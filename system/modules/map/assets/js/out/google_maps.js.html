@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: google_maps.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: google_maps.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ Classe para Google Maps.
+ * 
+ * @author Thiago Silva
+ */
+
+/**
+ * Constructor.
+ * 
+ * @constructor
+ * @param {GeoJson} coordenadas
+ * @returns {GMaps}
+ */
+var GMaps = function(coordenadas) {
+    
+    /** @private */
+    this._coordenadas = coordenadas;
+
+    /** @private */
+    this._zoomInicial = 4;
+
+    /**
+     * Tamanho máximo do tooltip Google Maps.
+     * 
+     * @private
+     */
+    this._infoSize = 200;
+
+    /** @private */
+    this._marcadores = {};
+
+    /** @private */
+    this._infoMarcadores = {};
+
+    /** @private */
+    this._infoMarcador = null;
+
+    /** @private */
+    this._infoWindow = [];
+
+    /** @private */
+    this._valores = [];
+    this._valores2 = [];
+
+    /** @private */
+    this._contornos = [];
+
+    /** @private */
+    this._contornosId = [];
+
+    /** @private */
+    this._contornoAtual = null;
+
+    /**  @private */
+    this._debug = true;
+
+    /** @private */
+    this._ultimo = {id: null, contexto: null, espacialidade: null, indicador: null, ano: null};
+
+    /** @private */
+    this._faixas = {'legenda_personalizada': [], 'legenda_padrao': [], 'legenda_quantil': []};
+
+    /** @private */
+    this._ultimaLinha = {'cor': null, 'largura': null};
+
+    // valor de seleção
+    this._largura = {'linha_padrao': 0.35, 'selecao_contorno': 3};
+
+    /** @private */
+    this._cor = {'preechimento_padrao': 'transparent', 'linha_padrao': 'black', 'selecao_contorno': 'white'};
+
+    /** @private */
+    this._possuiContorno = true;
+
+    /**
+     * Id espacialidades.
+     * @private
+     * @enum {String}
+     */
+    this._mapaTipoUrl = {2: 'm', 4: 'uf', 5: 'udh', 6: 'rm'};
+
+    /**
+     * @private
+     * @constant
+     */
+    this.TIPO_LEGENDA_PADRAO        = 1;
+
+    /**
+     * @private
+     * @constant
+     */
+    this.TIPO_LEGENDA_PERSONALIZADA = 2;
+
+    /**
+     * @private
+     * @constant
+     */
+    this.TIPO_LEGENDA_QUANTIL       = 3;
+
+    /**
+     * Tipo de legenda atual. 
+     * Padrão 1, Personalizada 2, Quantil 3.
+     * 
+     * @private
+     */
+    this._tipoLegenda               = 1;
+
+    try {
+        this._centroDoMapa = new google.maps.LatLng(-15.134552411923314, -53.190445809999915); // coordenadas centro Brasil
+        this._tipoDoMapa = google.maps.MapTypeId.ROADMAP;
+    } catch (e) {
+        throw Error('Não foi possível localizar o Google Maps.');
+    }
+};
+
+/**
+ * Dispara evento de clique no marcador.
+ * 
+ * @param {Integer} idMarcador
+ */
+GMaps.prototype.clicaNoMarcador = function(idMarcador) {
+    google.maps.event.trigger(this._marcadores[idMarcador], 'click');
+};
+
+/**
+ * Seta coordenadas
+ * 
+ * @param {Object} coordenadas
+ */
+GMaps.prototype.setCoordenadas = function(coordenadas) {
+    this._coordenadas = coordenadas;
+};
+
+/**
+ * Trava o zoom do mapa.
+ * 
+ * @param {Integer} max
+ * @param {Integer} min
+ * @return {undefined}
+ */
+GMaps.prototype.setZoomRange = function(max, min) {
+    var m = this.getMapa();
+//    m.setZoom(min);
+    m.setOptions({
+        maxZoom: max,
+        minZoom: min || null
+    });
+};
+
+/**
+ * Set o max zoom do mapa.
+ * 
+ * @param {Integer} max
+ * @return {undefined}
+ */
+GMaps.prototype.setMaxZoom = function(max) {
+    this.getMapa().setOptions({
+        maxZoom: max || null
+    });
+};
+
+/**
+ * Destrava o zoom do mapa.
+ * 
+ * @return {undefined}
+ */
+GMaps.prototype.destravaZoom = function() {
+    var m = this.getMapa();
+    m.setOptions({
+        maxZoom: null,
+        minZoom: 4
+    });
+};
+
+/**
+ * Reseta atributos
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype._resetAtributosMapa = function() {
+//    this.resetaMapa();
+
+    this._marcadores = {};
+    this._infoMarcadores = {};
+    this._infoMarcador = null;
+    this._infoWindow = [];
+    this._valores = [];
+    this._valores2 = [];
+    this._contornos = [];
+    this._contornosId = [];
+    this._contornoAtual = null;
+    this._infoWindowAtual = null;
+};
+
+/**
+ * Atualiza GMaps.
+ * 
+ * @public
+ * @see http://stackoverflow.com/questions/15689656/google-maps-window-only-showing-part-of-the-map
+ */
+GMaps.prototype.atualizaMapa = function() {
+    var mapa = this.getMapa();
+
+    if (mapa instanceof google.maps.Map) {
+        google.maps.event.trigger(mapa, 'resize');
+    } else {
+        throw new Error('Erro ao atualizar mapa.');
+    }
+};
+
+/**
+ * Função centralizar o mapa.
+ * 
+ */
+GMaps.prototype.centralizaMapa = function() {
+    var mapa = this.getMapa();
+
+    if (mapa instanceof google.maps.Map) {
+        google.maps.event.trigger(mapa, 'resize');
+        mapa.setCenter(this._centroDoMapa);
+        mapa.setZoom(this._zoomInicial);
+    } else {
+        throw new Error('Erro ao atualizar mapa.');
+    }
+};
+
+/**
+ * Variavél global do mapa.
+ * 
+ * @param {google.maps.Map} mapa
+ */
+GMaps.prototype._salvaMapa = function(mapa) {
+    $('#map-canvas').data('mapa', mapa);
+};
+
+
+/**
+ * Cria um mapa.
+ * 
+ * @returns {google.maps.Map}
+ */
+GMaps.prototype.criaMapa = function() {
+    var mapa = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: this._zoomInicial,
+        minZoom: 4,
+        mapTypeId: this._tipoDoMapa
+    });
+
+    // centraliza pelo centro do mapa
+    mapa.setCenter(this._centroDoMapa);
+
+    // Busca centro do polígono:
+    // http://stackoverflow.com/questions/3081021/how-to-get-the-center-of-a-polygon-in-google-maps-v3
+    google.maps.Polygon.prototype.my_getBounds = function() {
+        var bounds = new google.maps.LatLngBounds();
+        this.getPath().forEach(function(element, index) {
+            bounds.extend(element);
+        });
+        return bounds;
+    };
+
+    return mapa;
+};
+
+
+/**
+ * Inicia Google Maps
+ * 
+ * @public
+ * @see https://developers.google.com/maps/documentation/staticmaps/?hl=pt-BR&amp;csw=1#StyledMaps
+ */
+GMaps.prototype.inicializaMapa = function() {
+    var mapa;
+
+    this._resetAtributosMapa();
+
+    if (!this.getMapa() || !(this.getMapa() instanceof google.maps.Map)) {
+        mapa = this.criaMapa();
+        this._salvaMapa(mapa);
+    } else {
+        mapa = this.getMapa();
+        this.atualizaMapa();
+    }
+
+    this._adicionaMarcadorNoMapa(mapa, this._coordenadas);
+};
+
+/**
+ * Retorna variavél global do mapa.
+ * 
+ * @return {google.maps.Map}
+ */
+GMaps.prototype.getMapa = function() {
+    return $('#map-canvas').data('mapa') || null;
+};
+
+/**
+ * Cria marcador para mapa.
+ * 
+ * @param {google.maps.Marker} mapa
+ * @param {Double} latitude
+ * @param {Double} longitude
+ * @param {String} titulo
+ * @return {google.maps.Marker}
+ */
+GMaps.prototype._criaMarcador = function(mapa, latitude, longitude, titulo) {
+    var url = this.getBaseUrl();
+    return new google.maps.Marker({
+        position: new google.maps.LatLng(latitude, longitude),
+        map: mapa,
+        title: titulo,
+        icon: url + 'system/modules/map/assets/img/logo_atlasbrasil.png'
+    });
+};
+
+/**
+ * Cria info do marcador.
+ * 
+ * @param {String} info 
+ * @param {google.maps.LatLng} latLng Coordenada.
+ * @return {google.maps.InfoWindow}
+ */
+GMaps.prototype._criaInfoMarcador = function(info, latLng) {
+    var window, size, content;
+
+    window = new google.maps.InfoWindow();
+    size = this._infoSize;
+    content = '&lt;div style="white-space:nowrap;">' + info + '&lt;/div>';
+    window.setOptions({maxWidth: size, content: content, position: latLng});
+    return window;
+};
+
+/**
+ * Cria marcador para mapa.
+ * 
+ * @param {gooogle.maps.Mapa} mapa
+ * @param {gooogle.maps.LatLng} latLng
+ * @param {Array} info Array de google.maps.LatLng.
+ * @return {google.maps.InfoWindow}
+ */
+GMaps.prototype._criaInfoPersonalizado = function(mapa, latLng, info) {
+    var window = new google.maps.InfoWindow(), size = this._infoSize;
+
+    window.setOptions({maxWidth: size, content: info, position: latLng});
+    window.open(mapa);
+
+    return window;
+};
+
+
+/**
+ * Cria os marcadores sobre as regiões metropolitanas.
+ * @param {google.maps.Map}
+ *            mapa Google Maps
+ * @param {Array}
+ *            coordenadas Array de google.maps.LatLng.
+ * @return {undefined}
+ */
+GMaps.prototype._adicionaMarcadorNoMapa = function(mapa, coordenadas) {
+    var self = this, //i, t, 
+            coords, id, nome;
+    
+    $('#legenda_mapa').hide();
+    
+    if ($.isArray(coordenadas)) {
+        $(coordenadas).each(function(i) {
+            coords = coordenadas[i];
+
+            // título do info window
+            id = coords['id'];
+            nome = (id + ' - ' + coords['nome']);
+
+            // cria marcadores
+            self._marcadores[id] = self._criaMarcador(mapa, coords['lat'], coords['lng'], nome);
+
+            coords['zoom'] = parseInt(coords['zoom'], 10);
+
+            self._adicionaOnclickMarcador(i, id, coords);
+        }); // fim: each
+    }
+};
+
+/**
+ * Deixa visível/invisível todos os marcadores.
+ * 
+ * @param {Boolean} visivel
+ */
+GMaps.prototype.setMarcadoresVisivel = function(visivel) {
+    // reseta visiabilidade de todos marcadores
+    $.each(this._marcadores, function() {
+        this.setVisible(visivel);
+    });
+};
+
+
+/**
+ * Esconde o marcador atual.
+ * 
+ * @param {google.maps.Marker} marcador
+ */
+GMaps.prototype._escondeMarcador = function(marcador) {
+    this.setMarcadoresVisivel(true);
+    // some marcador
+    marcador.setVisible(false);
+};
+
+/**
+ * Adiciona observador onclick para mostrar informações do marcador.
+ * 
+ * @param {Integer} indexCoords
+ * @param {Integer} id 
+ * @param {Object} infoCoords
+ * @return {undefined}
+ */
+GMaps.prototype._adicionaOnclickMarcador = function(indexCoords, id, infoCoords) {
+    var self = this, coords, nome, mapa = this.getMapa();
+
+    coords = self.converteGeoJsonParaArray(self._coordenadas[indexCoords]);
+
+    // verifica contexto rm adicionar prefixo
+    if (self.getContexto() === 6) {
+        nome = self._trataPrefixoRm(infoCoords['nome']);
+    } else {
+        nome = infoCoords['nome'];
+    }
+
+    // desenha todos shapes
+    (function(self, id, nome) {
+        google.maps.event.addListener(self._marcadores[id], 'mouseover', function() {
+            if (!self._infoMarcador) {
+                self._infoMarcador = self._criaInfoMarcador(nome, self._marcadores[id].getPosition());
+                (function(self) {
+                    setTimeout(function() {
+                        if (self._infoMarcador) {
+                            self._infoMarcador.open(self.getMapa(), self._marcadores[id]);
+                        }
+                    }, 450);
+                })(self);
+            }
+        });
+
+        google.maps.event.addListener(self._marcadores[id], 'mouseout', function() {
+            if (self._infoMarcador) {
+                self._infoMarcador.close();
+                self._infoMarcador = null;
+            }
+        });
+
+        google.maps.event.addListener(self._marcadores[id], 'click', function() {
+            var marcador = self._marcadores[id];
+
+            // muda título como nome do marcador
+            $('#titulo_contexto').text(nome);
+
+            self.setId(id, true);
+
+            // centraliza o mapa
+            mapa.setZoom(infoCoords['zoom']);
+            mapa.setCenter(marcador.getPosition());
+
+            // faz requisição de contorno
+            self.consultaMapa(
+                    id,
+                    self.getEspacialidade(),
+                    self.getIndicador(),
+                    self.getAno(),
+                    self.getContexto());
+
+            // ao clicar esconde marcador atual
+            self._escondeMarcador(marcador);
+        });
+    })(self, id, nome);
+};
+
+/**
+ * Tenta encontrar o melhor zoom para aquele shape.
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype.tentaMelhorZoom = function() {
+    var bounds;
+
+    if (this._contornos.length === 1) {
+        bounds = this._contornos[0].my_getBounds();
+        this.getMapa().fitBounds(bounds);
+    } else if (this._contornos.length > 1) {
+        bounds = new google.maps.LatLngBounds();
+        for (var i = 0, len = this._contornos.length; i &lt; len; i++) {
+            bounds.union(this._contornos[i].my_getBounds());
+        }
+        this.getMapa().fitBounds(bounds);
+    }
+};
+
+
+/**
+ * Converte JSON de geo do banco de dados em array.
+ * 
+ * @param {JSON} coordsJson
+ * @return {Array}
+ */
+GMaps.prototype.converteGeoJsonParaArray = function(coordsJson) {
+    try {
+        var index = (!('geo_json' in coordsJson) ? 2 : 'geo_json'),
+                json = (JSON &amp;&amp; JSON.parse(coordsJson[index])) || $.parseJSON(coordsJson[index]);
+        return json['coordinates'];
+    } catch (e) {
+        return [];
+    }
+};
+
+
+/**
+ * Recupera faixas da legenda.
+ * 
+ * @param {Integer|undefined} tipoFaixa
+ * @return {Array}
+ */
+GMaps.prototype.getFaixasLegenda = function(tipoFaixa) {
+    if (tipoFaixa === this.TIPO_LEGENDA_PERSONALIZADA) {
+        return this._faixas['legenda_personalizada'];
+    } else if (tipoFaixa === this.TIPO_LEGENDA_QUANTIL) {
+        return this._faixas['legenda_quantil'];
+    } else if (tipoFaixa === this.TIPO_LEGENDA_PADRAO) {
+        return this._faixas['legenda_padrao'];
+    }
+    return [];
+};
+
+/**
+ * Carrega legendas do banco de dados.
+ * 
+ * @public
+ * @param {Object} urlParams
+ * @return {undefined}
+ */
+GMaps.prototype._carregaValores = function(urlParams) {
+    var self = this, url = this.getBaseUrl();
+
+    urlParams['tipo'] = 'valores';
+
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        cache: false,
+        url: url + 'system/modules/map/controller/MapService.php',
+        data: urlParams,
+        error: function(err) {
+            if (self._debug) {
+                console &amp;&amp; console.log(err);
+            }
+            self.fechaAvisoCarregando();
+        },
+        beforeSend: function() {
+            $('#legenda_mapa').hide();
+        },
+        success: function(response) {
+            if (response['sucesso']) {
+                self._atualizaValores(response);
+                self._carregaLegenda(urlParams['indicador'], urlParams['espacialidade']);
+            }
+        }
+    });
+};
+
+/**
+ * Retorna mensagem carregando internacionalizada.
+ * 
+ * @param {String} tipo Valores aceitos: contornos, valores e legenda.
+ * @returns {undefined}
+ */
+//GMaps.prototype._msgCarregando = function(tipo) {
+//    return lang_mng.getString('mp_aviso_carregando') + ' ' + lang_mng.getString('mp_aviso_carregando_tipo_' + tipo) + '...';
+//};
+
+/**
+ * Carrega legendas do banco de dados.
+ * 
+ * @public
+ * @param {Integer|String} indicador Id do indicador.
+ * @param {Integer|String} espacialidade Id do espacialidade.
+ * @return {undefined}
+ */
+GMaps.prototype._carregaLegenda = function(indicador, espacialidade) {
+    var self = this, url = this.getBaseUrl();
+
+    $('#legenda_itens li').remove();
+
+    this._tipoLegenda = this.TIPO_LEGENDA_PADRAO;
+
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        cache: false,
+        url: url + 'system/modules/map/controller/MapService.php',
+        data: {tipo: 'legenda', indicador: indicador, espacialidade: espacialidade},
+        error: function(err) {
+            $('#legenda_mapa').show();
+            if (self._debug) {
+                console &amp;&amp; console.log(err);
+            }
+        },
+        beforeSend: function() {
+//            $('#contentLoading-text').text(self._msgCarregando('legenda'));
+        },
+        complete: function() {
+            self.setAbaLegendaPadrao();
+        },
+        success: function(response) {
+            if (response['sucesso']) {
+                self._adicionaLegenda(response['retorno']);
+            }
+            self.fechaAvisoCarregando();
+        }
+    });
+};
+
+/**
+ * Seta aba legenda padrão.
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype.setAbaLegendaPadrao = function() {
+    $('#legenda-tabs .ativo').removeClass('ativo')
+            .parent()
+            .find('#tab-legenda-padrao')
+            .addClass('ativo');
+    $('#legenda-quantil, #legenda-personalizada').hide();
+    $('#legenda_mapa').show();
+};
+
+/**
+ * 
+ * @param {Integer} numQuantil
+ * @returns {undefined}
+ */
+GMaps.prototype.quantil = function(numQuantil) {
+//    var numVals             = this._valores.length,
+    var numBin,
+            valsLen         = this._valores2.length,
+            valsOrdenados   = this._valores2.slice(0),
+            idxVals         = [];
+    
+    var cor, min, max, nome,
+            valorBrilho, qntBrilho;
+    
+    valsOrdenados.sort(function(a, b) {
+        return a[1] - b[1];
+    });
+        
+    numBin = Math.ceil(valsLen / numQuantil);
+    
+    this._faixas['legenda_quantil'] = [];
+
+    // adiciona os valores das faixas
+    for (var i = 0; i &lt; valsLen; i += numBin) {
+        idxVals.push(valsOrdenados[i][1]);
+    }
+    idxVals.push(valsOrdenados[valsLen-1][1]);
+
+    // gradiente cores
+    qntBrilho   = 1 / numQuantil;
+    valorBrilho = 0;
+
+    cor = this._faixas['legenda_padrao'][0].cor_preenchimento;
+
+    for (var i = numQuantil; i > 0; i -= 1) {
+        min = parseFloat(idxVals[i - 1]);
+        max = parseFloat(idxVals[i]);
+
+        if (isNaN(min) || isNaN(max)) {
+            break;
+        }
+
+        nome = formataValor(min + ' - ' + max, true);
+
+        this._faixas['legenda_quantil'].push({
+            cor_preenchimento: increase_brightness(cor, 100 * valorBrilho),
+            nome: nome,
+            max: max,
+            min: min
+        });
+
+        valorBrilho += qntBrilho;
+    }
+
+    this.atualizaLegenda(this._faixas['legenda_quantil'], this.TIPO_LEGENDA_QUANTIL);
+    this.atualizaCoresDosContornos(this._faixas['legenda_quantil']);
+};
+
+
+/**
+ * Retorna as faixas atuais utilizadas pelo mapa.
+ * 
+ * @returns {Object|Array|undefined}
+ */
+//GMaps.prototype._getFaixasAtual = function() {
+//    if (this._tipoLegenda === this.TIPO_LEGENDA_PADRAO) {
+//        return this._faixas['legenda_padrao'];
+//    } else if (this._tipoLegenda === this.TIPO_LEGENDA_QUANTIL) {
+//        return this._faixasQuantil;
+//    } else {
+//        return this._faixasPersonalizada;
+//    }
+//};
+
+/**
+ * Adiciona legenda a prtir dos itens fornecidos.
+ * 
+ * @param {JSON} faixas JSON referente aos indicadores.
+ */
+GMaps.prototype._adicionaLegenda = function(faixas) {
+    var self = this, faixasSelecionadas;
+
+    // reset faixas legenda
+    this._faixas['legenda_padrao']          = [];
+    this._faixas['legenda_personalizada']   = [];
+    this._faixas['legenda_quantil']         = [];
+
+    $(faixas['__legenda__']).each(function(i, item) {
+        self._faixas['legenda_padrao'].push({
+            'cor_preenchimento': item.cor_preenchimento,
+            'nome': item.nome,
+            'max': item.max,
+            'min': item.min
+        });
+    });
+
+    // clone faixas legenda padrão
+    faixasSelecionadas = this._faixas['legenda_padrao'].slice(0);
+
+    this._faixas['legenda_personalizada'] = this._faixas['legenda_padrao'];
+
+    this.atualizaCoresDosContornos(faixasSelecionadas);
+
+    $(faixasSelecionadas).each(function(i, item) {
+        self.adicionaFaixa(item.cor_preenchimento, item.nome);
+    });
+};
+
+/**
+ * Adiciona faixa para legenda.
+ * 
+ * @param {String} cor
+ * @param {String} nome
+ * @returns {undefined}
+ */
+GMaps.prototype.adicionaFaixa = function(cor, nome) {
+    $('#legenda_itens').append('&lt;li>&lt;span class="legenda_indicador" style="border-color: ' + cor + ';" >&lt;/span> ' + nome + '&lt;/li>');
+};
+
+/**
+ * Retorna o tipo de legenda.
+ * 
+ * @see GMaps._tipoLegenda
+ * @returns {Number}
+ */
+GMaps.prototype.getTipoLegenda = function() {
+    return this._tipoLegenda;
+};
+
+/**
+ * Atualiza faixas da legenda. Se não fornecido atualiza para valores padrão da legenda.
+ * 
+ * @param {Object} faixasLegenda 
+ * @param {Integer} tipoFaixas 
+ * @returns {undefined}
+ */
+GMaps.prototype.atualizaLegenda = function(faixasLegenda, tipoFaixas) {
+    if (tipoFaixas === this.TIPO_LEGENDA_PADRAO) {
+        this._tipoLegenda = tipoFaixas;
+        this._faixas['legenda_padrao'] = faixasLegenda;
+    } else if (tipoFaixas === this.TIPO_LEGENDA_QUANTIL) {
+        this._tipoLegenda = tipoFaixas;
+        this._faixas['legenda_quantil'] = faixasLegenda;
+    } else if (tipoFaixas === this.TIPO_LEGENDA_PERSONALIZADA) {
+        this._tipoLegenda = tipoFaixas;
+        this._faixas['legenda_personalizada'] = faixasLegenda;
+    }
+    this._desenhaFaixasLegenda(tipoFaixas);
+};
+
+/**
+ * 
+ * @param {Integer} tipoFaixas
+ * @returns {undefined}
+ */
+GMaps.prototype._desenhaFaixasLegenda = function(tipoFaixas) {
+    var self = this, faixas;
+
+    $('#legenda_itens li').remove();
+
+    faixas = this.getFaixasLegenda(tipoFaixas);
+
+    $(faixas).each(function(i, item) {
+        self.adicionaFaixa(item.cor_preenchimento, item.nome);
+    });
+};
+
+/**
+ * Legenda Personalizada.
+ * 
+ * @param {Object} novasFaixas
+ * @returns {undefined}
+ */
+GMaps.prototype.setLegendaPersonalizada = function(novasFaixas) {
+    novasFaixas = novasFaixas || this._faixas['legenda_personalizada'];
+    this.atualizaLegenda(novasFaixas, this.TIPO_LEGENDA_PERSONALIZADA);
+    this.atualizaCoresDosContornos(novasFaixas);
+};
+
+/**
+ * Legenda Quantil.
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype.setLegendaQuantil = function() {
+    var faixas = this._faixas['legenda_quantil'];
+    this.atualizaLegenda(faixas, this.TIPO_LEGENDA_QUANTIL);
+    this.atualizaCoresDosContornos(faixas);
+};
+
+/**
+ * Legenda padrão.
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype.setLegendaPadrao = function() {
+    this.atualizaLegenda(this._faixas['legenda_padrao'], this.TIPO_LEGENDA_PADRAO);
+    this.atualizaCoresDosContornos();
+};
+
+
+/**
+ * Retorna cor do contorno a partir do 
+ * 
+ * @param {String} corPreenchimento
+ * @returns {String}
+ */
+GMaps.prototype._corContorno = function(corPreenchimento) {
+    return ColorLuminance(corPreenchimento, -0.25);
+};
+
+/**
+ * Atualiza cores do mapa de acordo Legenda Personalizada.
+ * 
+ * @returns {undefined}
+ */
+//GMaps.prototype.atualizaCoresParaLegendaPersonalizada = function() {
+//    this.atualiza
+//    this.atualizaCoresDosContornos(this._faixas['legenda_personalizada']);
+//};
+
+/**
+ * Atualiza cores dos contornos.
+ * 
+ * @param {object?} coresFaixasLegenda
+ * @returns {undefined}
+ */
+GMaps.prototype.atualizaCoresDosContornos = function(coresFaixasLegenda) {
+    var self = this,
+            valorAtual,
+            contornoAtual,
+            faixaAtual,
+            encontrouNaFaixa,
+            isSelecionadoContornoAtual,
+            cor,
+            faixas              = coresFaixasLegenda || this._faixas['legenda_padrao'],
+            corSelecaoAtual     = this._cor['selecao_contorno'],
+            numFaixasLegenda    = faixas.length,
+            mapaCores           = {};
+
+    for (var k = 0; k &lt; numFaixasLegenda; k++) {
+        if (this._possuiContorno) {
+            cor = this._corContorno(faixas[k]['cor_preenchimento']); // nova cores para contorno
+        } else {
+            cor = faixas[k]['cor_preenchimento']; // mesma cor do background
+        }
+
+        mapaCores[faixas[k]['cor_preenchimento']] = cor;
+    }
+
+    for (var pos = 0, length = self._contornos.length; pos &lt; length; pos++) {
+
+        valorAtual                  = self._valores[pos];
+        contornoAtual               = self._contornos[pos];
+        
+        isSelecionadoContornoAtual  = (contornoAtual.strokeWeight === this._largura['selecao_contorno']);
+        encontrouNaFaixa            = false;
+
+        // percorre todos limites das faixas
+        for (var i = 0, len = numFaixasLegenda; i &lt; len; i++) {
+            faixaAtual = faixas[i];
+
+            if (+valorAtual >= +faixas[i]['min'] &amp;&amp; +valorAtual &lt;= +faixas[i]['max']) {
+                if (isSelecionadoContornoAtual) {
+                    self._ultimaLinha['cor'] = mapaCores[faixaAtual['cor_preenchimento']];
+                    contornoAtual.setOptions({
+                        fillColor   : faixaAtual['cor_preenchimento']
+                    });
+                } else {
+                    contornoAtual.setOptions({
+                        fillColor   : faixaAtual['cor_preenchimento'],
+                        strokeColor : mapaCores[faixaAtual['cor_preenchimento']]
+                    });
+                }
+
+                encontrouNaFaixa = true;
+            }
+        } // fim: for
+
+        // se não esta na faixa de valores aplicar cor e linha padrão
+        if (!encontrouNaFaixa) {
+            self._ultimaLinha['cor'] = self._cor['linha_padrao'];
+
+            if (isSelecionadoContornoAtual) {
+                contornoAtual.setOptions({strokeColor: corSelecaoAtual});
+            } else {
+                contornoAtual.setOptions({strokeColor: self._ultimaLinha['cor']});
+            }
+
+            contornoAtual.setOptions({fillColor: self._cor['preechimento_padrao']});
+        }
+    } // fim: each
+};
+
+/**
+ * Reseta cores do mapa.
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype.resetaCoresDoMapa = function() {
+    var self = this;
+
+    $('.info_valor').html(' ');
+    $(self._contornos).each(function(i, item) {
+        if (item.strokeWeight === self._largura['selecao_contorno']) {
+            self._ultimaLinha['cor'] = self._cor['linha_padrao'];
+            item.setOptions({
+                fillColor: self._cor['preechimento_padrao']
+            });
+        } else {
+            item.setOptions({
+                fillColor: self._cor['preechimento_padrao'],
+                strokeColor: self._cor['linha_padrao']
+            });
+        }
+    });
+};
+
+
+/**
+ * Desenha shape.
+ * 
+ * @param {google.maps.Map} mapa
+ * @param {Intger} id
+ * @param {Array} coords Array de google.maps.LatLng que compõem o cotorno(paths)
+ * @param {String} corDePreenchimento
+ * @param {String} corDaBorda
+ * @param {String|double} larguraLinha
+ * @return {google.maps.Polygon} contorno Shape do mapa.
+ */
+GMaps.prototype._adicionaContorno = function(mapa, id, coords, corDePreenchimento, corDaBorda, larguraLinha) {
+    var novoContorno;
+
+    novoContorno = this.criaContorno(coords, corDePreenchimento, corDaBorda, larguraLinha);
+
+    this._contornos.push(novoContorno);
+    this._contornosId.push(id);
+
+    novoContorno.setMap(mapa);
+
+    return novoContorno;
+};
+
+/**
+ * Cria uma camada(UDH ou município).
+ * 
+ * @param paths
+ * @param corDePreenchimento
+ * @param corDaBorda
+ * @param larguraLinha
+ * @param opacidade
+ */
+GMaps.prototype.criaContorno = function(paths, corDePreenchimento, corDaBorda, larguraLinha, opacidade) {
+    var transparencia = this.getTransparencia();
+
+    return new google.maps.Polygon({
+        paths: paths,
+        geodesic: true,
+        fillColor: corDePreenchimento,
+        strokeColor: corDaBorda,
+        strokeWeight: larguraLinha,
+        fillOpacity: opacidade || transparencia
+    });
+};
+
+/**
+ * Método para obter variavél global ID.
+ */
+GMaps.prototype.getId = function() {
+    return $('#map-canvas').data('id');
+};
+
+/**
+ * Método setar variavél global ID.
+ * 
+ * @param {Integer} id
+ * @param {Boolean|undefined} atualizaUltimo
+ */
+GMaps.prototype.setId = function(id, atualizaUltimo) {
+    if (!atualizaUltimo) {
+        this._ultimo['id'] = this.getId();
+    }
+    $('#map-canvas').data('id', id);
+};
+
+/**
+ * Método helper para obter variavél global.
+ */
+GMaps.prototype.getContornoDoMarcador = function() {
+    return $('#map-canvas').data('contorno');
+};
+
+/**
+ * Remove todos os infowindows dos marcadores.
+ */
+GMaps.prototype.limpaInfoMarcadores = function() {
+    var self = this;
+
+    if (self._infoMarcador) {
+        self._infoMarcador.close();
+        self._infoMarcador = null; // não há self._infoMarcador isOpen
+    }
+
+    $.each(self._infoMarcadores, function() {
+        this.close();
+    });
+};
+
+/**
+ * Muda o tipo de visualização do mapa.
+ * 
+ * @param {String}
+ *            tipo Tipos: MapTypeId.ROADMAP, MapTypeId.SATELLITE,
+ *            MapTypeId.HYBRID e MapTypeId.TERRAIN.
+ */
+GMaps.prototype.setTipoDoMapa = function(tipo) {
+    this._tipoDoMapa = tipo;
+    this.getMapa().setMapTypeId(this._tipoDoMapa);
+};
+
+/**
+ * Muda o tipo de visualização do mapa. 
+ * Tipos: MapTypeId.ROADMAP, MapTypeId.SATELLITE, MapTypeId.HYBRID e MapTypeId.TERRAIN.
+ * 
+ * @param {Integer} id 
+ */
+GMaps.prototype.setTipoDoMapaId = function(id) {
+    this._tipoDoMapa = [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE,
+        google.maps.MapTypeId.HYBRID][id];
+
+    this.getMapa().setMapTypeId(this._tipoDoMapa);
+};
+
+
+/**
+ * Retorna op;óes o tipo de visualização do mapa.
+ * 
+ * @return {Array}
+ */
+GMaps.prototype.getMarcadores = function() {
+    return this._marcadores;
+};
+
+/**
+ * Apaga todos contornos, limpando o mapa.
+ */
+GMaps.prototype.limpaContornos = function() {
+    var contornos = this._contornos;
+    $.each(contornos || {}, function(i, item) {
+        if (typeof item !== 'undefined' &amp;&amp; (item instanceof google.maps.Polygon))
+            //item.setVisible(false);
+            item.setPaths([]);
+    });
+};
+
+/**
+ * Muda linha.
+ * 
+ * @param {google.maps.Polygon} coords
+ */
+GMaps.prototype.mudaLinhaDoContorno = function(coords) { //, corLinha, larguraLinha) {
+    var self = this;
+    if (typeof coords !== 'undefined' &amp;&amp; coords instanceof google.maps.Polygon) {
+        coords.setOptions({
+            strokeColor     : self._ultimaLinha['cor'],
+            strokeWeight    : self._ultimaLinha['largura'],
+            strokeOpacity   : self.getTransparencia(),
+            zIndex          : 9998
+        });
+    }
+};
+
+/**
+ * Formata info valor.
+ * 
+ * @param {String|Number} valor
+ * @returns {String}
+ */
+GMaps.prototype._formataInfoValor = function(valor) {
+    return lang_mng.getString('mp_valor_indicador') + ' : &lt;span class="info_valor" style="color:#999;">' + ("" + valor).replace(/\./, ',') + "&lt;/span>";
+};
+
+/**
+ * Formata mensagem da info.
+ * 
+ * @param {String} nomeEspacialidade Localidade.
+ * @param {String} valor Valor do indicador.
+ * @param {String} url Link para o perfil da localidade.
+ * @param {String|Integer} id
+ */
+GMaps.prototype._msgInfo = function(nomeEspacialidade, valor, url, id) {
+    var link, href, info_valor;
+
+    if (!url || (+this.getContexto() === 10 &amp;&amp; +this.getEspacialidade() === 10)) {
+        info_valor = '';
+        link = '';
+    } else {
+        if (valor) {
+            info_valor = this._formataInfoValor(valor);
+        } else {
+            // valor encontrado para indicador
+            info_valor = ('&amp;nbsp;');
+        }
+
+        info_valor = '&lt;div class="info_marcador_valor-' + id + '" style="margin-top:3px;">' + info_valor + '&lt;/div>';
+
+        // link para perfil
+        href = url.toLowerCase();
+        link = '&lt;div style="margin-top:3px;white-space:nowrap;">&lt;a href=' + href + ' target="_blank">' + lang_mng.getString('mp_link_perfil') + '&lt;/a>&lt;/div>';
+    }
+
+    return '&lt;div class="mapa_infowindow">' + nomeEspacialidade + '&lt;/div>' + info_valor + link;
+};
+
+/**
+ * Adiciona prefixo RM traduzido.
+ * 
+ * @param {String} nomeEspacialidade
+ * @returns {String}
+ */
+GMaps.prototype._trataPrefixoRm = function(nomeEspacialidade) {
+    var er = new RegExp('^' + lang_mng.getString('mp_prefixo_rm') + ' ', 'g'),
+            nomeEspacialidadeFormatado; // tira prefixo
+
+    // adiciona prefixo para RM  
+    nomeEspacialidadeFormatado = lang_mng.getString('mp_prefixo_rm') + ' ' + nomeEspacialidade.replace(er, '');
+
+    return nomeEspacialidadeFormatado;
+};
+
+/**
+ * Formata informação para mudança do indicador de busca.
+ * 
+ * @param {String} nomeEspacialidade Id da espacialidade.
+ * @param {Integer} id Id do elemento da aplicação.
+ * @param {Integer} pos Valor do indicador.
+ * @return {undefined} String representa url do info no mapa.
+ */
+GMaps.prototype._formataInfo = function(nomeEspacialidade, id, pos) {
+    var url, splitUrl, espacialidade, lang, lastIndex, valor;
+
+    espacialidade = this.getEspacialidade();
+
+    if (typeof pos === 'number' &amp;&amp; pos > -1) {
+        valor = this._valores[pos];
+    } else {
+        valor = '';
+    }
+
+    if (!this._mapaTipoUrl[espacialidade]) {
+        return this._msgInfo(nomeEspacialidade, valor, '', id);
+    } else {
+
+        /** @see: http://www.nczonline.net/blog/2013/04/16/getting-the-url-of-an-iframes-parent/ */
+        splitUrl = ((parent !== window) ? document.referrer : location.href.replace(/\/$/, '')).split('/');
+
+        lang = ((typeof user_lang === 'undefined' || !user_lang) ? 'pt' : user_lang);
+        lang = ((parent === window) ? '/' + lang : '');
+
+        lastIndex = splitUrl.length - (splitUrl.length > 5 ? 2 : 1);
+
+        // link url
+        url = splitUrl.splice(0, lastIndex).join('/') + lang + '/perfil_' + this._mapaTipoUrl[espacialidade] + '/' + id;
+
+        return this._msgInfo(nomeEspacialidade, valor, url, id);
+    }
+};
+
+/**
+ * Testa se o path está dentro do polígono, verificando o sentido horário(clockwise) 
+ * para desenho normal e antihorário(counter clockwise) para "buracos" dentro do polígono.
+ * 
+ * @link http://en.wikipedia.org/wiki/Curve_orientation
+ * @param {google.maps.Polygon.Path} path
+ * @returns {Boolean}
+ */
+GMaps.prototype._ccw = function(path) {
+    var isCCW, a = 0;
+
+    for (var i = 0, len = path.length - 2; i &lt; len; i++) {
+        a += ((path[i + 1].lat() - path[i].lat()) * (path[i + 2].lng() - path[i].lng()) - (path[i + 2].lat() - path[i].lat()) * (path[i + 1].lng() - path[i].lng()));
+    }
+
+    if (a > 0) {
+        isCCW = true;
+    } else {
+        isCCW = false;
+    }
+
+    return isCCW;
+};
+
+/**
+ * Gerência os contornos os espacialidades.
+ * 
+ * @param {Integer} i
+ * @param {Array} arrLatLng
+ * @param {Array} arrLatLngs
+ * @returns {undefined}
+ */
+GMaps.prototype._gerenciaDirecaoContorno = function(i, arrLatLng, arrLatLngs) {
+    var self = this;
+    var exteriorDirection, interiorDirection;
+
+    if (!i) {
+        exteriorDirection = self._ccw(arrLatLng);
+        arrLatLngs.push(arrLatLng);
+    } else if (i === 1) {
+        interiorDirection = self._ccw(arrLatLng);
+        if (exteriorDirection === interiorDirection) {
+            arrLatLngs.push(arrLatLng.reverse());
+        } else {
+            arrLatLngs.push(arrLatLng);
+        }
+    } else {
+        if (exteriorDirection === interiorDirection) {
+            arrLatLngs.push(arrLatLng.reverse());
+        } else {
+            arrLatLngs.push(arrLatLng);
+        }
+    }
+}; // fim:
+
+/**
+ * Manipulador de desenho Ajax do serviço do mapa.
+ * 
+ * @param {Object} response Json resposta da requisição AJAX.
+ * @return {undefined}
+ */
+GMaps.prototype.desenhaContorno = function(response) {
+    var self = this;
+    var contorno = [], coords, arrLatLng, arrLatLngs, posicao = 0;
+    var retorno = response &amp;&amp; response['retorno'];
+    var shape = retorno['__contornos__'];
+
+    self.setMaxZoom(retorno['__maxzoom__']);
+
+    $(shape).each(function(i) {
+        // converte para JSON
+        coords = self.converteGeoJsonParaArray(shape[i]);
+
+        // lista de contornos
+        contorno[i] = [];
+
+        for (var j = 0, len = coords.length; j &lt; len; j++) {
+            // matriz de lista coordenadas
+            arrLatLngs = [];
+
+            for (var k = 0, len2 = coords[j].length; k &lt; len2; k++) {
+                arrLatLng = []; // lista coordenadas
+
+                for (var l = 0, len3 = coords[j][k].length; l &lt; len3; l++) {
+                    arrLatLng.push(new google.maps.LatLng(coords[j][k][l][1], coords[j][k][l][0]));
+                }
+
+                self._gerenciaDirecaoContorno(i, arrLatLng, arrLatLngs);
+            } // fim: k                
+
+            // contornos da espacialidade
+            contorno[i][j] = self.criaContorno(
+                    arrLatLngs,
+                    self._cor['preechimento_padrao'],
+                    self._cor['linha_padrao'],
+                    self._largura['linha_padrao'],
+                    self.getTransparencia());
+
+            // adiciona contorno ao mapa
+            contorno[i][j].setMap(self.getMapa());
+
+            // valores e contornos sincronizados
+            self._contornos.push(contorno[i][j]);
+            self._contornosId.push(shape[i][0]);
+
+            // adiciona evento onclick na camada(contorno)
+            self._adicionaOnclickCamada(contorno[i][j], shape[i][0], shape[i][1], posicao);
+
+            posicao += 1;
+        } // fim: j
+    }); // fim: each
+
+}; // fim: desenhaContorno
+
+/**
+ * Atualiza valores do contorno do mapa.
+ * 
+ * @param {Object} response Json resposta da requisição AJAX.
+ * @return {undefined}
+ */
+GMaps.prototype._atualizaValores = function(response) {
+    var id, valor, valores,
+            retorno = (response &amp;&amp; response['retorno']),
+            tabelaDeValores = {};
+
+    valores = retorno['__valores__'];
+    this._valores2 = valores;
+
+    for (var i = 0, lv = valores.length; i &lt; lv; i++) {
+        id = valores[i][0];
+        tabelaDeValores[id] = valores[i][1];
+        
+//        this._valores2.push({
+//            id: valores[i][0],
+//            valor: valores[i][1]
+//        });
+    }
+    
+    // recupera último infowindow aberto e atualiza
+    if (this._infoWindowAtual) {
+        var valorMsg = this._formataInfoValor(tabelaDeValores[this._infoWindowAtual]);
+        $('.info_marcador_valor-' + this._infoWindowAtual).html(valorMsg);
+    }
+
+    for (var k = 0, lc = this._contornosId.length; k &lt; lc; k++) {
+        id = this._contornosId[k];
+        valor = tabelaDeValores[id];
+        this._valores[k] = parseFloat(valor) || null;
+    }
+};
+
+/**
+ * Reseta ultimos valores do mapa.
+ * 
+ * @returns {undefined}
+ */
+//GMaps.prototype.resetUltimaValoresDoMapa = function() {
+//    // atualizando cache para consulta
+//    this._ultimoId = null;
+//    this._ultimo['contexto'] = null;
+//    this._ultimo['indicador'] = null;
+//    this._ultimo['espacialidade'] = null;
+//    this._ultimo['ano'] = null;
+//};
+
+/**
+ * Verifica se mudou a espacialidade.
+ 
+ * @returns {Boolean}
+ */
+GMaps.prototype._isMesmaEspacialidade = function() {
+    return (this._ultimo['id'] === this.getId()
+            &amp;&amp; this._ultimo['espacialidade'] === this.getEspacialidade()
+            &amp;&amp; this._ultimo['contexto'] === this.getContexto());
+};
+
+/**
+ * Muda o indicador se a espacialidade for composta. 
+ * Ex.: RMs, UDHs e municipios.
+ * 
+ * @param {Integer} id 
+ * @param {Integer} espacialidade
+ * @param {Integer} indicador
+ * @param {Integer} ano
+ * @param {Integer} contexto
+ * @param {Boolean} salvaUltimosValores
+ * @return {undefined}
+ */
+GMaps.prototype.consultaMapa = function(id, espacialidade, indicador, ano, contexto, salvaUltimosValores) {
+    var self = this, urlParams, url,
+            mesmaEspacialidade = this._isMesmaEspacialidade();
+
+    // remove aviso de UDH de 1991
+    $('#aviso_1991').hide();
+
+    urlParams = {
+        tipo            : ((!mesmaEspacialidade) ? 'mapa' : 'valor'),
+        id              : id,
+        espacialidade   : espacialidade,
+        ano             : ano,
+        indicador       : (indicador || ''),
+        contexto        : contexto
+    };
+
+    // mapservice
+    url = self.getBaseUrl() + 'system/modules/map/controller/MapService.php';
+
+    if (!salvaUltimosValores) {
+        self.setId(id);
+        self.setEspacialidade(espacialidade);
+        self.setContexto(contexto);
+        self.setAno(ano);
+        self.setIndicador(indicador);
+    }
+
+    self.mostraAvisoCarregando();
+
+    if (mesmaEspacialidade) {
+        self._carregaValores(urlParams);
+    } else {
+
+        self.resetMapa();
+
+        $.ajax({
+            type: 'get',
+            dataType: 'json',
+            data: urlParams,
+            cache: false,
+            url: url,
+            error: function(err) {
+                if (self._debug) {
+                    console &amp;&amp; console.log(err);
+                }
+                self.fechaAvisoCarregando();
+            },
+            success: function(response) {
+                var existeRetorno = (response &amp;&amp; typeof response === 'object' &amp;&amp; (!('retorno' in response) || !response['retorno']));
+
+                if (existeRetorno) {
+                    self.fechaAvisoCarregando();
+                } else {
+                    // max zoom do mapa
+                    self.desenhaContorno(response);
+
+                    if (indicador) {
+                        self._carregaValores(urlParams);
+                    }
+                }
+            }, // fim sucess
+            beforeSend: function() {
+            },
+            complete: function() {
+                if (!indicador) {
+                    self.fechaAvisoCarregando();
+                }
+            }
+        });
+    } 
+};
+
+/**
+ * Limpa mapa com informações anteriores.
+ * 
+ */
+GMaps.prototype.resetMapa = function() {
+    var self = this;
+
+    self.limpaMapa();
+    self.limpaInfoMarcadores();
+
+    // fecha info windows     			 
+    self.limpaInfoContornos(self._infoWindow);
+
+    self._infoWindow = [];
+
+    // limpa contornos
+//    console.log(self._contornos);
+    $(self._contornos).each(function(i, item) {
+        item.setMap(null);
+    });
+
+    $(self._contornoAtual).each(function(i, item) {
+        item.setMap(null);
+    });
+
+
+//    self._contornosId = [];
+
+    // reset contornos
+    this.resetContornos();
+//    this._resetAtributosMapa();
+};
+
+GMaps.prototype.resetContornos = function() {
+//    this.setId(null);
+    this._contornos = [];
+    this._contornosId = [];
+    this._valores = [];
+    this._contornoAtual = null;
+};
+
+
+/**
+ * Função para adicionar evento onclick na camada.
+ * 
+ * @param {Array} contorno
+ * @param {Integer} id
+ * @param {String} nome
+ * @param {Integer} pos Posição no vetor de valores do mapa.
+ * @return {Void}
+ */
+GMaps.prototype._adicionaOnclickCamada = function(contorno, id, nome, pos) {
+    var self = this,
+            contexto = this.getContexto(),
+            mapa = this.getMapa(),
+            espacialidade = this.getEspacialidade(),
+            infoWindow;
+
+
+    google.maps.event.addListener(contorno, 'click', function() {
+        var posicao;
+
+        self._infoWindowAtual = id;
+
+        // reseta info windows	 
+        self.limpaInfoContornos(self._infoWindow);
+
+        // reseta contorno atual        
+        if (self._contornoAtual) {
+            (function() {
+                self.mudaLinhaDoContorno(self._contornoAtual);
+                
+                // retorna z-index ao normal
+                self._contornoAtual.setOptions({zIndex: 0});
+            })();
+
+        }
+
+        // guarda o contorno atual para resetar futuramente
+        self._contornoAtual = contorno;
+
+        // centro do contorno
+        posicao = contorno.my_getBounds().getCenter();
+
+        // formata informação adiciona prefixo RM ao infowindow
+        if ((contexto === 6) &amp;&amp; (espacialidade === 6)) {
+            nome = self._trataPrefixoRm(nome);
+        }
+
+        // atualiza info window
+        infoWindow = self._formataInfo(nome, id, pos);
+        self._infoWindow.push(self._criaInfoPersonalizado(mapa, posicao, infoWindow));
+
+        // última config linha
+        if (this._tipoDoMapa === this.TIPO_LEGENDA_PERSONALIZADA) {
+            self._ultimaLinha['cor'] = contorno.fillColor;
+        } else {
+            self._ultimaLinha['cor'] = contorno.strokeColor;
+        }
+        
+        self._ultimaLinha['largura']    = contorno.strokeWeight;
+
+        // highlight
+        this.setOptions({
+            strokeColor         : self._cor['selecao_contorno'],
+            strokeWeight        : self._largura['selecao_contorno'],
+            strokeOpacity       : 1,
+            zIndex              : 9999
+        });
+    }); // fim: google
+};
+
+
+/**
+ * Limpa os info dos contornos.
+ * 
+ * @param {Array|null} infoContornos Lista de info dos contornos.
+ * @returns {undefined}
+ */
+GMaps.prototype.limpaInfoContornos = function(infoContornos) {
+    $(infoContornos || this._infoWindow).each(function(i, item) {
+        if (typeof item !== 'undefined' &amp;&amp; (item instanceof google.maps.InfoWindow)) {
+            item.close();
+        }
+    });
+};
+
+/**
+ * Limpa mapa.
+ * 
+ * @returns {undefined}
+ */
+GMaps.prototype.limpaMapa = function() {
+    var self = this;
+    $(self._contornos).each(function(i, item) {
+        item.setPath([]);
+    });
+};
+
+/**
+ * MapQuery.
+ * 
+ * @param {Object} arrIdEspacialidade 
+ * @param {Integer} espacialidade
+ * @param {Integer} contexto
+ * @param {Integer} indicador
+ * @param {Integer} ano
+ * @return {undefined}
+ */
+GMaps.prototype.mapQuery = function(arrIdEspacialidade, espacialidade, contexto, indicador, ano) {
+    var self = this, params, baseUrl;
+    params = $.extend({
+        tipo: 'mapa',
+        espacialidade: espacialidade,
+        contexto: contexto,
+        indicador: indicador,
+        ano: ano
+    }, arrIdEspacialidade);
+
+    this.setContexto(contexto);
+    this.setEspacialidade(espacialidade);
+    this.setIndicador(indicador);
+    this.setId(arrIdEspacialidade['id']);
+    this.setAno(ano);
+
+    // url do serviço JSON
+    baseUrl = self.getBaseUrl() + 'system/modules/map/controller/MapService.php';
+
+    // carregando
+    self.mostraAvisoCarregando();
+//    $('#contentLoading-text').text(self._msgCarregando('contornos'));
+
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        data: $.param(params),
+        cache: false,
+        url: baseUrl,
+        error: function(err) {
+            if (self._debug) {
+                console &amp;&amp; console.log(err);
+            }
+            self.fechaAvisoCarregando();
+        },
+        success: function(response) {
+            self.desenhaContorno(response);
+            self._carregaValores(params);
+
+        },
+        complete: function() {
+            self.tentaMelhorZoom();
+            self.atualizaMapa();
+//            self.fechaAvisoCarregando();
+        },
+        beforeSend: function() {
+//            self.desenhaLegendaNoMapa(indicador, espacialidade, contexto);
+            self.resetMapa();
+        }
+    });
+};
+
+/**
+ * Retorna espacialidade.
+ * 
+ * @return {Integer} Id da espacialidade.
+ */
+GMaps.prototype.getEspacialidade = function() {
+    var ret = $('#map-canvas').data('espacialidade');
+    return ret &amp;&amp; +ret;
+};
+
+/**
+ * Registra espacialidade.
+ * 
+ * @param {Integer|String} idEspacialidade
+ * @param {Boolean|undefined} atualizaUltimo
+ */
+GMaps.prototype.setEspacialidade = function(idEspacialidade, atualizaUltimo) {
+    if (!atualizaUltimo) {
+        this._ultimo['espacialidade'] = this.getEspacialidade();
+    }
+    $('#map-canvas').data('espacialidade', idEspacialidade);
+};
+
+/**
+ * Retorna indicador.
+ * 
+ * @return {Integer} Id da indicador.
+ */
+GMaps.prototype.getIndicador = function() {
+    var ret = $('#map-canvas').data('indicador');
+    return ret &amp;&amp; +ret;
+};
+
+/**
+ * Registra indicador.
+ *            
+ * @param {Integer|String} idIndicador 
+ * @param {Boolean|undefined} atualizaUltimo
+ */
+GMaps.prototype.setIndicador = function(idIndicador, atualizaUltimo) {
+    if (!atualizaUltimo) {
+        this._ultimo['indicador'] = this.getIndicador();
+    }
+    $('#map-canvas').data('indicador', idIndicador);
+};
+
+/**
+ * Retorna URL para AJAX.
+ * 
+ * @return {String} 
+ */
+GMaps.prototype.getBaseUrl = function() { // get
+    return $('#map-canvas').data('url') || '';
+};
+
+/**
+ * Registra URL para AJAX.
+ * 
+ * @param {String} url Url base.
+ */
+GMaps.prototype.setBaseUrl = function(url) {
+    $('#map-canvas').data('url', url);
+};
+
+/**
+ * Retorna ano.
+ * @return {Integer}
+ */
+GMaps.prototype.getAno = function() {
+    var ret = $('#map-canvas').data('ano');
+    return ret &amp;&amp; +ret;
+};
+
+/**
+ * Registra ano.
+ * 
+ * @param {Integer|String} idAno
+ * @param {Boolean|undefined} atualizaUltimo
+ */
+GMaps.prototype.setAno = function(idAno, atualizaUltimo) {
+    if (!atualizaUltimo) {
+        this._ultimo['ano'] = this.getAno();
+    }
+    $('#map-canvas').data('ano', idAno);
+};
+
+/**
+ * Retorna contexto.
+ * 
+ * @return {Integer}
+ */
+GMaps.prototype.getContexto = function() {
+    var ret = $('#map-canvas').data('contexto');
+    return ret &amp;&amp; +ret;
+};
+
+/**
+ * Registra contexto.
+ * 
+ * @param {Integer|String} idContexto
+ * @param {Boolean|undefined} atualizaUltimo
+ */
+GMaps.prototype.setContexto = function(idContexto, atualizaUltimo) {
+    if (!atualizaUltimo) {
+        this._ultimo['contexto'] = this.getContexto();
+    }
+    $('#map-canvas').data('contexto', idContexto);
+};
+
+/**
+ * Retorna transparência.
+ * 
+ * @return {Integer}
+ */
+GMaps.prototype.getTransparencia = function() {
+    return parseFloat($('#map-canvas').data('transparencia'));
+};
+
+/**
+ * Registra transparencia.
+ * 
+ * @param {Integer} transparencia
+ */
+GMaps.prototype.setTransparencia = function(transparencia) {
+    $('#map-canvas').data('transparencia', transparencia);
+};
+
+
+/**
+ * Muda transparência dos contornos do mapa.
+ * 
+ * @param opacidade Valor varia entre 0.0 e 1.0.
+ */
+GMaps.prototype.mudaTransparencia = function(opacidade) {
+    var self = this, largura = this._largura['selecao_contorno'];
+
+    self.setTransparencia(opacidade);
+
+    if (!self.getIndicador()) {
+        $(self._contornos).each(function(i, item) {
+            item.setOptions({fillOpacity: opacidade});
+        });
+    } else {
+        $(self._contornos).each(function(i, item) {
+            if (!self._possuiContorno &amp;&amp; item.strokeWeight !== largura) {
+                item.setOptions({fillOpacity: opacidade, strokeOpacity: opacidade});
+            } else {
+                item.setOptions({fillOpacity: opacidade});
+            }
+        });
+    }
+};
+
+/**
+ * Seta valor linha largura padrão.
+ * 
+ * @param {Double} valor
+ */
+GMaps.prototype.setLarguraLinha = function(valor) {
+    this._largura['linha_padrao'] = valor;
+};
+
+/**
+ * Remove contornos.
+ * 
+ */
+GMaps.prototype.removeContornos = function() {
+    var self = this,
+            larguraSelecao = this._largura['selecao_contorno'],
+            transparencia, item;
+
+    this._possuiContorno = false;
+    
+    transparencia = self.getTransparencia();
+
+    for (var i = 0, len = this._contornos.length; i &lt; len; i++) {
+        item = this._contornos[i];
+
+        if (item.strokeWeight !== larguraSelecao) {
+            item.setOptions({strokeColor: item.fillColor, strokeOpacity: transparencia});
+//            item.setOptions({strokeColor: item.fillColor});
+        } else {
+            self._ultimaLinha['cor'] = item.fillColor;
+        }
+
+//        item.setOptions({strokeOpacity: transparencia});
+    }
+};
+
+/**
+ * Retorna linhas do contorno.
+ * 
+ */
+GMaps.prototype.retornaContornos = function() {
+    var self = this,
+            larguraSelecao = this._largura['selecao_contorno'],
+            cor, transparencia, item;
+
+    this._possuiContorno = true;
+    
+    transparencia = self.getTransparencia();
+
+    for (var i = 0, len = this._contornos.length; i &lt; len; i++) {
+        item    = this._contornos[i];
+        cor     = self._corContorno(item.fillColor);
+        
+        if (item.strokeWeight !== larguraSelecao) {
+            item.setOptions({strokeColor: cor});
+        } else {
+            self._ultimaLinha['cor'] = cor;
+        }
+        
+        item.setOptions({strokeOpacity: 1});
+
+    }
+};
+
+/**
+ * Aviso carregando.
+ */
+GMaps.prototype.mostraAvisoCarregando = function() {
+    loadingHolder &amp;&amp; loadingHolder.show(lang_mng.getString('mp_aviso_carregando') + '...');
+};
+
+/**
+ * Fecha aviso carregando.
+ */
+GMaps.prototype.fechaAvisoCarregando = function() {
+    loadingHolder &amp;&amp; loadingHolder.dispose();
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="GMaps.html">GMaps</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Thu Sep 11 2014 01:08:49 GMT-0300 (Hora oficial do Brasil)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

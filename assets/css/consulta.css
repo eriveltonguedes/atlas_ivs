@@ -1,0 +1,8 @@
+.general-alert{
+	display : none;
+	padding: 5px;
+	margin-top: 10px;
+}
+.general-alert .alert-body{
+	padding: 5px;
+}

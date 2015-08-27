@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config_map>
+    <google_maps_api_key>AIzaSyBkJruNegrUCj8j086LtInDp11qcZKitos</google_maps_api_key>
+    <contexto_padrao>4</contexto_padrao>
+    <espacialidade_padrao>4</espacialidade_padrao>
+    <ano_padrao>3</ano_padrao>
+    <transparencia_padrao>50</transparencia_padrao>
+    <precisao_padrao>15</precisao_padrao>
+    <largura_linha_padrao>0.4</largura_linha_padrao>
+    <geom_padrao>the_geom</geom_padrao>
+    <max_faixas_mapa>8</max_faixas_mapa>
+    <min_faixas_mapa>2</min_faixas_mapa>
+    <faixas_mapa_padrao>5</faixas_mapa_padrao>
+    <display_errors>1</display_errors>
+    <rules_map_type>json</rules_map_type>
+    <rules_map_file>%s/config/rules_map.xml</rules_map_file>
+    <max_zoom>4</max_zoom>
+    <min_zoom>null</min_zoom>
+    <max_shapes>null</max_shapes>
+</config_map>

@@ -1,0 +1,142 @@
+/*
+ *  LEGENDA
+ * =======================
+ *  author: AtlasBrasil
+ *  package: Map
+ */
+.legenda_mapa {
+    display: none;
+    position: absolute;
+    bottom: 71px;
+    right: 10px;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    background-color: white;
+    padding: 10px;
+    max-width: 201px;
+    min-width: 201px;
+}
+
+.legenda_itens {
+    list-style: none;
+    font-size: 10px;
+    margin: 0;
+    position: relative;
+}
+
+.legenda_titulo {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    padding: 0;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.legenda_indice {
+    color: #555;
+    text-align: center;
+}
+
+.legenda_indicador {
+    display: inline-block;
+    /*width: 25px; height: 15px;*/
+    /* css background não funciona em print css */
+    /* http://css-tricks.com/dont-rely-on-background-colors-printing/ */
+    border-style: solid;
+    border-width: 7px 10px;
+    border-color: white;
+    margin-right: 5px;
+}
+.legenda_config {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent url('../img/config.jpg') no-repeat;
+    width: 15px;
+    height: 15px;
+}
+.legenda_config:hover {
+    cursor: pointer;
+}
+
+
+.faixa_valor {
+    border: 1px solid #ccc;
+    width: 100px;
+}
+
+.faixa_cor_quantil,
+.faixa_cor {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+#legenda-tabs ul {
+    border-top: 1px solid #efefef;
+    list-style: none;
+    margin: 5px 0 0;
+    text-align: center;
+}
+#legenda-tabs li {
+    display: inline-block;
+    border-left: 1px solid #ccc;
+    padding-left: 5px;
+    font-size: 12px;
+    margin: 10px 0 5px;
+    color: #777;
+}
+#legenda-tabs li a {
+    color: inherit;
+}
+#legenda-tabs li a:focus {
+    outline: none;
+    color: inherit;
+}
+#legenda-tabs li:hover {
+    color: #43A4DB;
+    cursor: pointer;
+}
+#legenda-tabs li:first-child {
+    border-left: 0;
+    padding-left: 0;
+}
+#legenda-tabs .ativo {
+    font-weight: bold;
+    color: black !important;
+}
+#legenda-container {
+    position: relative;
+}
+#legenda-container .info {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 12px;
+}
+#legenda-container .control {
+    text-align: center;
+}
+#legenda-quantil, #legenda-personalizada {
+    background-color: white;
+    display: none;
+}
+
+/*
+ *  Legenda personalizada
+ *  -------------------------
+ */
+.form-legend {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.form-legend input[type=number],
+.form-legend .btn {
+    -webkit-radius: 0 !important;
+    border-radius: 0 !important;
+}
+.form-legend input[type=number] {
+    padding: 1px;
+    margin-top: 10px;
+}

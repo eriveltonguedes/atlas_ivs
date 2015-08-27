@@ -1,0 +1,509 @@
+/*
+ *  COMPONENTES MAPA
+ * =======================
+ *
+ * @author: AtlasBrasil
+ * @package: Map
+*/
+
+.aviso-ajuda {
+    position: absolute;
+/*    top: 10px;
+    left: 315px;*/
+    background-color: #C9EAF7;
+    display: table;
+    /*text-align: center;*/
+    text-align: center;
+    padding: 10px 30px 10px 10px;
+    width: 200px;
+    color: #555;
+    cursor: default;
+    z-index: 9999;
+    line-height: 1.4;
+
+    color: #676F69;
+    font-size: 14px;
+    font-family: helvetica;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    box-shadow: 3px 3px 3px;
+}
+.aviso-ajuda .contexto {
+    /*color: black;*/
+    color: #555;
+    font-weight: bold;
+}
+.aviso-ajuda .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.aviso-ajuda .close:hover {
+    color: black;
+}
+
+.aviso-ajuda .passo-seletor-mapa {
+    font-weight: bold;
+    color: #47A9DA;
+}
+
+#aviso-ajuda-mapa {
+    bottom: 23px;
+    right: 265px;
+}
+
+#aviso-ajuda-seletor-contexto {
+    top: 10px;
+    left: 315px;
+}
+
+/*#aviso-ajuda-seletor-espacialidade {
+    top: -12px; 
+    left: 295px;
+}*/
+
+#aviso-ajuda-seletor-indicador {
+    top: 60px;
+    left: -45px;
+}
+
+#botao-aviso-ajuda {
+    position: absolute;
+    bottom: 150px;
+    left: 10px;
+    cursor: pointer;
+    background-color:white;
+    width: 25px;
+    padding: 5px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 120%;
+    color: #333;
+}
+#botao-aviso-ajuda.selecionado {
+    color: #ccc;
+}
+#botao-aviso-ajuda:active {
+    background-color: #eee;
+}
+
+
+/*
+ *  Seletor Contexto Atual
+ *  -------------------------
+ */
+#contexto_atual {
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    color: white !important; 
+    width: 297px;
+    height: 123px;
+    background-color: #666 !important;
+    display: table;
+    text-align: center;
+    cursor: pointer;
+}
+#titulo_contexto {
+    padding: 0 10px;
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 32px;
+    height: 100%;
+    width: 100%;
+    line-height: 1.2;
+}
+
+/*
+ *  Seletor Ano
+ *  -------------------------
+*/
+#seletor_ano {
+    position: absolute;
+    right: 10px;
+    top: 72px;
+    background-color: white;
+    padding: 10px;
+}
+#seletor_ano span {
+    cursor: pointer;
+    color: #aaa;
+    text-align: center;
+    width: 45px;
+}
+#seletor_ano .ano_atual {
+    color: black;
+    font-weight: bold;
+}
+
+/*
+ *  Seletor Indicador
+ *  -------------------------
+ */
+#seletor_indicadores_container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#seletor_indicadores {
+    width: 360px;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: white;
+    cursor: pointer;
+}
+#indicador_atual {
+    height: inherit;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+/*
+ *  Seletor: Espacialide e Contexto
+ *  -------------------------
+*/
+#seletor_contexto {
+    position: absolute;
+    left: 3px;
+    top: -13px;
+    padding: 10px;
+}
+#seletor_espacialidade {
+    position: absolute;
+    left: 10px;
+    top: 132px;
+    background-color: white;
+    padding: 10px;
+    width: 275px;
+    cursor: pointer;
+}
+#seletor_contexto {
+/*#seletor_espacialidade {*/
+    width: 275px;
+}
+#select_contexto,
+#select_espacialidade_container {
+    position: relative;
+}
+/*#select_espacialidade_container {
+    padding: 10px;
+    width: 275px;
+    cursor: pointer;
+}*/
+#espacialidade_atual {
+    padding: 5px 5px 10px 5px;
+}
+
+#seletor_contexto .label,
+#seletor_espacialidade .label {
+    color: #aaa;
+    text-align: right;
+}
+#seletor_espacialidade .lista-espacialidade .label,
+#seletor_contexto .lista-contexto .label {
+    text-align: center;
+    padding: 3px 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+.lista-contexto,
+.lista-espacialidade {
+    display: none;
+    position: absolute;
+    top: -12px;
+    left: 295px;
+    background-color: white;
+    white-space: nowrap;
+}
+.lista-contexto {
+    left: 302px;
+    top: 12px;
+}
+#label-contexto {
+    cursor: default;
+}
+#select_contexto ul,
+#select_espacialidade_container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 165px;
+}
+#select_contexto li,
+#select_espacialidade_container li {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+#select_contexto li:hover,
+#select_espacialidade li:hover {
+    background-color: #eee;
+}
+
+/*
+ *  Slider Transparência
+ *  -------------------------
+*/
+#transparencia-mapa-container {
+    position: absolute;
+    right: 10px;
+    bottom: 23px;
+    background-color: white;
+    padding: 10px 10px 10px 40px;
+    width: 170px;
+}
+#transparencia-mapa { 
+    margin-right: 5px; 
+    position:relative; 
+}
+#transparencia-mapa .valor { 
+    position: absolute; 
+    left: -37px; 
+    top: -2px; 
+}
+#transparencia-mapa .ui-slider-range,
+#transparencia-mapa .ui-slider-handle { 
+    background: #43A4DB; 
+}
+#transparencia-mapa .ui-slider-handle { 
+    border-radius: 50%; 
+}
+#transparencia-mapa .ui-slider-handle:focus { 
+    outline: none; 
+}
+
+/*
+ *  Checker: Contorno
+ *  -------------------------
+ */
+#contorno {
+    cursor: pointer; 
+    font-size: 12px;
+    font-weight: normal;
+}
+#contorno.ativo {
+    font-weight: bold;
+}
+
+/*
+ *  Zoom Mapa
+ *  -------------------------
+*/ 
+#zoom-mapa {
+    background-color: white;
+    position: absolute;
+    bottom: 82px;
+    left: 10px;
+}
+#zoom-mapa .desativado {
+    color: #ccc;
+}
+#zoom-mapa div {
+    width: 25px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 140%;
+}
+#zoom-mapa div:hover {
+    cursor: pointer;
+}
+#zoom-mapa div:active {
+    background-color: #eee;
+}
+
+/*
+ *  Tipo Mapa
+ *  -------------------------
+*/ 
+#tipo-mapa {
+    padding: 10px 5px;
+    background-color: white;
+    position: absolute;
+    bottom: 32px;
+    left: 10px;
+}
+.tipo-mapa-satelite {
+    margin-right: 5px;
+}   
+.tipo-mapa-estrada,
+.tipo-mapa-satelite {
+    color: #555;
+    width: 80px;
+    text-align: center;
+}
+.tipo-mapa-atual {
+    color: black;
+    font-weight: bold;
+}
+.tipo-mapa-estrada:hover,
+.tipo-mapa-satelite:hover {
+    cursor: pointer;
+}
+
+/*
+ *  Busca Mapa
+ *  -------------------------
+*/
+.busca_mapa {
+    position: absolute;
+    top: 179px;
+    left: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 0;
+}
+.busca_mapa .txt_busca_mapa {
+    border: 0;
+    font-size: 14px;
+    width: 275px;
+    padding: 0;
+    height: auto;
+    box-shadow: none !important;
+    padding: 10px;
+    margin: 0;
+    text-indent: 25px;
+}
+.busca_mapa .icon-lupa {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/*
+ *  TODOS
+ * =================
+*/
+
+/*
+ *  Arrows(Caret)
+ *  -------------------------
+ */
+/*.aviso-ajuda:after,
+.aviso-ajuda:before,
+.aviso-ajuda:before,*/
+#aviso-ajuda-seletor-contexto:before,
+#aviso-ajuda-seletor-indicador:before,
+.lista-espacialidade:after,
+.lista-espacialidade:before,
+.lista-contexto:after,.lista-contexto:before {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+/*.aviso-ajuda:after,*/
+.lista-contexto:after,
+.lista-espacialidade:after {
+    top: 36px;
+    left: -16px;
+    border: 8px solid;
+    border-color: transparent white transparent transparent;
+}
+/*.aviso-ajuda:before,
+.aviso-ajuda:before,*/
+#aviso-ajuda-seletor-contexto:before,
+#aviso-ajuda-seletor-indicador:before,
+.lista-contexto:before,
+.lista-espacialidade:before {
+    top: 35px;
+    left: -18px;
+    border: 9px solid;
+    border-color: transparent #aaa transparent transparent;
+}
+.lista-espacialidade:after {
+    top: 16px;
+}
+.lista-espacialidade:before {
+    top: 15px;
+}
+
+/*.aviso-ajuda:before, */
+#aviso-ajuda-seletor-contexto:before {
+    border-color: transparent #C9EAF7 transparent transparent;
+}
+
+#aviso-ajuda-seletor-espacialidade:before {
+    top: 15px;
+}
+
+#aviso-ajuda-seletor-indicador:before {
+    top: -16px;
+    left: 101px;
+    border-color: transparent transparent #C9EAF7 transparent;
+}
+
+
+/*#aviso-ajuda-seletor-espacialidade:after,
+.lista-espacialidade:after {
+    top: 16px;
+}
+#aviso-ajuda-seletor-espacialidade:before,
+.lista-espacialidade:before {
+    top: 15px;
+}
+
+#aviso-ajuda-seletor-indicador:before,
+#aviso-ajuda-seletor-indicador:after {
+    left: 100px;
+    cursor: pointer;
+}
+#aviso-ajuda-seletor-indicador:after {
+    top: -16px;
+    left: 101px;
+    border-color: transparent transparent white transparent;
+}
+#aviso-ajuda-seletor-indicador:before {
+    top: -18px;
+    border-color: transparent transparent #aaa transparent;
+}*/
+
+/*
+ *  Boxes
+ *  -------------------------
+*/
+/*.aviso-ajuda,*/
+#botao-aviso-ajuda,
+#zoom-mapa,
+#tipo-mapa,
+#transparencia-mapa-container,
+#seletor_rm,
+#seletor_indicadores,
+#seletor_ano,
+#seletor_espacialidade,
+#busca_mapa,
+.lista-contexto,
+.lista-espacialidade {
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+}
+
+/*
+ *  Click
+ *  -------------------------
+*/
+#contexto_atual:hover #titulo_contexto,
+#contexto_atual.highlight #titulo_contexto {
+    text-decoration: underline;
+}
+
+#indicador_atual:hover,
+#select_espacialidade:hover  #espacialidade_atual,
+#seletor_espacialidade .highlight {
+    color: #777;
+}
+
+/*
+ *  Display inline-block
+ *  -------------------------
+*/
+.tipo-mapa-estrada,
+.tipo-mapa-satelite,
+#seletor_ano span {
+    display: inline-block;
+}

@@ -1,0 +1,83 @@
+/* 
+    Caixa de pesquisa 
+*/
+.divCallOut:after,
+.divCallOut:before {
+    content: '';
+    display: block;
+    position: absolute;
+}
+.divCallOut:after {
+    top: -17px;
+    left: 158px;
+    border: 9px solid;
+    border-color: transparent transparent white;
+}
+.divCallOut:before {
+    top: -19px;
+    left: 158px;
+    border: 9px solid;
+    border-color: transparent transparent #ccc;
+}
+
+.divCallOut {
+    position: absolute;
+    top: 72px;
+    right: 10px;
+    z-index: 2;
+    background-color: white;
+    display: none;
+    border: 1px solid #ccc;
+    opacity: 1;
+    width: 522px;
+    -webkit-box-shadow: 0 0 7px #ccc;
+    box-shadow: 0 0 7px #ccc;
+    z-index: 9999;
+}
+div.tema.box {
+    width: 180px;
+}
+div.indicador.box {
+    border-right: 0;
+}
+.divCallOut ul {
+    margin: 0;
+    padding-left: 0;
+}
+div.divCallOut .box {
+    border-right-color: #ccc;
+}
+.divCallOut li {
+    display: block;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+.divCallOut span {
+    margin-bottom: 0;
+    padding: 3px 5px;
+    line-height: 1.4;
+    display: inline-block;
+}
+
+div.divCallOut .box .list_menu_indicador li.selecionado:hover,
+div.divCallOut .box .list_menu_indicador li .selecionado,
+div.divCallOut .box .list_menu_indicador li:hover {
+    background-color: #eee;
+}
+
+#list_menu_indicador_temas {
+    width: 100%;
+}
+#list_menu_indicador_indicadores {
+    width: 190px !important;
+}
+
+#list_menu_indicador_indicadores li {
+    display: block;
+    width: 100%;
+}
+
+div.indicador .list_menu_indicador,div.tema .list_menu_indicador {
+    overflow: auto;
+}

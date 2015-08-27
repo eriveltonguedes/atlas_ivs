@@ -1,0 +1,24 @@
+.img-order-updown:hover{
+	background: url("../img/icons/up_down.png") no-repeat center right;
+	background-position: right 1px bottom 13px;
+}
+
+.img-order-desc{
+	background: url("../img/icons/order_desc.png") no-repeat center right;	
+	background-position: right 1px bottom 13px;
+}
+.img-order-asc{
+	background: url("../img/icons/order_asc.png") no-repeat center right;	
+	background-position: right 1px bottom 13px;
+}
+.search-table-component{
+	float: right;
+}
+#table-container{
+	margin-top: 3px;
+}
+.pagination-table-component{
+	float : right;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}

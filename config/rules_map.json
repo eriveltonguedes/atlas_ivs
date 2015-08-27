@@ -1,0 +1,29 @@
+[
+    {
+        "context": null,
+        "layer": "MUNICIPAL",
+        "cut": "PRECISAO_PADRAO",
+        "the_geom": "the_geom_light2",
+        "symplify": false,
+        "maxzoom": null,
+        "active": true
+    },
+    {
+        "context": "BRASIL",
+        "layer": "MUNICIPAL",
+        "cut": "PRECISAO_PADRAO",
+        "the_geom": "the_geom_light4",
+        "symplify": false,
+        "maxzoom": 6,
+        "active": true
+    },
+    {
+        "context": "REGIAODEINTERESSE",
+        "layer": "REGIAODEINTERESSE",
+        "cut": "PRECISAO_PADRAO",
+        "the_geom": "the_geom_light2",
+        "symplify": false,
+        "maxzoom": null,
+        "active": true
+    }
+]

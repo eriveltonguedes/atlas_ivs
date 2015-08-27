@@ -1,0 +1,19 @@
+{
+    "google_maps_api_key": "AIzaSyBkJruNegrUCj8j086LtInDp11qcZKitos",
+    "contexto_padrao": "REGIAOMETROPOLITANA",
+    "espacialidade_padrao": "REGIAOMETROPOLITANA",
+    "ano_padrao": 3,
+    "transparencia_padrao": 30,
+    "precisao_padrao": 15,
+    "largura_linha_padrao": 0.35,
+    "geom_padrao": "the_geom",
+    "max_faixas_mapa": 10,
+    "min_faixas_mapa": 2,
+    "faixas_mapa_padrao": 5,
+    "display_errors": 1,
+    "min_zoom": 4,
+    "max_zoom": null,
+    "max_shapes": 5600,
+    "rules_map_type": "json",
+    "rules_map_file": "%s/config/rules_map.json"
+}

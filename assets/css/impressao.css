@@ -1,0 +1,19 @@
+/*
+ Impressão
+*/
+@media print {
+    @page {
+        margin: 0.5cm; /* Tamanho da página */
+    }
+    * {
+        -webkit-print-color-adjust: exact; 
+        print-color-adjust: exact;
+    }
+    .print {
+        display:block;
+    }   
+    .no-print {
+        display: none !important;
+    }
+}
+

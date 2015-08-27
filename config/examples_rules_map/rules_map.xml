@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+    <rule>
+        <context>BRASIL</context>
+        <layer>MUNICIPAL</layer>
+        <cut>PRECISAO_PADRAO</cut>
+        <the_geom>the_geom_light2</the_geom>
+        <maxzoom>7</maxzoom>
+        <symplify>true</symplify>
+        <active>true</active>
+    </rule>
+    <rule>
+        <context>BRASIL</context>
+        <layer>MUNICIPAL</layer>
+        <cut>PRECISAO_PADRAO</cut>
+        <the_geom>GEOM_PADRAO</the_geom>
+        <maxzoom>7</maxzoom>
+        <symplify>true</symplify>
+        <active>false</active>
+    </rule>
+</rules>

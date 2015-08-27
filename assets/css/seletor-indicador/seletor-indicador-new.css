@@ -1,0 +1,42 @@
+div.divCallOut .box{
+	float: left;
+	border-right: 1px solid #ddd;
+}
+div.itens_selecionados.box{
+	border: none;
+}
+#modal-seletor-indicadores{
+	width: 720px;
+	left: 46%;
+}
+#modal-seletor-indicadores .modal-body{
+	padding: 0px;
+}
+#modal-seletor-indicadores .nav-list>li>a{
+	margin: 0;
+}
+#modal-seletor-indicadores .list_menu_indicador{
+	width: 100% !important;
+}
+#modal-seletor-indicadores .box .list_menu_indicador li{
+	padding: 0;
+}
+#modal-seletor-indicadores .btn_select{
+	padding: 0px;
+	float: right;
+	width: 100% !important;
+	height: auto;
+	border: none;
+}
+#modal-seletor-indicadores .btn_select .messages{
+	width: 55%;
+	float: left;
+}
+#modal-seletor-indicadores .btn_select .buttons{
+	width: 40%;
+	float: right;
+}
+#modal-seletor-indicadores .btn_select .buttons button{
+	float: right;
+	margin-right: 2%;
+}
