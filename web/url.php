@@ -294,9 +294,9 @@ else if ($pag == "pesquisa") {
 
 #O Atlas
 else if ($pag == "o_atlas") {
-    if ($pagNext != "" && $pagNext != "o_atlas_" && $pagNext != "quem_faz" && $pagNext != "para_que" && $pagNext != "processo" && $pagNext != "desenvolvimento_humano" && $pagNext != "idhm" && $pagNext != "metodologia" && $pagNext != "glossario" && $pagNext != "perguntas_frequentes" && $pagNext != 'tutorial') {
+    if ($pagNext != "" && $pagNext != "o_atlas_" && $pagNext != "quem_faz" && $pagNext != "para_que" && $pagNext != "processo" && $pagNext != "vulnerabilidade_social" && $pagNext != "ivs" && $pagNext != "metodologia" && $pagNext != "glossario" && $pagNext != "perguntas_frequentes" && $pagNext != 'tutorial') {
         include './bloqueios/paginaNaoEncontradaView.php';
-    } else if ($pagNext == 'metodologia' && $pagNext2 != 'idhm_longevidade' && $pagNext2 != 'idhm_educacao' && $pagNext2 != 'idhm_renda' && $pagNext2 != 'calculo-do-idhm-e-seus-subindices' && $pagNext2 != 'construcao-das-unidades-de-desenvolvimento-humano' && $pagNext2 != '') {
+    } else if ($pagNext == 'metodologia' && $pagNext2 != 'calculo-do-ivs' && $pagNext2 != 'ivs_dados' && $pagNext2 != '') {
         include './bloqueios/paginaNaoEncontradaView.php';
     } else {
         include "./o_atlas/oAtlasView.php";

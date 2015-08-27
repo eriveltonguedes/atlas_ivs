@@ -34,16 +34,16 @@
         }
         
         else if(valor == 5){
-            url = pag + "desenvolvimento_humano/";
+            url = pag + "vulnerabilidade_social/";
         }
         
         else if(valor == 6){
-            url = pag + "idhm/";
+            url = pag + "ivs/";
         }
         
         else if(valor == 7){
 
-            url = pag + "metodologia/construcao-das-unidades-de-desenvolvimento-humano/";
+            url = pag + "metodologia/calculo-do-ivs";
         }
         
         else if(valor == 8){
@@ -89,21 +89,21 @@
                                 echo 'class="ativo2"';
                     ?> ></a><span class='ballMarker'>&bull;</span>
                 </li>
-                <li><a id="atlas_menuProcesso" onclick="myfunction('4')" 
+                <!--<li><a id="atlas_menuProcesso" onclick="myfunction('4')" 
                     <?php 
                                 if($separator[1] == 'processo')
                                 echo 'class="ativo2"';
                         ?> ></a><span class='ballMarker'>&bull;</span>
-                </li>
-                <li><a id="atlas_menuDesenvolvimentoHumano" onclick="myfunction('5')" 
+                </li>-->
+                <li><a id="atlas_menuVulnerabilidadeSocial" onclick="myfunction('5')" 
                     <?php
-                                if($separator[1] == 'desenvolvimento_humano')
+                                if($separator[1] == 'vulnerabilidade_social')
                                 echo 'class="ativo2"';
                        ?> ></a><span class='ballMarker'>&bull;</span>
                 </li>
-                <li><a id="atlas_menuIdhm" onclick="myfunction('6')" 
+                <li><a id="atlas_menuIvs" onclick="myfunction('6')" 
                     <?php 
-                                if($separator[1] == 'idhm')
+                                if($separator[1] == 'ivs')
                                 echo 'class="ativo2"';
                         ?> ></a><span class='ballMarker'>&bull;</span>
                 </li>
@@ -117,13 +117,13 @@
                     <?php
                                 if($separator[1] == 'glossario')
                                 echo 'class="ativo2"';
-                       ?> ></a><span class='ballMarker'>&bull;</span>
+                       ?> ></a><!--<span class='ballMarker'>&bull;</span>-->
                 </li>
-                <li><a id="atlas_menuFAQ" onclick="myfunction('9')"
+                <!--<li><a id="atlas_menuFAQ" onclick="myfunction('9')"
                     <?php
                                 if($separator[1] == 'perguntas_frequentes')
                                 echo 'class="ativo2"';
-                    ?> ></a><!-- <span class='ballMarker'>&bull;</span> --></li>
+                    ?> ></a><!-- <span class='ballMarker'>&bull;</span></li>-->
        <!--          <li><a id="atlas_menututorial" onclick="myfunction('10')"
                     <?php
                                 if($separator[1] == 'tutorial')
@@ -147,13 +147,13 @@
                         include 'o_atlas/'.$_SESSION["lang"].'/paraQueView.php';
                     }
                     else if($separator[1] == 'processo'){
-                        include 'o_atlas/processoView.php';
+                       include 'o_atlas/processoView.php';
                     }
-                    else if($separator[1] == 'desenvolvimento_humano'){
-                        include 'o_atlas/'.$_SESSION["lang"].'/desenvolvimentoHumanoView.php';
+                    else if($separator[1] == 'vulnerabilidade_social'){
+                        include 'o_atlas/'.$_SESSION["lang"].'/vulnerabilidadeSocialView.php';
                     }
-                    else if($separator[1] == 'idhm'){
-                        include 'o_atlas/'.$_SESSION["lang"].'/idhmView.php';
+                    else if($separator[1] == 'ivs'){
+                        include 'o_atlas/'.$_SESSION["lang"].'/ivsView.php';
                     }
                     else if($separator[1] == 'metodologia'){
                         include 'o_atlas/metodologiaView.php';
@@ -184,8 +184,8 @@
      $("#atlas_menuQuemFaz").html(lang_mng.getString("atlas_menuQuemFaz"));
      $("#atlas_menuParaQue").html(lang_mng.getString("atlas_menuParaQue"));
      $("#atlas_menuProcesso").html(lang_mng.getString("atlas_menuProcesso"));
-     $("#atlas_menuDesenvolvimentoHumano").html(lang_mng.getString("atlas_menuDesenvolvimentoHumano"));
-     $("#atlas_menuIdhm").html(lang_mng.getString("atlas_menuIdhm"));
+     $("#atlas_menuVulnerabilidadeSocial").html(lang_mng.getString("atlas_menuVulnerabilidadeSocial"));
+     $("#atlas_menuIvs").html(lang_mng.getString("atlas_menuIvs"));
      $("#atlas_menuMetodologia").html(lang_mng.getString("atlas_menuMetodologia"));
      $("#atlas_menuGlossario").html(lang_mng.getString("atlas_menuGlossario"));
      $("#atlas_menuFAQ").html(lang_mng.getString("atlas_menuFAQ"));

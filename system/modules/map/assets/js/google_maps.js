@@ -1538,7 +1538,7 @@ GMaps.prototype._msgInfo = function(nomeEspacialidade, valor, url, id) {
         link = '<div style="margin-top:3px;"><a href=' + href + ' target="_blank" style="outline:none">' + lang_mng.getString('mp_link_perfil') + '</a></div>';
     }
 
-    return '<div class="mapa_infowindow" style="font-weight: bold;min-width:175px;">' + nomeEspacialidade + '</div>' + infoValor + link;
+    return '<div class="mapa_infowindow" style="font-weight: bold;min-width:175px;">' + nomeEspacialidade + '</div>' + infoValor;
 };
 
 /**

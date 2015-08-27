@@ -22,7 +22,7 @@ body{
 }
 
 .h1Home{
-    color: #FF66CC;
+    color: #66CCFF;
     font-weight: bold;
     font-family: 'Passion One', Arial, sans-serif;
     font-size: 24pt;
@@ -261,13 +261,13 @@ body{
 
 .mainMenuTopUl a:hover{
     text-decoration: none;
-    background: #FF66CC;
+    background: #66CCFF;
     color: #FFFFFF;
 }
 
 .mainMenuTopUl .ativo{
     text-decoration: none;
-    background: #FF66CC;
+    background: #66CCFF;
     color: #FFFFFF;
 }
 
@@ -1085,7 +1085,7 @@ body{
 
 .block-01-div-title
 {
-    color: #E26FAB;
+    color: #6FABE2;
     font-size: 42pt;
     font-family: Passion One;
     border-top:2px groove #EFEFEF;
@@ -1223,7 +1223,7 @@ body{
 
 .box-perfil-main-title
 {
-    color: #FF66CC;
+    color: #66CCFF;
     font-size: 30pt;
     font-weight: lighter;
     margin-bottom: 30px;
@@ -2172,7 +2172,7 @@ div#box_indicador_local>.box_local
 
 
 .pmainMenuTopUl a:hover{
-    background: #FF66CC;;
+    background: #66CCFF;;
     color: #FFF;
     font-family: helvetica;
     font-size: 9pt;
@@ -2185,13 +2185,13 @@ div#box_indicador_local>.box_local
 }
 
 .pmainMenuTopActive a{
-    background-color: #FF66CC;
+    background-color: #66CCFF;
     color: #FFF !important;
     
 }
 
 .pmainMenuTopActive a:hover{
-    background-color: #FF66CC;
+    background-color: #66CCFF;
     color: #FFF !important;
 }
 
@@ -2272,7 +2272,7 @@ div#box_indicador_local>.box_local
 .idhContainer1 h1{
     font-family: fonte google passion one;
     font-size: 30pt;
-    color: #FF66CC;
+    color: #66CCFF;
 }
 
 .idhContainer2{
@@ -2624,7 +2624,7 @@ div#box_indicador_local>.box_local
 .areatitle{
     font-family: 'Passion One', cursive;
     font-size: 42pt;
-    color: #E26FAB;
+    color: #6FABE2;
     margin-top: 25px;
     line-height: 41px;
     margin-bottom: 20px;
@@ -3059,13 +3059,13 @@ div#box_indicador_local>.box_local
 
 .menuDestaquesUl a:hover{
     text-decoration: none;
-    background: #FF66CC;
+    background: #66CCFF;
     color: #FFFFFF;
 }
 
 .menuDestaquesUl .ativo{
     text-decoration: none;
-    background: #FF66CC;
+    background: #66CCFF;
     color: #FFFFFF;
 }
 
@@ -3326,11 +3326,11 @@ div#box_indicador_local>.box_local
 }
 
 .p1_erro{
-    color: #E26FAB;
+    color: #6FABE2;
 }
 
 .p2_erro{
-    color: #E26FAB; 
+    color: #6FABE2; 
     font-size: 20pt; 
     margin-bottom: 30px;
 }
@@ -3341,11 +3341,11 @@ div#box_indicador_local>.box_local
 
 .p1_ptestes{
     font-size: 15pt; 
-    color: #E26FAB;
+    color: #6FABE2;
 }
 
 .p2_ptestes{
-    color: #E26FAB; 
+    color: #6FABE2; 
     font-size: 10pt; 
     margin-bottom: 30px;
 }
@@ -3904,7 +3904,7 @@ width: 100px;
 
 .nh-title {
     font-family: "Passion One", Helvetica, Arial, Sans-serif;
-    color: #FF66CC;
+    color: #66CCFF;
     font-weight: 400;
 }
 

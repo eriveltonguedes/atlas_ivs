@@ -1,4 +1,4 @@
-<div style="height: 1200px;">
+<div>
     <div id ="img_realizacao"></div>
     <div id ="texto_realizacao">
         <div class="block-01-div-subtitle_atlas">Realização</div>
@@ -6,55 +6,149 @@
         <br /><br /><br />
         <p>
         <b>
-            <span>Programa das Nações Unidas para o Desenvolvimento – PNUD</span></br>
-            <span>Instituto de Pesquisa Econômica Aplicada – Ipea</span></br>
-            <span>Fundação João Pinheiro – FJP</span><br />
+            <span>Instituto de Pesquisa Econômica Aplicada – Ipea</span><br />
         </b>
         </p>
-        <p>
-            <span>Jorge Chediek &bull; Representante Residente do PNUD no Brasil </span></br>
-            <span>Marcelo Côrtes Neri &bull; Presidente do Ipea</span></br>
-            <span>Marilena Chaves &bull; Presidente da FJP</span></br>
-        </p>
-        <br /><br />
-        
-        <div class="block-01-div-subtitle_atlas">Supervisão</div>
-            <span>Maristela Baioni &bull; Representante Residente Assistente para Programa – PNUD</span></br>
-            <span>Sergei Suarez Dillon Soares &bull; Chefe de Gabinete – Ipea</span> <br />
-			<span>Maria Luiza de Aguiar Marques – FJP</span>
-        <br /><br />    
-        
+
         <div class="block-01-div-subtitle_atlas">Coordenação</div>
-            <span>Daniela Gomes Pinto &bull; PNUD</span><br /> 
-            <span>Marco Aurélio Costa &bull; Ipea</span><br />
-            <span>Maria Luiza de Aguiar Marques &bull; FJP</span><br />
-        <br /><br />    
-        
+            <span>&bull; Marco Aurélio Costa </span><br />
+            <span>&bull; Bárbara Oliveira Marguti </span><br />
+        <br /> <br />
         <div class="block-01-div-subtitle_atlas">Equipe Técnica</div>
-        <span><b>PNUD</b></span> Helmi Turunen &bull; Jacob Said &bull; Luisa Kieling &bull; Raíssa Teixeira &bull; Samantha Salve <br />
-        <span><b>Ipea</b></span> Nikolas de Camargo Pirani &bull; Pedro Herculano G. Ferreira de Souza &bull; Rafael Guerreiro Osório &bull;<span><br />
-        <span> Renan Amabile Boscariol <!-- &bull; --> <!-- Daniele Reis de Oliveira --></span><br />
-        <span><b>FJP</b></span> Olinto J. O. Nogueira (Coordenação) &bull; Bruna Duarte &bull; Daniele Reis de Oliveira &bull;  <br />
-        <span> Fernando Martins Prates &bull; Mônica Galupo Fonseca Costa &bull; Priscilla de Souza da Costa Pereira &bull; </span><br />
-        <span> Vera Scarpelli Castilho </span><br />
-        <!-- <span>Matias</span><br /> -->
-        <span><b>Projeto Gráfico Atlas Web</b></span> Explico<br/>
-        <span><b>Desenvolvimento Atlas Web</b></span> Erivelton Guedes (Ipea) &bull; Rodrigo Queiroz <br /><br /><br />
-        
-        <div class="block-01-div-subtitle_atlas">Colaboração</div>
-        <span><b>PNUD</b></span> Daniel de Castro &bull;  Daniele Godoy &bull; Rogerio Carlos Borges de Oliveira &bull; Yuri Lima <br />
-        <!-- <span><b>PNUD</b></span> <br /> -->
-        <span><b>Desenvolvimento Atlas Web</b></span> André Castro &bull; Leoflávio Silva &bull; Elaine Moreira &bull; <br />
-            <span>Ricardo Ruas &bull; Valter Lorran &bull; Rafael Chagas &bull; Reinaldo Rocha &bull; Cristina Durães</span><br />
-            <span>Suporte Ipea: Moisés Silva &bull; Paulo Lari &bull; Frederico Franzosi</span><br />
-        <span><b>Programação ATI/FJP</b></span> Rodrigo Diniz Rosa &bull; Tiago Francisco Ferreira &bull; Luiz Marques de Oliveira</span><br />
-        <span><b>Consultoria Técnica FJP</b></span> Irineu Rigotti &bull; Laura Wong &bull; José Alberto Magno de Carvalho 
+            <span style="font-weight: bold; font-size: 13pt; margin-right: 6px;">Ipea</span> &bull; Arlei Teodoro de Queiroz &bull; Clayton Gurgel Albuquerque &bull; Maria Paula Gomes dos Santos &bull; Nikolas de Camargo Pirani &bull; Roberta Amanajás Monteiro <br />
+        <br /> <br />
 
 </div>
 </div>
+
+<div style="clear:both"> </div>
+        <div class="block-01-div-subtitle_atlas">Colaboração Técnica - Instituições Parceiras</div><br/>        
+        <!-- <div class="accordion" id="accordionPai">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionPai" href="#collapsePai">
+                
+              </a>
+          </div> -->
+            <!-- <div id="collapsePai" class="accordion-body collapse">
+            <div class="accordion-inner"> -->
+                <!--sub menus 20-->
+                <div class="accordion" id="accordion20">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion20" href="#collapse20">
+                            <div class="block-20-div-subtitle_atlas"><span> <b>Fundação Sistema Estadual de Análise de Dados (Seade)</b></span><br/></div>
+                        </a>
+                    </div>    
+                    <div id="collapse20" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <br/>
+                            <span>Maria Paula Ferreira (coordenadora)</span><br/>
+                            <br/>
+                        </div>   
+                    </div>     
+                </div> 
+            </div>
+            <!--sub menus 16-->
+            <div class="accordion" id="accordion16">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion16" href="#collapse16">
+                        <div class="block-16-div-subtitle_atlas"><span> <b>Instituto Paranaense de Desenvolvimento Econômico e Social (Ipardes)</b></span><br/>
+                        </div>
+                        </a>
+                    </div>    
+                    <div id="collapse16" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <br/>
+                           <span>Paulo Roberto Delgado (coordenador)</span><br/>
+                           <br/>
+                       </div>   
+                   </div>     
+               </div> 
+           </div>
+            <!--sub menus 1-->
+            <div class="accordion" id="accordion1">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
+                            <div class="block-00-div-subtitle_atlas"><span><b>Secretaria de Estado de Meio Ambiente, Recursos Hídricos, Infraestrutura, Cidades e Assuntos Metropolitanos (Segplan)</b></span><br/></div>
+                        </a>
+                    </div>    
+                    <div id="collapse1" class="accordion-body collapse"><br/>
+                        <div class="accordion-inner">
+                            <span>Lucelena Fátima de Melo (coordenadora)</span><br/><br/>
+                        </div>   
+                    </div>     
+                </div> 
+            </div>
+            <!--sub menus 4-->
+            <div class="accordion" id="accordion4">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapse4">
+                        <div class="block-02-div-subtitle_atlas"><span><b>Fundação João Pinheiro</b></span><br/></div>
+                        </a>
+                    </div>    
+                    <div id="collapse4" class="accordion-body collapse"><br/>
+                        <div class="accordion-inner">
+                            <span>Maria Izabel Marques do Valle (coordenadora)</span><br/><br/>
+                        </div>   
+                    </div>     
+                </div> 
+            </div>
+            <!--sub menus 19-->
+            <div class="accordion" id="accordion19">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion19" href="#collapse19">
+                        <div class="block-19-div-subtitle_atlas"><span> <b>Fundação Amazônia de Amparo a Estudos e Pesquisas do Pará (Fapespa)</b></span><br/></div>
+                      </a>
+                    </div>    
+                    <div id="collapse19" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <br/>
+                            <span>Geovana Raiol Pires (coordenadora)</span><br/>
+                            <span>Andréa de Cássia Lopes Pinheiro</span><br/>
+                            <br/>
+                        </div>   
+                    </div>     
+                </div> 
+            </div>
+            <!--sub menus 6-->
+            <div class="accordion" id="accordion6">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion6" href="#collapse6">
+                        <div class="block-06-div-subtitle_atlas"><span><b>Fundação Centro Estadual de Estatísticas, Pesquisas e Formação de Servidores do Rio de Janeiro (Ceperj)</b></span><br/></div>
+                    </a>
+                    </div>    
+                    <div id="collapse6" class="accordion-body collapse"><br/>
+                        <div class="accordion-inner">
+                            <span>Fabio Odilon Alves Gomes (coordenador)</span><br/>
+                            <span>Sergio Urzedo Jr.</span><br/><br/>
+                        </div>   
+                    </div>     
+                </div> 
+            </div>
+            <!--sub menus 8-->
+            <div class="accordion" id="accordion8">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion8" href="#collapse8">
+                        <div class="block-08-div-subtitle_atlas"><span> <b>Superintendência de Estudos Econômicos e Sociais da Bahia (SEI)</b></span><br/></div>
+                      </a>
+                    </div>    
+                    <div id="collapse8" class="accordion-body collapse"><br/>
+                        <div class="accordion-inner">
+                           <span> Luis André de Aguiar Alves (coordenador)</span><br/><br/>
+                       </div>   
+                   </div>     
+                </div> 
+            </div>
 
 <?php
-    $title2 = $lang_mng->getString("atlas_titlequemfaz");
-    $meta_title2 = $lang_mng->getString("atlas_metaTitlequemfaz");
-    $meta_description2 = $lang_mng->getString("atlas_metaDescricaoquemfaz");
+$title2 = $lang_mng->getString("atlas_titlequemfaz");
+$meta_title2 = $lang_mng->getString("atlas_metaTitlequemfaz");
+$meta_description2 = $lang_mng->getString("atlas_metaDescricaoquemfaz");
 ?>

@@ -901,14 +901,14 @@ function csv_build(){
                 //console.log(retorno.length);
                 
 				$("#modalDownload-body").html(lang_mng.getString("msg_down_ok"));
-				$("#modalDownload-footer").html('<a class="btn btn-primary" target="_blank" href="system/preconsultas/consultas/'+retorno+'.csv" download="AtlasBrasil_Consulta.csv">Download</a>');
+				$("#modalDownload-footer").html('<a class="btn btn-primary" target="_blank" href="system/preconsultas/consultas/'+retorno+'.csv" download="AtlasIVS_Consulta.csv">Download</a>');
                 
                 if(false)
                 if(retorno.length==33){
 					//$("#alertTabela").html('<div class="alert alert-warnning"><button type="button" class="close" data-dismiss="alert">&times;</button> '+lang_mng.getString("msg_alerta_download")+'<br>Dados Gerados clique <a target="_blank" href="system/preconsultas/consultas/'+retorno+'.csv" download="AtlasIDHM2013.csv">aqui</a> para dowload! </div>');
 					$("#modalDownload-body").html(lang_mng.getString("msg_down_ok"));
 					//$(".modal-footer").html('<button type="button" class="btn btn-primary" onClick="location.href=system/preconsultas/consultas/'+retorno+'.csv" >Download</button>');
-					$("#modalDownload-footer").html('<a class="btn btn-primary" target="_blank" href="system/preconsultas/consultas/'+retorno+'.csv" download="AtlasIDHM2013.csv">Download</a>');
+					$("#modalDownload-footer").html('<a class="btn btn-primary" target="_blank" href="system/preconsultas/consultas/'+retorno+'.csv" download="AtlasIVS.csv">Download</a>');
 				}else{
 					tbObjetoConsulta = jQuery.parseJSON(retorno);
 					
