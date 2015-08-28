@@ -36,10 +36,10 @@ $home_LinkBannerTop = array(
 $home_perguntasFrequentes = 'o_atlas/perguntas_frequentes';
 
 //Links Redes Sociais PNUD
-$home_FooterFacebook = 'http://www.facebook.com/PNUDBrasil?ref=ts&fref=ts';    // Link Facebook
-$home_FooterGooglePlus = 'https://plus.google.com';                              // Link Google Plus
-$home_FooterTwitter = 'http://twitter.com/PNUDBrasil';                             // Link Twitter
-$home_FooterYoutube = 'http://www.youtube.com/user/PNUDBrasil';               //Link Youtube
+$home_FooterFacebook = 'https://www.facebook.com/IPEA1964?ref=ts&fref=ts';    // Link Facebook
+$home_FooterGooglePlus = 'https://plus.google.com/+agenciaipea';                              // Link Google Plus
+$home_FooterTwitter = 'https://twitter.com/ipeaonline';                             // Link Twitter
+$home_FooterYoutube = 'https://www.youtube.com/user/agenciaipea';               //Link Youtube
 
 $home_footerPNUD = 'http://www.pnud.org.br/';                     //Link PNUD
 $home_footerFJP = 'http://www.fjp.mg.gov.br/';                   //Link Fundação João Pinheiro

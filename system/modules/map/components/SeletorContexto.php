@@ -4,8 +4,8 @@
             <div id="label-contexto" class="label"><?php echo $lang_mng->getString('mp_label_contexto'); ?></div>
             <ul>
                 <li id="contexto_pais"><?php echo $lang_mng->getString('mp_item_contexto_brasil'); ?></li>
-                <li id="contexto_estado"><?php echo $lang_mng->getString('mp_item_contexto_estado'); ?></li>
-                <li id="contexto_rm"><?php echo $lang_mng->getString('mp_item_contexto_rm'); ?></li>
+                <<!--<li id="contexto_estado"><?php echo $lang_mng->getString('mp_item_contexto_estado'); ?></li>
+                <li id="contexto_rm"><?php echo $lang_mng->getString('mp_item_contexto_rm'); ?></li>-->
             </ul>
         </div>
     </div>

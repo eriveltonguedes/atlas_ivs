@@ -55,7 +55,7 @@
     }elseif($count_f >= JS_LIMITE_DOWN){
         $result["erro"] = 99;
         $result["msg"] = "Atenção: sua consulta superou o limite de (112000) células na tabela.<br />
-Acesse \"Download\" e baixe todos os dados do Atlas Brasil 2013.";
+Acesse \"Download\" e baixe todos os dados do Atlas da vulnerabilidade social.";
         $json = json_encode($result);
         echo $json;
         die();

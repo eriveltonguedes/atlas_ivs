@@ -472,11 +472,11 @@
              style="float: left; width: 100%; height: 100%; margin-right: 1px;">
             <ul id="lista_espacialidade">
                 <li data-id="4"><?php echo $lang_mng->getString('mp_item_camada_estado'); ?></li>
-                <li data-id="6"><?php echo $lang_mng->getString('mp_item_camada_rm'); ?></li>
+                <!--<li data-id="6"><?php echo $lang_mng->getString('mp_item_camada_rm'); ?></li>-->
                 <li data-id="2"><?php echo $lang_mng->getString('mp_item_camada_mun'); ?></li>
-                <li data-id="7"><?php echo $lang_mng->getString('mp_item_camada_ri'); ?></li>
+                <!--<li data-id="7"><?php echo $lang_mng->getString('mp_item_camada_ri'); ?></li>
                 <li data-id="5"><?php echo $lang_mng->getString('mp_item_camada_udh'); ?></li>
-                <li data-id="3"><?php echo $lang_mng->getString('mp_item_camada_reg'); ?></li>
+                <li data-id="3"><?php echo $lang_mng->getString('mp_item_camada_reg'); ?></li>-->
             </ul>
         </div>
         <!-- /espacialidade -->
@@ -854,8 +854,8 @@
         return {
             id  : getEspacialidade(espacialidade),
             est : getEspacialidadeDeTipo('est', espacialidade),
-            rm  : getEspacialidadeDeTipo('rm', espacialidade),
-            udh : getEspacialidadeDeTipo('udh', espacialidade),
+            //rm  : getEspacialidadeDeTipo('rm', espacialidade),
+            //udh : getEspacialidadeDeTipo('udh', espacialidade),
             mun : getEspacialidadeDeTipo('mun', espacialidade)
         };
     }

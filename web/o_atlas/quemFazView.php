@@ -14,7 +14,7 @@
         pag = '<?=$path_dir?>' + lang + '/o_atlas/quem_faz/';
 
         if(valor == 1){
-            url = pag + "atlas_municipio/";
+            url = pag + "atlas/";
         }
 
         else if(valor == 2){
@@ -27,18 +27,18 @@
 
     <div class="areatitle" id='atlas_titleQuemFazIDHMunicipio'></div>
     
-    <div class="menuAtlasMet">
+    <!--<div class="menuAtlasMet">
         <ul class="menuAtlasMetUl">
             <li><a id="atlas_menuAtlasIDHMunicipio" onclick="myfunction2('1')" 
-                <?php if($separator[2] == 'atlas_municipio' || $separator[0] == '') {echo 'class="ativo2"'; } ?>></a><span class='ballMarker'>&bull;</span></li>
+                <?php if($separator[2] == 'atlas' || $separator[0] == '') {echo 'class="ativo2"'; } ?>></a><span class='ballMarker'>&bull;</span></li>
             <li><a id="atlas_menuAtlasRegiaoMetropolitana" onclick="myfunction2('2')" 
                 <?php if($separator[2] == 'atlas_regiao_metropolitana') {echo 'class="ativo2"';}?> ></a><span class='ballMarker'></span></li>
         </ul>
     </div>
-    <div class="linhaDivisoriaQuemFaz"></div>
+    <div class="linhaDivisoriaQuemFaz"></div>-->
     
     <?php
-                if($separator[2] == 'atlas_municipio' || $separator[1] == ''){
+                if($separator[2] == 'atlas' || $separator[1] == ''){
                     include 'o_atlas/'.$_SESSION["lang"].'/quemFazAtlasMunicipioView.php';
                 }
                 

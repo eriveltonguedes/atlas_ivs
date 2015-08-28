@@ -72,7 +72,7 @@
         <p>As comparações e análises entre indicadores, 
         municípios e anos – incluindo os dados de 
         2010, 2000 e 1991 – devem ser feitas <b>apenas</b> 
-        dentro da plataforma do <b>Atlas Brasil 2013</b>.</p> 
+        dentro da plataforma do <b>Atlas da vulnerabilidade social</b>.</p> 
         Esta nova plataforma traz como novidade 
         o <b>Índice de Desenvolvimento Humano 
         Municipal (IDHM)</b> calculado com uma <b>nova 

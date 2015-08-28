@@ -22,7 +22,7 @@
         }
 
         else if(valor == 2){
-            url = pag + "quem_faz/atlas_regiao_metropolitana/";
+            url = pag + "quem_faz/atlas/";
         }
 
         else if(valor == 3){
@@ -117,9 +117,9 @@
                     <?php
                                 if($separator[1] == 'glossario')
                                 echo 'class="ativo2"';
-                       ?> ></a><!--<span class='ballMarker'>&bull;</span>-->
+                       ?> ></a><span class='ballMarker'>&bull;</span>
                 </li>
-                <!--<li><a id="atlas_menuFAQ" onclick="myfunction('9')"
+                <li><a id="atlas_menuFAQ" onclick="myfunction('9')"
                     <?php
                                 if($separator[1] == 'perguntas_frequentes')
                                 echo 'class="ativo2"';

@@ -39,7 +39,7 @@
 <div id="processo" style="width:900px;">
     <div class="areatitle" id='atlas_Metodologia'></div>
     
-    <div class="menuAtlasMet">
+    <!--<div class="menuAtlasMet">
         <ul class="menuAtlasMetUl">
                 <li>
                     <a id="atlas_aba_1" onclick="myfunction2('1')" 
@@ -56,10 +56,10 @@
                     <a id="atlas_aba_2" onclick="myfunction2('4')" 
                 <?php if($separator[2] == 'construcao-das-unidades-de-desenvolvimento-humano') {echo 'class="ativo2"';}?> >IDHM EDUCAÇÃO</a>
                 <!-- <span class='ballMarker'>&bull;</span> -->
-                </li>
+                <!--</li>
         </ul>
     </div>
-    <div class="linhaDivisoriaMet"></div>
+    <div class="linhaDivisoriaMet"></div>-->
     <div class="title-geral">
         <h1>O IVS</h1>
 <p>O IVS é o resultado da média aritmética dos subíndices: IVS Infraestrutura Urbana, IVS Capital Humano e IVS Renda e Trabalho, cada um deles entra no cálculo do IVS final com o mesmo peso.</p>

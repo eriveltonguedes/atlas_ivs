@@ -116,11 +116,11 @@
     
     <ul>
         <li class='ativo'>
-            <a href="<?php echo $path_dir . "$ltemp" ?>/consulta/"><img src="./assets/img/home/banner/banner_1.jpg" alt=""></a>
+            <a href="<?php echo $path_dir . "$ltemp" ?>/consulta/"><img src="./assets/img/home/banner/modelo_banner_site_v02.jpg" alt=""></a>
         </li>
-        <li>
+        <!--<li>
             <a href="<?php echo $path_dir . "$ltemp" ?>/download/"><img src="./assets/img/home/banner/banner-cebolao.png" alt=""></a>
-        </li>
+        </li> -->
         <!-- <li>
             <a href="<?php echo $path_dir . "$ltemp" ?>/destaques/"><img src="./assets/img/home/banner/banner_2.jpg" alt=""></a>
         </li> -->

@@ -20,7 +20,8 @@
 <ul class="nav navbar-nav">
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#1">O que é Desenvolvimento Humano?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#2">O que é o Índice de Desenvolvimento Humano (IDH)?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#3">O que é o Índice de Desenvolvimento Humano Municipal (IDHM?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#3">O que é o Índice de Desenvolvimento Humano Municipal (IDHM) ?</a></li>
+
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#4">Para que serve o IDHM?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#5">Qual a diferença entre o IDH e o IDHM?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#6">Por que adaptar o IDH Global ao nível municipal?</a></li>
@@ -45,22 +46,23 @@
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#22">O que significa o IDHM do Brasil? Ele é uma média do IDHM de todos os municípios brasileiros?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#23">Como foram escolhidos os máximos e mínimos de cada dimensão? Como são calculados?</a></li>
 </ul>
-<div style="font-weight: bold">Desenvolvimento Humano, IDH e IDHM<br /><br /></div>
+<div style="font-weight: bold">Vulnerabilidade Social e o Índice de Vulnerabilidade Social<br /><br /></div>
 <ul class="nav navbar-nav">
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#24">O que é o Atlas do Desenvolvimento Humano no Brasil?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#25">Quem desenvolveu o Atlas do Desenvolvimento Humano?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#26">Para que serve o Atlas?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#27">A quem se destina o Atlas do Desenvolvimento Humano?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#28">De onde vêm os dados utilizados no Atlas?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#29">Por que os dados do Atlas e o IDHM são publicados somente a cada 10 anos?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#30">Quantos municípios estão incluídos no Atlas Brasil?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#31">Meu município não existia em 2000 (ou em 1991), como seus dados estão apresentados no Atlas? O que significa compatibilizar malhas municipais?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#32">O que é o Perfil Municipal?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#33">Como o Atlas Brasil se relaciona com os Objetivos de Desenvolvimento do Milênio?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#34">Além do IDHM, que outros dados podem ser encontrados no Atlas?</a></li>
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#35">Não tenho acesso à internet. Posso utilizar o Atlas Brasil?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#24">O que é vulnerabilidade social?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#25">O que é o Índice de Vulnerabilidade Social?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#26">O que cada uma das Dimensões do IVS?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#27">As três dimensões tem o mesmo peso?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#28">O Índice de Vulnerabilidade Social foi calculado para quais localidades?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#29">Como ler o IVS?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#30">Como é construído o IVS?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#31">O IVS foi calculado para quais anos?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#32">Posso comparar o IVS que aparece na publicação com o de outros anos?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#33">Por que o cálculo do IVS foi feito com base no censo demográfico, e não na Pesquisa Nacional por Amostra de Domicílios (PNAD)?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#34">Posso comparar o IVS do Brasil com o de outros países? </a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#35">Quando leio na base de dados que determinado município teve índice 1,000 no indicador “taxa de desocupação da população de 18 anos ou mais de idade”, quer dizer que toda a população com 18 anos ou mais está desocupada nesse município?</a></li>
+    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#36">O que é a prosperidade social?</a></li>
 </ul>
-<div style="font-weight: bold">O Atlas das Regiões Metropolitanas<br /><br /></div>
+<!--<div style="font-weight: bold">O Atlas das Regiões Metropolitanas<br /><br /></div>
 <ul class="nav navbar-nav">
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#36">O que é o Atlas das Regiões Metropolitanas?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#37">Quantas regiões metropolitanas estão incluídas no Atlas Brasil?</a></li>
@@ -74,9 +76,9 @@
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#45">O que é uma Unidade de Desenvolvimento Humano (UDH)?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#46">Como foram nomeadas as UDH?</a></li>
     <!-- <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#47">Quantas UDHs estão incluídas no Atlas Brasil?</a></li> -->
-    <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#48">O que é o Perfil da UDH?</a></li>
+    <!--<li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#48">O que é o Perfil da UDH?</a></li>
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#49">Há previsão de inclusão de outras regiões metropolitanas?</a></li>
-</ul>
+</ul>-->
 <!-- <div style="font-weight: bold">Guia de Utilização do Atlas Brasil 2013<br /><br /></div>
 <ul class="nav navbar-nav">
     <li><a href="<?php echo $path_dir.$_SESSION['lang']; ?>/o_atlas/perguntas_frequentes/#50">Como fazer uma Consulta sobre o meu município?</a></li>
@@ -355,1292 +357,168 @@
     Os limites de máximo e mínimo definidos para a renda per capita mensal são R$ 4.033,00 e R$ 8,00, respectivamente. O mínimo corresponde ao mínimo adotado pelo IDH Global para países; e o máximo corresponde à renda média do décimo mais rico da população no município mais rico do país (Brasília). A fórmula a ser aplicada para a transformação é, então: (ln valor-ln 8,00)/(ln 4.033,00-ln 8,00).
 </div>
 
-<div class="block-01-div-subtitle">O Atlas do Desenvolvimento Humano no Brasil<br /><br /></div>
+<div class="block-01-div-subtitle">Vulnerabilidade Social<br /><br /></div>
 
 <div class="text_met" id="24">
-    <span><b>O que é o Atlas do Desenvolvimento Humano no Brasil?</b></span><br>
-    O <strong>Atlas do Desenvolvimento Humano no Brasil </strong>engloba o Atlas do
-    Desenvolvimento Humano nos Municípios e o Atlas do Desenvolvimento Humano nas
-    Regiões Metropolitanas. É, uma plataforma de consulta ao Índice de Desenvolvimento
-    Humano Municipal (IDHM) de 5.565 municípios brasileiros, 27 Unidades da Federação
-    (UF), 20 Regiões Metropolitanas (RM) e suas respectivas Unidades de
-    Desenvolvimento Humano (UDH). O Atlas traz, além do IDHM, mais de 200
-    indicadores de demografia, educação, renda, trabalho, habitação e vulnerabilidade,
-    com dados extraídos dos Censos Demográficos de 1991, 2000 e 2010.Os indicadores podem ser visualizados através de tabelas e mapas, além do Perfil Municipal, que traz análises e informações resumidas, objetivas e amigáveis sobre cada município brasileiro.
+    <span><b>O que é vulnerabilidade social?</b></span><br>
+    <p>A vulnerabilidade social, a que este Índice de Vulnerabilidade Social (IVS) se refere, aponta a  ausência ou insuficiência de alguns ativos, recursos ou estruturas (como fluxo de renda; condições adequadas de moradia; acesso a serviços de educação, dentre outros) que deveriam estar à disposição de todo cidadão, promovendo condições de vida e de inserção social favoráveis.</p>
+    <p>As vulnerabilidades sociais decorrem de processos sociais amplos, contra as quais o indivíduo, por si só, não tem meios para agir; e cujos rumos, só o Estado, através de políticas públicas, tem condições de alterar.</p>
+
 </div>
 
 <div class="text_met" id="25">
-    <span><b>Quem desenvolveu o Atlas do Desenvolvimento Humano no Brasil?</b></span><br>
-    O Atlas do Desenvolvimento Humano no Brasil foi desenvolvido através da parceria entre o Programa das Nações Unidas para o Desenvolvimento (PNUD), o Instituto de Pesquisa Econômica Aplicada (IPEA) e a Fundação João Pinheiro (FJP), com dados dos Censos Demográficos do IBGE.
+    <span><b>O que é o Índice de Vulnerabilidade Social?</b></span><br>
+    <p>O IVS é um índice sintético que reúne indicadores do bloco de vulnerabilidade social do Atlas do Desenvolvimento Humano, os quais, apresentados por meio de cartogramas e estruturados em diferentes dimensões, servem de suporte para a identificação de porções do território onde há a sobreposição daquelas situações indicativas de exclusão e vulnerabilidade social, de modo a orientar gestores públicos municipais, estaduais e federais para o desenho de políticas públicas mais sintonizadas com as carências e necessidades presentes nesses territórios.</p>
+    <p>O IVS permite identificar falhas de oferta de bens e serviços públicos no território nacional, uma vez que o Índice foi pensado para dialogar com o desenho da política social brasileira, caminho pelo qual o Estado promove o acesso aos direitos sociais básicos previstos pela Constituição Federal de 1988.</p>
+    <p>O IVS é composto por 16 indicadores estruturados em três dimensões: Infraestrutura Urbana, Capital Humano e Renda e Trabalho. São eles, com seus respectivos pesos:</p>
+    <table border="1" cellspacing="0" cellpadding="0" width="567">
+  <tr>
+    <td width="567" colspan="3" valign="top"><p align="center"><strong>Índice de Vulnerabilidade Social    (IVS)</strong></p></td>
+  </tr>
+  <tr>
+    <td width="120" valign="top"><p align="center"><strong>Subíndice</strong></p></td>
+    <td width="450" valign="top"><p align="center"><strong>Indicador</strong></p></td>
+    <td width="75" valign="middle"><p align="center"><strong>Peso</strong></p></td>
+  </tr>
+  <tr>
+    <td width="120" rowspan="3" valign="top"><p align="center"><strong>IVS Infraestrutura Urbana</strong></p></td>
+    <td width="450" valign="top"><p style="padding: 10px;">a)    Percentual de pessoas em domicílios com abastecimento de água e esgotamento    sanitário inadequados </p></td>
+    <td width="75" valign="middle"><p align="center">0,300 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">b)    Percentual da população que vive em domicílios urbanos sem serviço de coleta de    lixo </p></td>
+    <td width="75" valign="middle"><p align="center">0,300 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">c)    Percentual de pessoas que vivem em domicílios com renda <em>per capita </em>inferior a meio salário mínimo e que gastam mais de    uma hora até o trabalho no total de pessoas ocupadas, vulneráveis e que    retornam diariamente do trabalho </p></td>
+    <td width="75" valign="middle"><p align="center">0,400 </p></td>
+  </tr>
+  <tr>
+    <td width="120" rowspan="8" valign="top"><p align="center"><strong>IVS</strong> <br>
+      <strong> Capital Humano</strong></p></td>
+    <td width="450" valign="top"><p style="padding: 10px;">a)    Mortalidade até 1 ano de idade </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">b)    Percentual de crianças de 0 a 5 anos que não frequentam a escola </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">c)    Percentual de pessoas de 6 a 14 anos que não frequentam a escola </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">d)    Percentual de mulheres de 10 a 17 anos de idade que tiveram filhos </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">e)    Percentual de mães chefes de família, sem fundamental completo e com pelo    menos um filho menor de 15 anos de idade, no total de mães chefes de família </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">f) Taxa    de analfabetismo da população de 15 anos ou mais de idade </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">g)    Percentual de crianças que vivem em domicílios em que nenhum dos moradores    tem o ensino fundamental completo </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">h)    Percentual de pessoas de 15 a 24 anos que não estudam, não trabalham e    pos­suem renda domiciliar <em>per capita </em>igual    ou inferior a meio salário mínimo (2010), na população total dessa faixa    etária </p></td>
+    <td width="75" valign="middle"><p align="center">0,125 </p></td>
+  </tr>
+  <tr>
+    <td width="120" rowspan="5" valign="top"><p align="center"><strong>IVS</strong> <br>
+      <strong> Renda e Trabalho</strong></p></td>
+    <td width="450" valign="top"><p style="padding: 10px;">a)    Proporção de pessoas com renda domiciliar <em>per    capita </em>igual ou inferior a meio salário mínimo (2010) </p></td>
+    <td width="75" valign="middle"><p align="center">0,200 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">b) Taxa    de desocupação da população de 18 anos ou mais de idade </p></td>
+    <td width="75" valign="middle"><p align="center">0,200 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">c)    Percentual de pessoas de 18 anos ou mais sem fundamental completo e em    ocupação informal </p></td>
+    <td width="75" valign="middle"><p align="center">0,200 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">d)    Percentual de pessoas em domicílios com renda <em>per capita </em>inferior a meio salário mínimo (de 2010) e dependentes    de idosos </p></td>
+    <td width="75" valign="middle"><p align="center">0,200 </p></td>
+  </tr>
+  <tr>
+    <td width="450" valign="top"><p style="padding: 10px;">e) Taxa    de atividade das pessoas de 10 a 14 anos de idade </p></td>
+    <td width="75" valign="middle"><p align="center">0,200 </p></td>
+  </tr>
+</table>
+
 </div>
 
 <div class="text_met" id="26">
-    <span><b>Para que serve o Atlas?</b></span><br>
-    O Atlas surge da intenção de estimular a criação de instrumentos eficazes para a observação e análise da realidade brasileira. Sendo assim, o Atlas objetiva ser uma ferramenta de apoio aos gestores e administradores na formulação de políticas públicas adequadas à realidade municipal. Além disso, pretende ser uma plataforma amigável, de fácil acesso e compreensão, disponível a todos os cidadãos brasileiros, de maneira a atingir a sociedade em geral para que ela possa conhecer e transformar a realidade que a cerca.
+    <span><b>O que cada uma das Dimensões do IVS?</b></span><br>
+    <p><b>IVS Infraestrutura Urbana </b></p>
+    <p>O subíndice que contempla a vulnerabilidade de infraestrutura urbana procura refletir as condições de acesso aos serviços de saneamento básico e de mobilidade urbana, dois aspectos relacionados ao lugar de domicílio das pessoas e que impactam significativamente seu bem-estar. Tendo em vista as possibilidades e limites das informações coletadas pelos censos demográficos, foram escolhidos para compor este subíndice indicadores sobre a presença de redes de abastecimento de água, de serviços de esgotamento sanitário e coleta de lixo no território, bem como o indicador do tempo gasto no deslocamento entre a moradia e o local de trabalho pela população ocupada de baixa renda – este último tomado como uma proxy das condições da mobilidade urbana. Compõem o subíndice os indicadores descritos no quadro 1, nele também estão expressos os pesos relativos de cada indicador para a estruturação do subíndice.</p>
+    <p><b>IVS Capital Humano </b></p>
+    <p>O subíndice referente ao capital humano envolve dois aspectos (ou ativos e estruturas) que determinam as perspectivas (atuais e futuras) de inclusão social dos indivíduos: saúde e educação. Neste sentido, foram selecionados para compô-lo indicadores que retratam não só a presença atual destes ativos e recursos nas populações, mas também o potencial que suas gerações mais novas apresentam de ampliá-lo. Adotou-se, para isso, indicadores de mortalidade infantil; da presença, nos domicílios, de crianças e jovens que não frequentam a escola; da presença, nos domicílios, de mães precoces, e de mães chefes de família, com baixa escolaridade e filhos menores; da ocorrência de baixa escolaridade entre os adultos do domicílio; e da presença de jovens que não trabalham e não estudam.</p>
+    <p><b>IVS Renda e Trabalho</b></p>
+    <p>A vulnerabilidade de renda e trabalho, medida por este subíndice, agrupa não só indicadores relativos à insuficiência de renda presente (percentual de domicílios com renda domiciliar per capita igual ou inferior a meio salário mínimo de 2010), mas incorpora outros fatores que, associados ao fluxo de renda, configuram um estado de insegurança de renda: a desocupação de adultos; a ocupação informal de adultos pouco escolarizados; a dependência com relação à renda de pessoas idosas; assim como a presença de trabalho infantil. </p>
+    <p>Há, portanto, nesta dimensão, indicadores de exclusão e de vulnerabilidade social que retratam diferentes situações, com suas múltiplas determinações, ao mesmo tempo em que não se privilegia, diretamente, o nível dos rendimentos médios auferidos pelas pessoas, ainda que se considere o percentual de domicílios nos quais a renda domiciliar per capita é inferior a R$ 255,00/mês (valores de agosto/2010).</p>
 </div>
 
 <div class="text_met" id="27">
-    <span><b>A quem se destina o Atlas do Desenvolvimento Humano no Brasil?</b></span><br>
-    O Atlas está disponível para todos os cidadãos brasileiros. Em geral, se destina aos municípios e aos formuladores de políticas e iniciativas voltadas à gestão pública e ao desenvolvimento humano. Sendo assim, pode servir a diversos segmentos sociais e profissionais: administradores e gestores públicos, pesquisadores, estudantes, professores, jornalistas, profissionais da saúde, lideranças comunitárias e de movimentos sociais,  setor privado, terceiro setor, agentes locais de desenvolvimento, entre outros.
+    <span><b>As três dimensões tem o mesmo peso?</b></span><br>
+    <p>Na dimensão infraestrutura urbana, os três indicadores não possuem o mesmo peso, o que implicaria deixar o saneamento básico com dois terços do peso geral do subíndice infraestrutura urbana, deixando apenas um terço para a dimensão da mobilidade. Isso geraria um desequilíbrio e uma sobrevalorização de uma dimensão sobre a outra. Por outro lado, deixar o indicador de mobilidade com o peso de 50% do subíndice geraria outro problema: como o indicador só está disponível para o ano de 2010 haveria um reforço do componente inercial do subíndice, reduzindo o impacto dos avanços na disponibilização de infraestrutura urbana sobre o resultado final. A adoção dos pesos, tal como proposta, visou equilibrar as duas situações, gerando um subíndice que confere um peso agregado maior aos indicadores de saneamento básico e que inova ao incorporar o indicador de mobilidade urbana enquanto expressão da dissociação entre local de moradia e de trabalho, ainda que ele tenha sido disponibilizado apenas no Censo demográfico 2010.</p>
 </div>
 
 <div class="text_met" id="28">
-    <span><b>De onde vêm os dados utilizados no Atlas?</b></span><br>
-    Os dados utilizados no Atlas Brasil foram extraídos dos Censos Demográficos de 2010, 2000 e 1991, realizados pelo Instituto Brasileiro de Geografia e Estatística (IBGE).
+    <span><b>O Índice de Vulnerabilidade Social foi calculado para quais localidades?</b></span><br>
+    <p>Em uma primeira etapa o IVS foi calculado para todos os 5.565 municípios do Brasil. Em breve o Ipea lançará o Atlas do IVS para os recortes intraurbanos dos municípios das principais regiões metropolitanas do país.</p>
 </div>
 
 <div class="text_met" id="29">
-    <span><b>Por que os dados do Atlas e o IDHM são publicados somente a cada 10 anos?</b></span><br>
-    O Atlas está vinculado aos dados fornecidos pelos Censos Demográficos realizados de 10 em 10 anos pelo Instituto Brasileiro de Geografia e Estatística (IBGE). Dessa forma, o Atlas Brasil utiliza os dados dos últimos Censos: 2010, 2000 e 1991. A utilização do Censo Demográfico como fonte de dados garante comparabilidade e representatividade entre os municípios, já que os dados foram obtidos através do mesmo processo censitário. Os Censos Demográficos podem ser definidos, segundo as Nações Unidas, como o conjunto das operações que consistem em recolher, agrupar e publicar dados demográficos, econômicos e sociais relativos a um momento determinado ou a certos períodos, a todos os habitantes de um país ou território, ou seja, são um retrato de corpo inteiro do país com o perfil da população e as características de seus domicílios.
+    <span><b>Como ler o IVS?</b></span><br>
+    <p>O IVS é um índice que varia entre 0 e 1. Quanto mais próximo a 1, maior é a vulnerabilidade social de um território (figura 1). Quanto mais próximo de 0, menor a vulnerabilidade social de um território.</p>
+    <p>Para os municípios que apresentam IVS entre 0 e 0,200, considera-se que possuem muito baixa vulnerabilidade social. Valores entre 0,201 e 0,300 indicam baixa vulnerabilidade social. Aqueles que apresentam IVS entre 0,301 e 0,400 são de média vulnerabilidade social, ao passo que, entre 0,401 e 0,500, são considerados de alta vulnerabilidade social. Qualquer valor entre 0,501 e 1 indica que o município possui muito alta vulnerabilidade social.</p>
+    <img src="./assets/img/oAtlas/perguntas_frequentes_como_ler.png" />
 </div>
 
 <div class="text_met" id="30">
-    <span><b>Quantos municípios estão incluídos no Atlas do Desenvolvimento Humano nos Municípios?</b></span><br>
-    Todos os 5.565 municípios brasileiros contabilizados no Censo Demográfico 2010 estão incluídos no Atlas Brasil, com dados também para 2000 e 1991.
-</div>
-
-<div class="text_met">
-    Para tanto, foi realizada uma compatibilização espacial para os anos de 1991 e de 2000, quando o país tinha, respectivamente, 4.491 e 5.507 municípios. Ou seja, embora não existissem do ponto de vista da divisão político-administrativa do país como município nos anos anteriores, o espaço correspondente a eles em 2010 correspondia a parcelas de um ou mais municípios no passado. Este espaço foi considerado separadamente dos municípios de origem para que pudesse ser feita uma comparação espacial e temporal dos indicadores do Atlas.
+    <span><b>Como é construído o IVS?</b></span><br>
+    <p>O IVS é o resultado da média aritmética dos subíndices IVS Infraestrutura Urbana, IVS Capital Humano e IVS Renda e Trabalho. Cada um deles entra no cálculo do IVS final com o mesmo peso.</p>
+    <p>Para o cálculo dos subíndices, foram utilizados 16 indicadores calculados a partir das variáveis dos censos demográficos do IBGE, para os anos de 2000 e 2010 com seus respectivos pesos. Para a construção de cada dimensão do IVS, utilizando os pesos equivalentes para cada indicador, foi necessário utilizar parâmetros máximos e mínimos, em cada indicador, para transformá-lo, também, num indicador padronizado, com valores variando de 0,000 a 1,000.</p>
 </div>
 
 <div class="text_met" id="31">
-    <span><b>Meu município não existia em 2000 (ou em 1991), como seus dados estão apresentados no Atlas? O que significa compatibilizar malhas municipais?</b></span><br>
-    Em 1991 o país tinha 4.491 municípios, em 2000 tinha 5.507 e em 2010 tinha 5.565 municípios. Ou seja, durante estes 20 anos ocorreram muitas divisões polítco-administrativas e vários novos municípios surgiram. Embora vários municípios não existissem como tal, do ponto de vista da divisão político-administrativa do país nos anos anteriores, o espaço do município atual correspondia a parcelas de um ou mais municípios no passado. Este espaço dos municípios de origem foi considerado separadamente para que pudesse ser feita uma comparação espacial e temporal dos indicadores do Atlas.
+    <span><b>O IVS foi calculado para quais anos?</b></span><br>
+    <p>O IVS foi calculado para os anos de 2000 e 2010, a partir de indicadores disponíveis na plataforma do Atlas do Desenvolvimento Humano no Brasil, os quais, por sua vez, foram gerados a partir dos microdados dos Censos Demográficos do IBGE, disponíveis para os anos de 2000 e 2010.</p>
 </div>
 
 <div class="text_met" id="32">
-    <span><b>O que é o Perfil Municipal?</b></span><br>
-    O Perfil Municipal é um retrato resumido de cada município brasileiro, acessível online ou exportável em formato PDF. Ele reúne um conjunto de textos e dados comparativos, com informações de 2010, 2000 e 1991. Nele, são apresentados, de forma resumida, os principais indicadores socioeconômicos das áreas de demografia e saúde, educação, habitação, renda, trabalho e vulnerabilidade, além do Índice de Desenvolvimento Humano Municipal (IDHM).
+    <span><b>Posso comparar o IVS que aparece na publicação com o de outros anos?/b></span><br>
+    <p>Não, pois o IVS foi calculado apenas para os anos em que foram realizados os censos demográficos, em 2000 e 2010. não houve censos demográficos.</p>
 </div>
 
 <div class="text_met" id="33">
-    <span><b>Como o Atlas Brasil se relaciona com os Objetivos de Desenvolvimento do Milênio?</b></span><br>
-    Em setembro de 2000 a Assembleia Geral da ONU promoveu a Cúpula do Milênio, oportunidade na qual  chefes de estado ou de governo de 191 países pactuaram a Declaração do Milênio. Este documento deu origem a uma série de objetivos para o desenvolvimento e a erradicação da pobreza no mundo, conhecidos como os Objetivos de Desenvolvimento do Milênio (ODM). Para o alcance dos ODM até o ano de 2015, foram criadas diversas metas e indicadores para avaliar e monitorar o progresso dos objetivos acordados.
-</div>
-
-<div class="text_met">
-    As metas estabelecidas variam de país para país, sendo que cada um deles é responsável por acompanhar o desempenho de seus indicadores. Assim, cada país deve valer-se de suas próprias capacidades sociais e institucionais para monitorá-los. O Atlas do Desenvolvimento Humano no Brasil contribui para a avaliação dos ODM, pois seus dados permitem acompanhar a evolução do bem-estar dos municípios nas últimas duas décadas. 
+    <span><b>Por que o cálculo do IVS foi feito com base no censo demográfico, e não na Pesquisa Nacional por Amostra de Domicílios (PNAD)?</b></span><br>
+    <p>A escolha dos dados do IBGE como fonte utilizada deu-se porque, ao contrário de registros administrativos, os números do Instituto Brasileiro de Geografia e Estatística oferecem a vantagem de procederem fonte única e serem coletados por metodologia uniforme, aplicada com a mesma validade estatística e rigor em todo o território nacional.</p>
+    <p>O censo demográfico foi escolhido em detrimento das Pesquisas Nacionais por Amostra de Domicílios (PNADs) porque estas não permitem o recorte municipal, o que inviabilizaria o propósito inicial de se obter indicadores para esta escala territorial.</p>
 </div>
 
 <div class="text_met" id="34">
-    <span><b>Além do IDHM, que outros dados podem ser encontrados no Atlas?</b></span><br>
-    Com dados do Censo 2010, o Atlas também apresenta indicadores de suporte à análise do IDHM.  São mais de 200 indicadores que se dividem em grandes áreas: 
-    <ul>
-        <li><b>IDHM</b>: IDHM, IDHM Longevidade, IDHM Educação, IDHM Renda;
-            <li><b>Demografia e Saúde</b>: esperança de vida ao nascer, mortalidade infantil, taxa de envelhecimento, taxa de fecundidade total;
-                <li><b>População</b>: total, por faixa etária, gênero, economicamente ativa;
-                    <li><b>Educação</b>: escolaridade, frequência à escola, alfabetização, defasagem idade-ano;
-                        <li><b>Habitação</b>: população em domicílios com água encanada, coleta de lixo, energia elétrica;
-                            <li><b>Renda</b>: nível/composição, pobreza, desigualdade;
-                                <li><b>Trabalho</b>: população ativa, desemprego e características dos ocupados (posição na ocupação, setor de atividade, grau de escolaridade, grau de formalização remuneração e desigualdade de rendimento); 
-                                    <li><b>Vulnerabilidade</b>: famílias e pessoas em situação vulnerável quanto à renda, educação, moradia e trabalho.
-                                    </ul>
-                                </div>
+    <span><b>Posso comparar o IVS do Brasil com o de outros países? </b></span><br>
+    <p>O IVS é um índice construído no Brasil pelo IPEA e parceiros, a partir de um conjunto de variáveis disponíveis no ADH, portanto não é possível compara-lo com outros países.</p>
+</div>
 
-<!-- <div class="text_met" id="35">
-    <span><b>Não tenho acesso à internet. Posso utilizar o Atlas Brasil 2013?</b></span><br>
-    A segunda fase do Atlas Brasil 2013 prevê a disponibilização da plataforma em DVD. Enquanto isso, é possível fazer download de mapas e tabelas na plataforma web para uso offline.
-</div> -->
-
-<div class="block-01-div-subtitle">O Atlas do Desenvolvimento Humano nas Regiões Metropolitanas<br /><br /></div>
+<div class="text_met" id="35">
+    <span><b>Quando leio na base de dados que determinado município teve índice 1,000 no indicador “taxa de desocupação da população de 18 anos ou mais de idade”, quer dizer que toda a população com 18 anos ou mais está desocupada nesse município?</b></span><br>
+    <p>Não. O valor máximo de um indicador - ou seja, a situação de máxima vulnerabilidade - foi estabelecido a partir da média encontrada para os dados municipais desse mesmo indicador, considerando, para efeitos de cálculo, os valores relativos aos anos de 2000 e 2010, acrescido de dois desvios-padrão e limitado em 1, mesmo para os municípios que extrapolaram esse valor. Portanto, da mesma forma, um índice de 0,000 no mesmo indicador mencionado na pergunta não significa que toda a população de 18 anos ou mais esteja ocupada. Para deixar mais claro o que significam os indicadores com valores 0 ou 1, na página 20 do Atlas é possível encontrar uma tabela com as informações percentuais do valor de cada indicador do IVS que se referem à melhor (0,000) e à pior situação (1,000).</p>
+</div>
 
 <div class="text_met" id="36">
-    <span><b>O que é o Atlas do Desenvolvimento Humano nas Regiões Metropolitanas?</b></span><br>
-    O Atlas das Regiões Metropolitanas traz o computo do IDHM e demais indicadores do Atlas para algumas das mais importantes regiões metropolitanas do país. O Atlas das Regiões Metropolitanas possibilita conhecer aspectos da realidade socioeconômica no nível intramunicipal e identificar desigualdades socioespaciais nas e entre as diferentes porções do território dessas regiões metropolitanas. Os dados intramunicipais são calculados para Unidades de Desenvolvimento Humano (UDH), agrupamentos de setores censitários com feições urbanísticas, sociais e econômicas homogêneas.
+    <span><b>O que é prosperidade social? </b></span><br>
+    <p>A análise integrada do desenvolvimento humano (por meio do Índice de Desenvolvimento Humano Municipal, IDHM) com a vulnerabilidade social oferece o que se denomina aqui de “prosperidade social”. A prosperidade social é a ocorrência simultânea do alto desenvolvimento humano com a baixa vulnerabilidade social, sugerindo que, nas porções do território onde ela se verifica, ocorre uma trajetória de desenvolvimento humano menos vulnerável e socialmente mais próspera.</p>
+    <p>A prosperidade social reflete uma situação em que o desenvolvimento humano se assenta em bases sociais mais robustas, onde o capital familiar e escolar, as condições de inserção no mundo do trabalho e as condições de moradia e de acesso à infraestrutura urbana da população são tais que há uma perspectiva de prosperidade não apenas econômica, mas das condições de vida no meio social. Para mais informações sobre o IDHM, acesse <a href="www.atlasbrasil.com.br">Atlas Brasil</a>.</p>
 </div>
 
-<div class="text_met" id="37">
-    <span><b>Quantas regiões metropolitanas estão incluídas no Atlas do Desenvolvimento Humano nas Regiões Metropolitanas? </b></span><br>
-    O Atlas irá abarcar mais de 200 indicadores relativos a 16 regiões metropolitanas: Belém, Belo Horizonte, Curitiba, Fortaleza, Goiânia, Grande São Luís, Grande Vitória, Manaus, Natal, Porto Alegre, Recife, RIDE do Distrito Federal, Rio de Janeiro, Salvador, São Paulo e Vale do Rio Cuiabá.
-</div>
-
-<div class="text_met" id="38">
-    <span><b>Todas as regiões metropolitanas do país estão no Atlas do Desenvolvimento Humano nas Regiões Metropolitanas?</b></span><br>
-    Não, somente 16 regiões metropolitanas foram contempladas no Atlas até o momento.
-</div>
-
-<div class="text_met" id="39">
-    <span><b>Os dados do Atlas das Regiões Metropolitanas também são extraídos dos Censos Demográficos? Para quais anos teremos os indicadores disponibilizados? </b></span><br>
-    Sim, todos os dados do Atlas são extraídos dos Censos Demográficos do IBGE. Nesta edição, são apresentados os dados relativos a 2000 e 2010, compatibilizados em conformidade com a malha censitária de 2010. 
-</div>
-
-<div class="text_met" id="40">
-    <span><b>Qual a composição de cada região metropolitana? Todos os municípios metropolitanos fazem parte do Atlas?</b></span><br>
-    Os recortes intramunicipais correspondem às UDHs. Haverá dados disponíveis para as UDHs de cada um dos municípios brasileiros que compunham as regiões metropolitanas abrangidas pelo Atlas na data de referência adotada: 31 de dezembro de 2013. Para as RM que fazem parte do Atlas, serão considerados os municípios que faziam parte das RM na data de referência, conforme a legislação complementar de cada unidade federativa das RMs abrangidas pelo Atlas. 
-</div>
-
-<div class="text_met" style="margin-bottom: 10px;" id="41">
-    <span><b>Quais municípios fazem parte das regiões metropolitanas contidas no Atlas?</b></span>    
-</div>
-<!-- colappse para municípios das regiões metropolitanas -->
-<div class="accordion accordion-rm-municipios" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseUm">
-            Região Metropolitana da Baixada Santista
-        </a>
-    </div>
-    <div id="collapseUm" class="accordion-body collapse">
-      <div class="accordion-inner">
-         Bertioga <br/> 
-         Cubatão <br/> 
-         Guarujá <br/> 
-         Itanhaém <br/> 
-         Mongaguá <br/> 
-         Peruíbe <br/>
-         Praia Grande <br/> 
-         Santos <br/> 
-         São Vicente
-     </div>
- </div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Região Metropolitana de Belém
-    </a>
-</div>
-<div id="collapseOne" class="accordion-body collapse">
-  <div class="accordion-inner">
-    Belém<br /> 
-    Ananindeua<br />
-    Castanhal<br /> 
-    Marituba<br />
-    Benevides<br /> 
-    Santa Isabel do Pará<br /> 
-    Santa Bárbara do Pará 
-</div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Região Metropolitana de Belo Horizonte
-    </a>
-</div>
-<div id="collapseTwo" class="accordion-body collapse">
-  <div class="accordion-inner">
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Baldim<br />  
-        Belo Horizonte<br />  
-        Betim<br />  
-        Brumadinho<br />  
-        Caeté<br />  
-        Capim Branco<br />  
-        Confins<br />  
-        Contagem<br />  
-        Esmeraldas<br />  
-        Florestal<br />  
-        Ibirité<br />  
-        Igarapé  
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Itaguara<br />  
-        Itatiaiuçu<br />  
-        Jaboticatubas<br />  
-        Juatuba<br />  
-        Lagoa Santa<br />  
-        Mário Campos<br />  
-        Mateus Leme<br />  
-        Matozinhos<br />  
-        Nova Lima<br />  
-        Nova União<br />  
-        Pedro Leopoldo<br />  
-        Raposos 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Ribeirão das Neves<br /> 
-        Rio Acima<br /> 
-        Rio Manso<br /> 
-        Sabará<br /> 
-        Santa Luzia<br /> 
-        São Joaquim de Bicas<br /> 
-        São José da Lapa<br /> 
-        Sarzedo<br /> 
-        Taquaraçu de Minas<br /> 
-        Vespasiano  
-    </div>
-</div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseDois">
-            Região Metropolitana de Campinas
-        </a>
-    </div>
-    <div id="collapseDois" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-         Americana <br/> 
-         Artur Nogueira <br/> 
-         Campinas <br/> 
-         Cosmópolis <br/> 
-         Engenheiro Coelho<br/>
-         Holambra <br/> 
-     </div>
-     <div style="width: 200px; float: left; margin-right: 20px;">
-         Hortolândia <br/> 
-         Indaiatuba <br/> 
-         Itatiba <br/> 
-         Jaguariúna <br/>
-
-         Monte Mor <br/> 
-         Nova Odessa <br/> 
-     </div>
-     <div style="width: 200px; float: left; margin-right: 20px;">
-         Paulínia <br/> 
-         Pedreira <br/> 
-         Santa Bárbara D'Oeste <br/> 
-
-         Santo Antônio de Posse <br/> 
-         Sumaré <br/> 
-         Valinhos <br/> 
-     </div>
-     <div style="width: 200px; float: left; margin-right: 20px;">
-         Vinhedo 
-     </div>
- </div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-        Região Integrada de Desenvolvimento Econômico do Distrito Federal e Entorno
-    </a>
-</div>
-<div id="collapseThree" class="accordion-body collapse">
-  <div class="accordion-inner">
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Abadiânia<br /> 
-        Água Fria de Goiás<br /> 
-        Águas Lindas de Goiás<br /> 
-        Alexânia<br /> 
-        Buritis<br />
-        Cabeceira Grande<br /> 
-        Cabeceiras<br /> 
-        Cidade Ocidental  
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Cocalzinho de Goiás<br />
-        Corumbá de Goiás<br /> 
-        Cristalina<br /> 
-        Distrito Federal<br /> 
-        Formosa<br /> 
-        Luziânia<br />
-        Mimoso de Goiás<br /> 
-        Novo Gama<br /> 
-        Padre Bernardo
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Pirenópolis<br />
-        Planaltina<br /> 
-        Santo Antônio do Descoberto<br /> 
-        Unaí<br />
-        Valparaíso de Goiás<br /> 
-        Vila Boa 
-    </div>
-</div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-        Região Metropolitana do Vale do Rio Cuiabá
-    </a>
-</div>
-<div id="collapseFour" class="accordion-body collapse">
-  <div class="accordion-inner">
-    Cuiabá<br /> 
-    Nossa Senhora do Livramento<br /> 
-    Santo Antônio de Leverger<br /> 
-    Várzea Grande
-</div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-        Região Metropolitana de Curitiba
-    </a>
-</div>
-<div id="collapseFive" class="accordion-body collapse">
-  <div class="accordion-inner">
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Adrianópolis<br /> 
-        Agudos do Sul<br /> 
-        Almirante Tamandaré<br /> 
-        Araucária<br /> 
-        Balsa Nova<br /> 
-        Bocaiúva do Sul<br /> 
-        Campina Grande do Sul<br /> 
-        Campo do Tenente<br /> 
-        Campo Largo
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Campo Magro<br /> 
-        Cerro Azul<br /> 
-        Colombo<br /> 
-        Contenda<br /> 
-        Curitiba<br /> 
-        Doutor Ulysses<br /> 
-        Fazenda Rio Grande<br /> 
-        Itaperuçu<br /> 
-        Lapa<br /> 
-        Mandirituba
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Piên<br /> 
-        Pinhais<br /> 
-        Piraquara<br /> 
-        Quatro Barras<br /> 
-        Quitandinha<br /> 
-        Rio Branco do Sul<br /> 
-        Rio Negro<br /> 
-        São José dos Pinhais<br /> 
-        Tijucas do Sul<br /> 
-        Tunas do Paraná 
-    </div>
-</div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
-        Região Metropolitana de Fortaleza
-    </a>
-</div>
-<div id="collapseSix" class="accordion-body collapse">
-  <div class="accordion-inner">
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Aquiraz<br /> 
-        Cascavel<br /> 
-        Caucaia<br /> 
-        Chorozinho<br /> 
-        Eusébio 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Fortaleza<br /> 
-        Guaiúba<br /> 
-        Horizonte<br /> 
-        Itaitinga<br /> 
-        Maracanaú 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Maranguape<br /> 
-        Pacajus<br /> 
-        Pacatuba<br /> 
-        Pindoretama<br /> 
-        São Gonçalo do Amarante 
-    </div>
-</div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
-        Região Metropolitana de Goiânia
-    </a>
-</div>
-<div id="collapseSeven" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Abadia de Goiás<br /> 
-            Aparecida de Goiânia<br /> 
-            Aragoiânia<br /> 
-            Bela Vista de Goiás<br /> 
-            Bonfinópolis<br /> 
-            Brazabrantes<br /> 
-            Caldazinha 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;"> 
-            Caturaí<br /> 
-            Goianápolis<br /> 
-            Goiânia<br /> 
-            Goianira<br /> 
-            Guapó<br /> 
-            Hidrolândia<br /> 
-            Inhumas 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Nerópolis<br /> 
-            Nova Veneza<br /> 
-            Santo Antônio de Goiás<br /> 
-            Senador Canedo<br /> 
-            Terezópolis de Goiás<br /> 
-            Trindade 
-        </div>
-    </div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
-        Região Metropolitana de Manaus
-    </a>
-</div>
-<div id="collapseEight" class="accordion-body collapse">
-    <div class="accordion-inner">
-        Careiro da Várzea<br />
-        Iranduba<br />
-        Itacoatiara<br />
-        Manacapuru<br />
-        Manaus<br /> 
-        Novo Airão<br /> 
-        Presidente Figueiredo<br />
-        Rio Preto da Eva 
-    </div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
-        Região Metropolitana de Natal
-    </a>
-</div>
-<div id="collapseNine" class="accordion-body collapse">
-    <div class="accordion-inner">
-        Ceará-Mirim<br /> 
-        Extremoz<br /> 
-        Macaíba<br /> 
-        Monte Alegre<br /> 
-        Natal<br /> 
-        Nísia Floresta<br /> 
-        Parnamirim<br /> 
-        São Gonçalo do Amarante<br /> 
-        São José de Mipibú<br /> 
-        Vera Cruz         
-    </div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
-        Região Metropolitana de Porto Alegre
-    </a>
-</div>
-<div id="collapseTen" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Alvorada<br /> 
-            Araricá<br /> 
-            Arroio dos Ratos<br /> 
-            Cachoeirinha<br /> 
-            Campo Bom<br /> 
-            Canoas<br /> 
-            Capela de Santana<br /> 
-            Charqueadas<br /> 
-            Dois Irmãos<br /> 
-            Eldorado do Sul<br /> 
-            Estância Velha<br /> 
-            Esteio 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">  
-            Glorinha<br />  
-            Gravataí<br />  
-            Guaíba<br />  
-            Igrejinha<br />  
-            Ivoti<br />  
-            Montenegro<br />  
-            Nova Hartz<br />  
-            Nova Santa Rita<br />  
-            Novo Hamburgo<br />  
-            Parobé<br />  
-            Portão<br />  
-            Porto Alegre 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Rolante<br /> 
-            Santo Antônio da Patrulha<br /> 
-            São Jerônimo<br /> 
-            São Leopoldo<br /> 
-            São Sebastião do Caí<br /> 
-            Sapiranga<br /> 
-            Sapucaia do Sul<br /> 
-            Taquara<br /> 
-            Triunfo<br /> 
-            Viamão  
-        </div>     
-    </div>
-</div>
-</div>  
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven">
-        Região Metropolitana do Recife
-    </a>
-</div>
-<div id="collapseEleven" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Abreu e Lima<br /> 
-            Araçoiaba<br /> 
-            Cabo de Santo Agostinho<br /> 
-            Camaragibe<br /> 
-            Igarassu 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;"> 
-            Ilha de Itamaracá<br /> 
-            Ipojuca<br /> 
-            Itapissuma<br /> 
-            Jaboatão dos Guararapes<br /> 
-            Moreno  
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Olinda<br /> 
-            Paulista<br /> 
-            Recife<br /> 
-            São Lourenço da Mata   
-        </div>
-    </div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelve">
-        Região Metropolitana do Rio de Janeiro
-    </a>
-</div>
-<div id="collapseTwelve" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Belford Roxo<br />
-            Cachoeiras de Macacu<br />
-            Duque de Caxias<br />
-            Guapimirim<br />
-            Itaboraí<br />
-            Itaguaí<br />
-            Japeri 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;"> 
-            Magé<br />
-            Maricá<br />
-            Mesquita<br />
-            Nilópolis<br />
-            Niterói<br />
-            Nova Iguaçu<br />
-            Paracambi  
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Queimados<br />
-            Rio Bonito<br />
-            Rio de Janeiro<br />
-            São Gonçalo<br />
-            São João de Meriti<br />
-            Seropédica<br />
-            Tanguá   
-        </div>
-    </div>
-</div>
-</div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThirteen">
-        Região Metropolitana de Salvador
-    </a>
-</div>
-<div id="collapseThirteen" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Camaçari<br /> 
-            Candeias<br /> 
-            Dias D'Ávila<br /> 
-            Itaparica<br /> 
-            Lauro de Freitas 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;"> 
-            Madre de Deus<br /> 
-            Mata de São João<br /> 
-            Pojuca<br /> 
-            Salvador<br /> 
-            São Francisco do Conde   
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            São Sebastião do Passé<br /> 
-            Simões Filho<br /> 
-            Vera Cruz   
-        </div>
-    </div>
-</div>
-</div>  
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteen">
-        Região Metropolitana da Grande São Luís
-    </a>
-</div>
-<div id="collapseFourteen" class="accordion-body collapse">
-    <div class="accordion-inner">
-        Alcântara<br /> 
-        Paço do Lumiar<br /> 
-        Raposa<br /> 
-        São José de Ribamar<br /> 
-        São Luís 
-    </div>
-</div>
-</div> 
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTres">
-        Região Metropolitana da Maceió
-    </a>
-</div>
-<div id="collapseTres" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-           Barra de Santo Antônio <br/> 
-           Barra de São Miguel <br/> 
-           Coqueiro Seco <br/> 
-           Maceió <br/> 
-           Marechal Deodoro <br/> 
-       </div>
-       <div style="width: 200px; float: left; margin-right: 20px;">
-           Messias <br/> 
-           Paripueira <br/> 
-           Pilar <br/> 
-           Rio Largo <br/> 
-           Santa Luzia do Norte <br/> 
-       </div>
-       São Miguel dos Campos <br/> 
-       Satuba
-   </div>
-</div>
-</div>  
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFiveteen">
-        Região Metropolitana de São Paulo
-    </a>
-</div>
-<div id="collapseFiveteen" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Arujá<br /> 
-            Barueri<br /> 
-            Biritiba-Mirim<br /> 
-            Caieiras<br /> 
-            Cajamar<br /> 
-            Carapicuiba<br /> 
-            Cotia<br /> 
-            Diadema<br /> 
-            Embu das Artes<br /> 
-            Embu-Guaçu<br /> 
-            Ferraz de Vasconcelos<br /> 
-            Francisco Morato<br /> 
-            Franco da Rocha<br /> 
-            Guararema 
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;"> 
-            Guarulhos<br /> 
-            Itapecerica da Serra<br /> 
-            Itapevi<br /> 
-            Itaquaquecetuba<br /> 
-            Jandira<br /> 
-            Juquitiba<br /> 
-            Mairiporã<br /> 
-            Mauá<br /> 
-            Mogi das Cruzes<br /> 
-            Osasco<br /> 
-            Pirapora do Bom Jesus<br /> 
-            Poá<br /> 
-            Ribeirão Pires<br /> 
-            Rio Grande da Serra<br />   
-        </div>
-        <div style="width: 200px; float: left; margin-right: 20px;">
-            Salesópolis<br /> 
-            Santa Isabel<br /> 
-            Santana do Parnaíba<br /> 
-            Santo André<br /> 
-            São Bernardo do Campo<br /> 
-            São Caetano do Sul<br /> 
-            São Lourenço da Serra<br /> 
-            São Paulo<br /> 
-            Suzano<br /> 
-            Taboão da Serra<br /> 
-            Vargem Grande Paulista  
-        </div>
-    </div>
-</div>
-</div>   
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFiveteen">
-        Região Metropolitana do Vale do Paraíba e Litoral Norte
-    </a>
-</div>
-<div id="collapseFiveteen" class="accordion-body collapse">
-    <div class="accordion-inner">
-        <div style="width: 200px; float: left; margin-right: 20px;">
-         Aparecida <br/>
-         Arapeí <br/>
-         Areias <br/>
-         Bananal <br/>
-         Caçapava <br/>
-         Cachoeira Paulista <br/>
-         Campos do Jordão <br/>
-         Canas <br/>
-         Caraguatatuba <br/>
-         Cruzeiro <br/>
-         Cunha <br/>
-         Guaratinguetá <br/>
-         Igaratá <br/>
-         Ilhabela <br/>
-     </div>
-     <div style="width: 200px; float: left; margin-right: 20px;">
-         Jacareí <br/>
-         Jambeiro <br/>
-         Lagoinha <br/>
-         Lavrinhas <br/>
-         Lorena <br/>
-         Monteiro Lobato <br/>
-         Natividade da Serra <br/>
-         Paraibuna <br/>
-         Pindamonhangaba <br/>
-         Piquete <br/>
-         Potim <br/>
-         Queluz <br/>
-         Redenção da Serra <br/>
-         Roseira <br/>
-     </div>
-     <div style="width: 200px; float: left; margin-right: 20px;">
-         Santa Branca <br/>
-         Santo Antônio do Pinhal <br/>
-         São Bento do Sapucaí <br/>
-         São José do Barreiro <br/>
-         São José dos Campos <br/>
-         São Luís do Paraitinga <br/>
-         São Sebastião <br/>
-         Silveiras <br/>
-         Taubaté <br/>
-         Tremembé <br/>
-         Ubatuba 
-     </div>
- </div>
-</div>
-</div>   
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteen">
-        Região Metropolitana da Grande Vitória
-    </a>
-</div>
-<div id="collapseSixteen" class="accordion-body collapse">
-    <div class="accordion-inner">
-        Cariacica<br /> 
-        Fundão<br /> 
-        Guarapari<br /> 
-        Serra<br /> 
-        Viana<br /> 
-        Vila Velha<br /> 
-        Vitória 
-    </div>
-</div>
-</div>  
-</div>
-
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Belém</b></span><br />
-    Belém<br /> 
-    Ananindeua<br />
-    Castanhal<br /> 
-    Marituba<br />
-    Benevides<br /> 
-    Santa Isabel do Pará<br /> 
-    Santa Bárbara do Pará 
-</div> -->
-<!-- 
-<div class="text_met">
-    <span><b>Região Metropolitana de Belo Horizonte</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Baldim<br />  
-        Belo Horizonte<br />  
-        Betim<br />  
-        Brumadinho<br />  
-        Caeté<br />  
-        Capim Branco<br />  
-        Confins<br />  
-        Contagem<br />  
-        Esmeraldas<br />  
-        Florestal<br />  
-        Ibirité<br />  
-        Igarapé  
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Itaguara<br />  
-        Itatiaiuçu<br />  
-        Jaboticatubas<br />  
-        Juatuba<br />  
-        Lagoa Santa<br />  
-        Mário Campos<br />  
-        Mateus Leme<br />  
-        Matozinhos<br />  
-        Nova Lima<br />  
-        Nova União<br />  
-        Pedro Leopoldo<br />  
-        Raposos 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Ribeirão das Neves<br /> 
-        Rio Acima<br /> 
-        Rio Manso<br /> 
-        Sabará<br /> 
-        Santa Luzia<br /> 
-        São Joaquim de Bicas<br /> 
-        São José da Lapa<br /> 
-        Sarzedo<br /> 
-        Taquaraçu de Minas<br /> 
-        Vespasiano  
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região integrada de desenvolvimento econômico do Distrito Federal e Entorno</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Abadiânia<br /> 
-        Água Fria de Goiás<br /> 
-        Águas Lindas de Goiás<br /> 
-        Alexânia<br /> 
-        Buritis<br />
-        Cabeceira Grande<br /> 
-        Cabeceiras<br /> 
-        Cidade Ocidental  
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Cocalzinho de Goiás<br />
-        Corumbá de Goiás<br /> 
-        Cristalina<br /> 
-        Distrito Federal<br /> 
-        Formosa<br /> 
-        Luziânia<br />
-        Mimoso de Goiás<br /> 
-        Novo Gama<br /> 
-        Padre Bernardo
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Pirenópolis<br />
-        Planaltina<br /> 
-        Santo Antônio do Descoberto<br /> 
-        Unaí<br />
-        Valparaíso de Goiás<br /> 
-        Vila Boa 
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana do Vale do Rio Cuiabá</b></span><br />
-    Cuiabá<br /> 
-    Nossa Senhora do Livramento<br /> 
-    Santo Antônio de Leverger<br /> 
-    Várzea Grande
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Curitiba</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Adrianópolis<br /> 
-        Agudos do Sul<br /> 
-        Almirante Tamandaré<br /> 
-        Araucária<br /> 
-        Balsa Nova<br /> 
-        Bocaiúva do Sul<br /> 
-        Campina Grande do Sul<br /> 
-        Campo do Tenente<br /> 
-        Campo Largo
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Campo Magro<br /> 
-        Cerro Azul<br /> 
-        Colombo<br /> 
-        Contenda<br /> 
-        Curitiba<br /> 
-        Doutor Ulysses<br /> 
-        Fazenda Rio Grande<br /> 
-        Itaperuçu<br /> 
-        Lapa<br /> 
-        Mandirituba
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Piên<br /> 
-        Pinhais<br /> 
-        Piraquara<br /> 
-        Quatro Barras<br /> 
-        Quitandinha<br /> 
-        Rio Branco do Sul<br /> 
-        Rio Negro<br /> 
-        São José dos Pinhais<br /> 
-        Tijucas do Sul<br /> 
-        Tunas do Paraná 
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Fortaleza</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Aquiraz<br /> 
-        Cascavel<br /> 
-        Caucaia<br /> 
-        Chorozinho<br /> 
-        Eusébio 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Fortaleza<br /> 
-        Guaiúba<br /> 
-        Horizonte<br /> 
-        Itaitinga<br /> 
-        Maracanaú 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Maranguape<br /> 
-        Pacajus<br /> 
-        Pacatuba<br /> 
-        Pindoretama<br /> 
-        São Gonçalo do Amarante 
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Goiânia</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Abadia de Goiás<br /> 
-        Aparecida de Goiânia<br /> 
-        Aragoiânia<br /> 
-        Bela Vista de Goiás<br /> 
-        Bonfinópolis<br /> 
-        Brazabrantes<br /> 
-        Caldazinha 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Caturaí<br /> 
-        Goianápolis<br /> 
-        Goiânia<br /> 
-        Goianira<br /> 
-        Guapó<br /> 
-        Hidrolândia<br /> 
-        Inhumas 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Nerópolis<br /> 
-        Nova Veneza<br /> 
-        Santo Antônio de Goiás<br /> 
-        Senador Canedo<br /> 
-        Terezópolis de Goiás<br /> 
-        Trindade 
-    </div>
-</div> -->
-<!-- 
-<div class="text_met">
-    <span><b>Região Metropolitana de Manaus</b></span><br />
-    Careiro da Várzea<br />
-    Iranduba<br />
-    Itacoatiara<br />
-    Manacapuru<br />
-    Manaus<br /> 
-    Novo Airão<br /> 
-    Presidente Figueiredo<br />
-    Rio Preto da Eva 
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Natal</b></span><br />
-    Ceará-Mirim<br /> 
-    Extremoz<br /> 
-    Macaíba<br /> 
-    Monte Alegre<br /> 
-    Natal<br /> 
-    Nísia Floresta<br /> 
-    Parnamirim<br /> 
-    São Gonçalo do Amarante<br /> 
-    São José de Mipibú<br /> 
-    Vera Cruz 
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Porto Alegre</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Alvorada<br /> 
-        Araricá<br /> 
-        Arroio dos Ratos<br /> 
-        Cachoeirinha<br /> 
-        Campo Bom<br /> 
-        Canoas<br /> 
-        Capela de Santana<br /> 
-        Charqueadas<br /> 
-        Dois Irmãos<br /> 
-        Eldorado do Sul<br /> 
-        Estância Velha<br /> 
-        Esteio 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">  
-        Glorinha<br />  
-        Gravataí<br />  
-        Guaíba<br />  
-        Igrejinha<br />  
-        Ivoti<br />  
-        Montenegro<br />  
-        Nova Hartz<br />  
-        Nova Santa Rita<br />  
-        Novo Hamburgo<br />  
-        Parobé<br />  
-        Portão<br />  
-        Porto Alegre 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Rolante<br /> 
-        Santo Antônio da Patrulha<br /> 
-        São Jerônimo<br /> 
-        São Leopoldo<br /> 
-        São Sebastião do Caí<br /> 
-        Sapiranga<br /> 
-        Sapucaia do Sul<br /> 
-        Taquara<br /> 
-        Triunfo<br /> 
-        Viamão  
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana do Recife </b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Abreu e Lima<br /> 
-        Araçoiaba<br /> 
-        Cabo de Santo Agostinho<br /> 
-        Camaragibe<br /> 
-        Igarassu 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Ilha de Itamaracá<br /> 
-        Ipojuca<br /> 
-        Itapissuma<br /> 
-        Jaboatão dos Guararapes<br /> 
-        Moreno  
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Olinda<br /> 
-        Paulista<br /> 
-        Recife<br /> 
-        São Lourenço da Mata   
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana do Rio de Janeiro</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Belford Roxo<br />
-        Cachoeiras de Macacu<br />
-        Duque de Caxias<br />
-        Guapimirim<br />
-        Itaboraí<br />
-        Itaguaí<br />
-        Japeri 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Magé<br />
-        Maricá<br />
-        Mesquita<br />
-        Nilópolis<br />
-        Niterói<br />
-        Nova Iguaçu<br />
-        Paracambi  
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Queimados<br />
-        Rio Bonito<br />
-        Rio de Janeiro<br />
-        São Gonçalo<br />
-        São João de Meriti<br />
-        Seropédica<br />
-        Tanguá   
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de Salvador</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Camaçari<br /> 
-        Candeias<br /> 
-        Dias D'Ávila<br /> 
-        Itaparica<br /> 
-        Lauro de Freitas 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Madre de Deus<br /> 
-        Mata de São João<br /> 
-        Pojuca<br /> 
-        Salvador<br /> 
-        São Francisco do Conde   
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        São Sebastião do Passé<br /> 
-        Simões Filho<br /> 
-        Vera Cruz   
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana da Grande São Luís</b></span><br />
-    Alcântara<br /> 
-    Paço do Lumiar<br /> 
-    Raposa<br /> 
-    São José de Ribamar<br /> 
-    São Luís 
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana de São Paulo</b></span><br />
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Arujá<br /> 
-        Barueri<br /> 
-        Biritiba-Mirim<br /> 
-        Caieiras<br /> 
-        Cajamar<br /> 
-        Carapicuiba<br /> 
-        Cotia<br /> 
-        Diadema<br /> 
-        Embu das Artes<br /> 
-        Embu-Guaçu<br /> 
-        Ferraz de Vasconcelos<br /> 
-        Francisco Morato<br /> 
-        Franco da Rocha<br /> 
-        Guararema 
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;"> 
-        Guarulhos<br /> 
-        Itapecerica da Serra<br /> 
-        Itapevi<br /> 
-        Itaquaquecetuba<br /> 
-        Jandira<br /> 
-        Juquitiba<br /> 
-        Mairiporã<br /> 
-        Mauá<br /> 
-        Mogi das Cruzes<br /> 
-        Osasco<br /> 
-        Pirapora do Bom Jesus<br /> 
-        Poá<br /> 
-        Ribeirão Pires<br /> 
-        Rio Grande da Serra<br />   
-    </div>
-    <div style="width: 200px; float: left; margin-right: 20px;">
-        Salesópolis<br /> 
-        Santa Isabel<br /> 
-        Santana do Parnaíba<br /> 
-        Santo André<br /> 
-        São Bernardo do Campo<br /> 
-        São Caetano do Sul<br /> 
-        São Lourenço da Serra*<br /> 
-        São Paulo<br /> 
-        Suzano<br /> 
-        Taboão da Serra<br /> 
-        Vargem Grande Paulista  
-    </div>
-</div> -->
-
-<!-- <div class="text_met">
-    <span><b>Região Metropolitana da Grande Vitória</b></span><br />
-    Cariacica<br /> 
-    Fundão<br /> 
-    Guarapari<br /> 
-    Serra<br /> 
-    Viana<br /> 
-    Vila Velha<br /> 
-    Vitória 
-</div> -->
-
-<div class="text_met" id="42">
-    <span><b>É possível haver empate entre regiões metropolitanas na classificação do IDHM? Por quê? </b></span><br>
-    Sim. Regiões metropolitanas que apresentam o mesmo valor na média geométrica entre os três componentes do IDHM, considerando três casas decimais, empatam na classificação do IDHM. 
-</div>
-
-<div class="text_met" id="43">
-    <span><b>Como são classificadas as UDHs e as regiões metropolitanas nas faixas de desenvolvimento humano?</b></span><br>
-    IDHM entre 0 - 0,499: Muito Baixo Desenvolvimento Humano;<br /> 
-    IDHM entre 0,500 - 0,599: Baixo Desenvolvimento Humano;<br /> 
-    IDHM entre 0,600 - 0,699: Médio Desenvolvimento Humano;<br /> 
-    IDHM entre 0,700 - 0,799: Alto Desenvolvimento Humano; <br />
-    IDHM entre 0,800 e 1: Muito Alto Desenvolvimento Humano.<br />
-</div>
-
-<div class="text_met" id="44">
-    <span><b>O IDHM possui a mesma metodologia de cálculo para os municípios, unidades federativas, Unidades de Desenvolvimento Humano e regiões metropolitanas? </b></span><br>
-    Sim, a metodologia de cálculo do IDHM é a mesma, independente da espacialidade. 
-</div>
-
-<div class="text_met" id="45">
-    <span><b>O que é uma Unidade de Desenvolvimento Humano (UDH)? </b></span><br>
-    Para saber mais sobre as UDHs, acesse: <a href=<?php echo $_SESSION["lang"].'/o_atlas/metodologia/construcao-das-unidades-de-desenvolvimento-humano/' ?>>link</a>. 
-</div>
-
-<div class="text_met" id="46">
-    <span><b>Como foram nomeadas as UDHs? </b></span><br>
-    Os parceiros estaduais do Atlas contribuíram com a nomeação das UDHs, conforme sua configuração no espaço urbano dos municípios metropolitanos.<br />
-    Quando uma única UDH corresponde integralmente (ou quase integralmente) a um bairro/recorte territorial conhecido pela população, o nome da UDH corresponde ao nome deste bairro ou recorte territorial.<br />
-    Quando o bairro ou recorte territorial possui um apelido ou nome popularmente conhecido, este pode ter sido anotado entre parênteses (bastante comum no caso de vilas, aglomerados, favelas e assentamentos identificados como subnormais). Como a consulta ao Atlas poderá ser feita pelo nome da UDH a partir de qualquer parte deste nome, vale a pena colocar esses “apelidos”, pois eles poderão facilitar a consulta ao Atlas.<br />  
-    Exemplos: Milionários<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Lindéia <br /><br />
-    Quando a junção de dois ou mais bairros/recortes territoriais conhecidos correspondem a uma única UDH, o nome da UDH faz referência a todos esses nomes. <br />
-    Exemplos: Lourdes / Santo Agostinho <br />
-    Lourdes e Santo Agostinho são bairros contíguos, homogêneos em termos socioeconômicos e, juntos, formam uma única UDH. O nome da UDH inclui a referência aos dois bairros, e, ao fazer a consulta à Plataforma, você irá encontrar a UDH correspondente a esses bairros ao digitar o nome de qualquer um deles. <br />
-    Quando duas UDHs diferentes fazem parte de um mesmo bairro/recorte territorial, o nome do bairro/recorte territorial se encontra seguido do sinal de dois pontos, seguido dos nomes de referência que ajudaram a distinguir uma UDH de outra. <br />
-    Desta forma, há várias UDHs com o mesmo nome de bairro/recorte territorial, mas após os dois pontos (:) as informações complementares facilitam o usuário na identificação de cada UDH, de cada parte do bairro/recorte territorial em questão. <br />
-    Exemplos: Sagrada Família : Horto<br /> 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Sagrada Família : Pátio da Estação Ferroviária<br />
-    Caso a referência complementar ao nome do bairro/recorte territorial envolva mais de uma referência, todos os nomes podem ser utilizados. <br />
-    Exemplos: Hipercentro : Imprensa Oficial / Pça. da Estação / Rodoviária 
-</div>
-
-<!-- <div class="text_met" id="47">
-    <span><b>Quantas UDHs estão incluídas no Atlas do Desenvolvimento Humano nas Regiões Metropolitanas?</b></span><br>
-    Para visualizar todas as UDHs incluídas no Atlas das Regiões Metropolitanas, <a href="">clique aqui</a>. 
-</div> -->
-
-<div class="text_met"id="48" >
-    <span><b>O que é o Perfil da Unidade de Desenvolvimento Humano (UDH)? </b></span><br>
-    O Perfil das Unidades de Desenvolvimento Humano é um retrato resumido de espaços intramunicipais brasileiros, acessível online ou exportável em formato PDF. Ele reúne um conjunto de textos e dados comparativos, com informações de 2010 e 2000. Nele são apresentados, de forma resumida, os principais indicadores socioeconômicos das áreas de demografia e saúde, educação, habitação, renda, trabalho e vulnerabilidade, além do Índice de Desenvolvimento Humano Municipal (IDHM). 
-</div>
-
-<div class="text_met" id="49">
-    <span><b> Há previsão de inclusão de outras regiões metropolitanas? </b></span><br>
-    <!-- Atualmente, temos a previsão de lançar mais 4 RMs: Baixada Santista, Campinas, Maceió, Vale do Paraíba.  -->Caso governos estaduais, municipais, órgãos de gestão metropolitana, empresas ou outros atores sociais e políticos e agentes econômicos tenham interesse em incluir outras RMs nesta plataforma, as instituições responsáveis pelo Atlas devem ser consultadas e irão avaliar as condições e recursos necessários para a inclusão de novas RM. 
-</div>
-
-<!-- <div class="block-01-div-subtitle">Guia de Utilização do Atlas Brasil 2013<br /><br /></div>
-
-<div class="text_met" id="50">
-    <span><b>Como fazer uma Consulta sobre o meu município?</b></span><br>
-    No menu superior, clique em Consulta. Automaticamente surgirá o IDHM total e desagregado de todos os municípios brasileiros. Para fazer nova Consulta, clique em Limpar Espacialidades e Limpar Indicadores no fim da página à esquerda. Vá a Espacialidades, no início da página à direita e clique no botão azul Selecionar. Escolha Estadual se quer ver dados dos estados brasileiros ou Municipal para selecionar o(s) município(s) de sua escolha. Uma vez selecionado(s), clique no botão azul "Ok". Espere até carregar a página e vá a Indicadores, ao lado de Espacialidades, e clique no botão azul “Selecionar”. Na caixa de diálogo aberta, selecione a dimensão, o tema e o indicador. Você pode selecionar o ano desejado (1991, 2000 e 2010) abaixo do item selecionado. Uma vez feita a escolha, clique no botão azul "Ok". Também é possível selecionar quantos indicadores, temas e dimensões desejar. Até 21 colunas serão exibidas na tela. Acima desse número, você será convidado a fazer download da tabela.
-</div>
-
-<div class="text_met" id="51">
-    <span><b>Como visualizar os dados do meu município em um mapa?</b></span><br>
-    Uma vez feita a Consulta, você pode optar por ver na tabela ou ver no mapa. Para ver como mapa, clique no botão com um símbolo do mapa do Brasil ao lado do título "Consulta". No modo mapa, a seleção de anos se encontra abaixo, à esquerda. Para selecionar o ano desejado, arraste a bolinha. Você pode salvar o resultado de sua busca em formato pdf.
-</div>
-
-<div class="text_met" id="52">
-    <span><b>Como fazer download de tabelas?</b></span><br>
-    Uma vez feita a Consulta e selecionados todos os indicadores e municípios desejados, clique no botão cinza da lateral direita e faça o download em formato csv. (compatível com o Microsoft Excel e outras planilhas eletrônicas de software livre).
-</div>
-
-<div class="text_met" id="53">
-    <span><b>Como posso buscar o Perfil Municipal do meu município?</b></span><br>
-    No menu superior, clique em Perfil. Digite o nome do município desejado na caixa de Busca e clique no botão azul com o símbolo de lupa. A página carregará o Perfil do seu município, com dados e gráficos já selecionados nos temas de Desenvolvimento Humano, Demografia e Saúde, Educação, Renda, Trabalho, Habitação e Vulnerabilidade Social. Você também pode selecionar o município na Home do Atlas, abaixo do quadro de Destaques, na área Perfil.
-</div>
-
-<div class="text_met" id="54">
-    <span><b>Como imprimir o Perfil Municipal?</b></span><br>
-    Ao lado direito do título "Perfil", clique no botão cinza com símbolo de uma impressora para imprimir uma cópia do Perfil do seu município.
-</div>
-
-<div class="text_met" id="55">
-    <span><b>Como eu vejo a posição do meu município ou estado no Ranking?</b></span><br>
-    No menu superior, clique em Ranking. Abaixo do título Ranking, selecione Municipal, se quer conhecer a posição dos municípios, ou Estadual, se quer conhecer a posição dos estados brasileiros. Abaixo dessas abas, clique na barra Exibir para mudar a quantidade de municípios que deseja visualizar na página. Para conhecer o ranking dos municípios pelo IDHM desagregado, clique em uma das dimensões (IDHM Renda IDHM Longevidade e IDHM Educação) na tabela à esquerda.
-</div>
-
-<div class="text_met" id="56">
-    <span><b>Como acompanhar a evolução dos indicadores ao longo dos anos?</b></span><br>
-    Se deseja visualizar o mesmo indicador em diferentes anos, você deve realizar uma Consulta. Uma vez na seção "Consulta" e selecionada a "Espacialidade", selecione o "Indicador" desejado. Na caixa de diálogo aberta, selecione a dimensão, o tema e o indicador. Ao selecionar o indicador, você pode marcar os anos desejados (1991, 2000 e 2010) na coluna "Itens Selecionados", na linha de anos abaixo do nome do indicador. É possível selecionar um ou mais anos para cada indicador. Os anos selecionados ficarão em negrito. Ao clicar em "Ok", a tabela abrirá com o indicador e os anos selecionados.
-</div> -->
 
 <?php
 $title2 = $lang_mng->getString("atlas_titlefaq");
