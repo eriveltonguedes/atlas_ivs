@@ -1,7 +1,7 @@
 {
     "google_maps_api_key": "AIzaSyBkJruNegrUCj8j086LtInDp11qcZKitos",
     "contexto_padrao": "PAIS",
-    "espacialidade_padrao": "MUNICIPAL",
+    "espacialidade_padrao": "ESTADUAL",
     "ano_padrao": 3,
     "transparencia_padrao": 30,
     "precisao_padrao": 15,

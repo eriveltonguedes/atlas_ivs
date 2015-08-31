@@ -87,7 +87,7 @@
     $(document).ready(function(){
         var tempo = 5000;
         var ativo = 0;
-        function transicaoBanner(elem){
+        /*function transicaoBanner(elem){
             clearInterval(interBanner);
             if(elem != -1) {
                 var i = elem;
@@ -107,7 +107,7 @@
             interBanner = setTimeout(function() { transicaoBanner(ativo+1) }, tempo);
         }
 
-        var interBanner = setTimeout(function() { transicaoBanner(ativo+1) }, tempo);
+        var interBanner = setTimeout(function() { transicaoBanner(ativo+1) }, tempo);*/
     });
 </script>
 

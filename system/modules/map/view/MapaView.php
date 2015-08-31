@@ -78,7 +78,7 @@ $mapa_espacialidade = array(
                 ?>
                 
                 <!-- aviso -->
-                <div class="aviso-ajuda" id="aviso-ajuda-mapa">
+                <!--<div class="aviso-ajuda" id="aviso-ajuda-mapa">
                     <div class="close">&times;</div>
                     <div class="msg"><?php echo $lang_mng->getString('mp_aviso_ajuda_marcador');?></div>
                 </div>

@@ -29,7 +29,8 @@ function SeletorEspacialidade() {
                             width: "60px",
                             height: "60px"
                         },
-                    }, {
+                    }, 
+                    /*{
                         name: lang_mng.getString("seletor_tematico"),
                         nameSingleFilter: lang_mng.getString("seletor_tematico_singular"),
                         id: 7,
@@ -74,7 +75,7 @@ function SeletorEspacialidade() {
                             width: "60px",
                             height: "60px"
                         },
-                    }],
+                    }*/],
                 // url: "com/mobiliti/componentes/seletor-espacialidade/Search.services.php",
                 url: "system/modules/seletor-espacialidade/controller/SearchEntities.controller.php",
             },
@@ -96,18 +97,18 @@ function SeletorEspacialidade() {
                     else if (objeto.idFilter == "2") { // municipios
                         item.mun.push(parseInt(objeto.idItemSelector));
                     }
-                    else if (objeto.idFilter == "6") {//rm
+/*                    else if (objeto.idFilter == "6") {//rm
                         item.rm.push(parseInt(objeto.idItemSelector));
                     }
                     else if (objeto.idFilter == "5") {//udh
                         item.udh.push(parseInt(objeto.idItemSelector));
-                    }
+                    }*/
                     else if (objeto.idFilter == "4") {//estado
                         item.est.push(parseInt(objeto.idItemSelector));
                     }
-                    else if (objeto.idFilter == "7") {//Área temática
+/*                    else if (objeto.idFilter == "7") {//Área temática
                         item.areaTematica.push(parseInt(objeto.idItemSelector));
-                    }
+                    }*/
                 }
             });
         });

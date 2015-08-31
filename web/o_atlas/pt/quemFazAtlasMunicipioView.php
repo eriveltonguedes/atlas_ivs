@@ -40,7 +40,7 @@
                             <div class="block-20-div-subtitle_atlas"><span> <b>Fundação Sistema Estadual de Análise de Dados (Seade)</b></span><br/></div>
                         </a>
                     </div>    
-                    <div id="collapse20" class="accordion-body collapse">
+                    <div id="collapse20" class="accordion-body">
                         <div class="accordion-inner">
                             <br/>
                             <span>Maria Paula Ferreira (coordenadora)</span><br/>
@@ -58,7 +58,7 @@
                         </div>
                         </a>
                     </div>    
-                    <div id="collapse16" class="accordion-body collapse">
+                    <div id="collapse16" class="accordion-body">
                         <div class="accordion-inner">
                             <br/>
                            <span>Paulo Roberto Delgado (coordenador)</span><br/>
@@ -75,7 +75,7 @@
                             <div class="block-00-div-subtitle_atlas"><span><b>Secretaria de Estado de Meio Ambiente, Recursos Hídricos, Infraestrutura, Cidades e Assuntos Metropolitanos (Segplan)</b></span><br/></div>
                         </a>
                     </div>    
-                    <div id="collapse1" class="accordion-body collapse"><br/>
+                    <div id="collapse1" class="accordion-body"><br/>
                         <div class="accordion-inner">
                             <span>Lucelena Fátima de Melo (coordenadora)</span><br/><br/>
                         </div>   
@@ -90,7 +90,7 @@
                         <div class="block-02-div-subtitle_atlas"><span><b>Fundação João Pinheiro</b></span><br/></div>
                         </a>
                     </div>    
-                    <div id="collapse4" class="accordion-body collapse"><br/>
+                    <div id="collapse4" class="accordion-body"><br/>
                         <div class="accordion-inner">
                             <span>Maria Izabel Marques do Valle (coordenadora)</span><br/><br/>
                         </div>   
@@ -105,7 +105,7 @@
                         <div class="block-19-div-subtitle_atlas"><span> <b>Fundação Amazônia de Amparo a Estudos e Pesquisas do Pará (Fapespa)</b></span><br/></div>
                       </a>
                     </div>    
-                    <div id="collapse19" class="accordion-body collapse">
+                    <div id="collapse19" class="accordion-body">
                         <div class="accordion-inner">
                             <br/>
                             <span>Geovana Raiol Pires (coordenadora)</span><br/>
@@ -123,7 +123,7 @@
                         <div class="block-06-div-subtitle_atlas"><span><b>Fundação Centro Estadual de Estatísticas, Pesquisas e Formação de Servidores do Rio de Janeiro (Ceperj)</b></span><br/></div>
                     </a>
                     </div>    
-                    <div id="collapse6" class="accordion-body collapse"><br/>
+                    <div id="collapse6" class="accordion-body"><br/>
                         <div class="accordion-inner">
                             <span>Fabio Odilon Alves Gomes (coordenador)</span><br/>
                             <span>Sergio Urzedo Jr.</span><br/><br/>
@@ -139,7 +139,7 @@
                         <div class="block-08-div-subtitle_atlas"><span> <b>Superintendência de Estudos Econômicos e Sociais da Bahia (SEI)</b></span><br/></div>
                       </a>
                     </div>    
-                    <div id="collapse8" class="accordion-body collapse"><br/>
+                    <div id="collapse8" class="accordion-body"><br/>
                         <div class="accordion-inner">
                            <span> Luis André de Aguiar Alves (coordenador)</span><br/><br/>
                        </div>   

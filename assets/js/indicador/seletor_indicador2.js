@@ -568,7 +568,7 @@ function IndicatorSelector()
 
 
         var html = "<div class='indicador_ano'>";
-        html += "<span data-id=1 style='text-align:left;padding-left:8px;' data-indicador=" + idIndicador + " class='year1 " + classAno1 + "'>1991</span>";
+        /*html += "<span data-id=1 style='text-align:left;padding-left:8px;' data-indicador=" + idIndicador + " class='year1 " + classAno1 + "'>1991</span>";*/
         html += "<span data-id=2 style='text-align:center' data-indicador=" + idIndicador + " class='year2 " + classAno2 + "'>2000</span>";
         html += "<span data-id=3 style='text-align:right' data-indicador=" + idIndicador + " class='year3 " + classAno3 + "'>2010</span>";
         html += "</div>";
