@@ -31,8 +31,8 @@ if (defined('ANO_PADRAO') && $ano_padrao) {
 ?>
 
 <div id="seletor_ano" style="top: 10px;">
-    <span id="ano_1"
-          <?php echo ($ano == 1) ? 'class="ano_atual"' : ''; ?>>1991</span>
+    <!--<span id="ano_1"
+          <?php echo ($ano == 1) ? 'class="ano_atual"' : ''; ?>>1991</span>-->
     <span id="ano_2"
           <?php echo ($ano == 2) ? 'class="ano_atual"' : ''; ?>>2000</span>
     <span id="ano_3"

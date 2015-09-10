@@ -63,7 +63,7 @@
     <div class="title-geral">
         <h1>O IVS</h1>
 <p>O IVS é o resultado da média aritmética dos subíndices: IVS Infraestrutura Urbana, IVS Capital Humano e IVS Renda e Trabalho, cada um deles entra no cálculo do IVS final com o mesmo peso.</p>
-<p>Para o cálculo dos subíndices, foram utilizados dezesseis indicadores calculados a par-tir das variáveis dos censos demográficos do IBGE, para os anos de 2000 e 2010 – tabulados para o ADH no Brasil3 – com seus respectivos pesos. Para a construção de cada dimensão do IVS, utilizando os pesos equivalentes para cada indicador, foi necessário utilizar parâmetros máximos e mínimos, em cada indicador, para transformá-lo, também, num indicador padro¬nizado, com valores variando de 0,000 a 1,000. 
+<p>Para o cálculo dos subíndices, foram utilizados dezesseis indicadores calculados a par-tir das variáveis dos censos demográficos do IBGE, para os anos de 2000 e 2010 – tabulados para o ADH no Brasil3 – com seus respectivos pesos. Para a construção de cada dimensão do IVS, utilizando os pesos equivalentes para cada indicador, foi necessário utilizar parâmetros máximos e mínimos, em cada indicador, para transformá-lo, também, num indicador padronizado, com valores variando de 0,000 a 1,000. 
 </p>
     </div>
     <p>Cada indicador teve seu valor normalizado numa escala que varia entre 0 a 1, em que 0 corresponde à situação ideal, ou desejável, e 1 corresponde à pior situação. </p>

@@ -8,7 +8,7 @@ $pag = $gets[2];
 <div class="clear"></div>
 <div id="footer">
     <div class="footerbottomCenter">
-        <!-- <div class="footerLeft"> -->
+        <div class="footerLeft">
             <div class="redesSociais">
                 <span id="footer_novidades"></span>
                 <p>
@@ -26,8 +26,8 @@ $pag = $gets[2];
                 }
                 ?>
             </div>
-        <!-- </div> -->
-        <!-- <div class="footerRight"> -->
+        </div>
+        <div class="footerRight">
             <div class="realizacao">
                 <p id="footer_realizacao"><p>
                 <div class="logosFooter">
@@ -36,13 +36,13 @@ $pag = $gets[2];
                     <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo_ipea.png" style="height:100px;" alt="IPEA"/></a>
                 </div>
             </div>
+        </div>
             <div class="realizacao">
                 <p id="footer_realizacao" style="margin-top: 30px;">Parceiros institucionais<p>
                 <div class="logosFooter">
-                    <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-go.jpg" alt="Governo do Estado de Goiás"/></a>
+                    <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-secima.png" alt="SECIMA"/></a>
                     <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-fjp.png" alt="Fundação João Pinheiro"/></a>
                     <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-sei.png" alt="SEI"/></a>
-                    <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-secima.jpg" alt="SECIMA"/></a>
                     <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-ceperj.jpg" alt="CEPERJ"/></a>
                     <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-seade.png" alt="SEADE"/></a>
                     <a href="<?php echo $home_footerIPEA ?>" target="_blank"><img src="./assets/img/footer/logo-ipardes.jpg" alt="IPARDES"/></a>
@@ -59,7 +59,7 @@ $pag = $gets[2];
                 </div>
             </div>-->
             
-        <!-- </div> -->
+        
     </div>
 </div>
 

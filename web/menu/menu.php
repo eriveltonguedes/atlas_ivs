@@ -96,7 +96,7 @@ foreach ($link as $value) {
     <div class="mainMenuTop">   
         <img src="<?php echo $path_dir ?>./assets/img/icons/setaMenu.png" id="setaMenu" style="display: none;position: absolute; width: 80px" alt=""/>
         <div class="imgLogo">
-            <a href="<?php echo $path_dir . $_SESSION["lang"] . '/' ?>"><img src=<?php echo $path_dir . "assets/img/logos/branca.png"; ?> alt=""/></a>
+            <a href="<?php echo $path_dir . $_SESSION["lang"] . '/' ?>"><!--<img src=<?php echo $path_dir . "assets/img/logos/branca.png"; ?> alt=""/>--><h1 style="font-family: 'Passion One', cursive;max-width: 340px; color: #333;    font-weight: 500;">Atlas da Vulnerabilidade Social</h1></a>
         </div>
         <ul class="mainMenuTopUl no-print" <?php if (LINKS_IDIOMAS == "") echo "style='margin-top: 57px;'" ?>>
             <li><a href="<?php echo $path_dir; ?><?php echo $_SESSION["lang"]; ?>/home/" <?php
@@ -195,7 +195,7 @@ foreach ($link as $value) {
                 ?> id="menu_ranking"><?php echo $lang_mng->getString('menu_ranking'); ?></a></li>
                     <?php
                    }
-                   ?>  
+                   ?>  -->
 
                    <?php
                    if (download_has_lang(@$_SESSION["lang"])) {
@@ -207,7 +207,7 @@ foreach ($link as $value) {
                 ?> id="menu_download"><?php echo $lang_mng->getString('menu_download'); ?></a></li>
                     <?php
                    }
-                   ?> !-->
+                   ?>
 
         </ul>
     </div> 

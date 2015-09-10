@@ -15,11 +15,11 @@ include_once ("../config/config_gerais.php");
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description"
               content="O Atlas do Desenvolvimento Humano no Brasil é uma plataforma de consulta ao Índice de Desenvolvimento Humano Municipal – IDHM - de 5.565 municípios brasileiros, além de mais de 180 indicadores de população, educação, habitação, saúde, trabalho, renda e vulnerabilidade, com dados extraídos dos Censos Demográficos de 1991, 2000 e 2010." />
-        <meta http-equiv="X-UA-Compatible" content="IE=IE8" />
 
         <base href="<?php echo $path_dir ?>" />
 

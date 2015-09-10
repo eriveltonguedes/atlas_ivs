@@ -9,6 +9,8 @@ $dados_post = json_decode(stripslashes($_POST['dados']), true);
 
 $dados = $dados_post['dataAjax'];
 
+//file_put_contents ( "arquivo_dump_ajax.txt" ,  $_POST['dados']);
+
 $espacialidades = $dados['aggregation'];
 $indicadores    = $dados['indicadores'];
 

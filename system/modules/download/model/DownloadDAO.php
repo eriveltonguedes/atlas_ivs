@@ -63,26 +63,26 @@ Class Download {
 			    .'<table class="table" style="width:100%;" >'
                             .'<tbody>'
                                 .'<tr style="width: 100px; height: 35px;">' .
-                                    '<td colspan="2" style=" border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-weight: bold; width: 100px;" id="download_rm">'.$this->lang->getString("download_mun").'</td>' .
+                                    '<td colspan="2" style=" border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-weight: bold; width: 100px;" id="download_rm">'.$this->lang->getString("download_ivs").'</td>' .
                                 '</tr>'
 			.'<tr style="width: 100px; height: 35px;">'
-				.'<td style="border-left: 1px solid #ccc; text-align: center;width: 100px;">'.$this->lang->getString("download_mun_uf_pais").'</td>'
+				.'<td style="border-left: 1px solid #ccc; text-align: center;width: 100px;">'.$this->lang->getString("download_dados_ivs").'</td>'
 				.'<td style="border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;width: 100px;">'
-                                	.'<a href="data/rawData/atlas2013_dadosbrutos_pt.xlsx">'
+                                	.'<a href="data/rawData/atlasivs_dadosbrutos_pt.xlsx">'
                                     		.'<button type="button" class="blue_button big_bt"  style="margin-top: 0px; font-size: 14px; height: 25px; margin-left: 40%; padding: 1px 15px;" id="download_buttonBaixe">'.$this->lang->getString("download_title").'</button>'
                                 	.'</a>'
                            	.'</td>'
 			.'</tr>'
-            .'<tr style="width: 100px; height: 35px;">'
-                .'<td style="border-left: 1px solid #ccc; text-align: center;width: 100px;">'.$this->lang->getString("download_publicacao_idhm").'</td>'
+            .'<tr style="width: 100px; height: 35px;border-bottom: 1px solid #ccc;">'
+                .'<td style="border-left: 1px solid #ccc; text-align: center;width: 100px;">'.$this->lang->getString("download_pub_ivs").'</td>'
                 .'<td style="border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center;width: 100px;">'
-                                    .'<a href="data/rawData/publicacao_atlas_municipal.pdf" target="_blank">'
+                                    .'<a href="data/rawData/publicacao_atlas_ivs.pdf" target="_blank">'
                                             .'<button type="button" class="blue_button big_bt"  style="margin-top: 0px; font-size: 14px; height: 25px; margin-left: 40%; padding: 1px 15px;" id="download_buttonBaixe">'.$this->lang->getString("download_title").'</button>'
                                     .'</a>'
                             .'</td>'
             .'</tr>'
 
-		.'<tr style="width: 100px; height: 35px;">' .
+		/*.'<tr style="width: 100px; height: 35px;">' .
 		                            '<td colspan="2" style=" border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-weight: bold; width: 100px;" id="download_rm">'.$this->lang->getString("download_rm").'</td>' .
 		                            '</tr>'
         .'</tr>'
@@ -109,11 +109,11 @@ Class Download {
                                             .'<button type="button" class="blue_button big_bt"  style="margin-top: 0px; font-size: 14px; height: 25px; margin-left: 40%; padding: 1px 15px;" id="download_buttonBaixe">'.$this->lang->getString("download_title").'</button>'
                                     .'</a>'
                             .'</td>'
-            .'</tr>';
+            .'</tr>'*/;
             
         }
 	
-        $SQL = "SELECT DISTINCT nome,link_download FROM $this->tipo WHERE ativo = true and link_download is not null ORDER BY nome ASC";
+        /*$SQL = "SELECT DISTINCT nome,link_download FROM $this->tipo WHERE ativo = true and link_download is not null ORDER BY nome ASC";
 
         $Resposta = pg_query($this->bd->getConexaoLink(), $SQL) or die('Não foi possível executar a consulta');
 
@@ -121,7 +121,7 @@ Class Download {
             $this->nome = $linha['nome'];
             $this->link = $linha['link_download'];
             $this->montaTabela();
-        }
+        }*/
         $this->tabela .= '</tbody></table></div>';
         echo $this->tabela;
     }

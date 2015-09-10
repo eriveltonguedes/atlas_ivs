@@ -116,7 +116,7 @@
     
     <ul>
         <li class='ativo'>
-            <a href="<?php echo $path_dir . "$ltemp" ?>/consulta/"><img src="./assets/img/home/banner/modelo_banner_site_v02.jpg" alt=""></a>
+            <a href="data/rawData/publicacao_atlas_ivs.pdf"><img src="./assets/img/home/banner/modelo_banner_site_v02.jpg" alt=""></a>
         </li>
         <!--<li>
             <a href="<?php echo $path_dir . "$ltemp" ?>/download/"><img src="./assets/img/home/banner/banner-cebolao.png" alt=""></a>
@@ -256,29 +256,46 @@
 
     <div class="nh-clear" style='margin-bottom: 20px'></div>
 
-   <!-- <div class="row">
+   <div class="row">
         <div class="nh-video-player">
-            <iframe width="440" height="248" src="//www.youtube.com/embed/K7Cftgj250Y" frameborder="0" allowfullscreen></iframe>
+            <iframe width="440" height="248" src="//www.youtube.com/embed/tnsiRD86iME" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="nh-video-descricao">
-        <h3 class="nh-subtitle nh-left"><?php echo $lang_mng->getString('atlas_titleOAtlas') ?></h3>
-        <p><?php echo $lang_mng->getString('home_oAtlasDescricao') ?>
-                <a href="<?php echo $path_dir . "$ltemp" ?>/o_atlas/o_atlas_/"> Saiba Mais </a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="<?php echo $path_dir . "$ltemp" ?>/o_atlas/perguntas_frequentes/"> Perguntas frequentes </a>
+        <h3 class="nh-subtitle nh-left">Ipea elabora Índice de Vulnerabilidade Social de municípios</h3>
+        <p>PANORAMA IPEA - 31.08.15: O Instituto de Pesquisa Econômica Aplicada (Ipea), em parceria com outras seis instituições, construiu um Índice de Vulnerabilidade Social (IVS) para os mais de 5 mil municípios brasileiros. Para falar sobre vulnerabilidade social e políticas públicas, o programa recebeu Marco Aurélio Costa, diretor de Estudos e Políticas Regionais Urbanas e Ambientais do Ipea e Paulo Jannuzzi, secretário de Avaliação e Direção da Informação.
+        </p>
+        </div>
+  
+
+        <div class="nh-clear" style='margin-bottom: 40px'></div>
+    </div> <!-- /row -->
+
+    <div class="row">
+        <div class="nh-video-descricao">
+            <h3 class="nh-subtitle nh-left">O que é o Índice de Vulnerabilidade Social?</h3>
+            <p>Bárbara Marguti, coordenadora de Estudos e Desenvolvimento Urbano do Ipea esclarece o que é o IVS.
             </p>
-           <p style="margin-top: 50px; float: right;">
-                <a href="<?php echo $home_FooterFacebook ?>" target="_blank"><img src="./assets/img/footer/facebook.png" alt="Facebook"/></a>
-                <a href="<?php echo $home_FooterTwitter ?>" target="_blank"><img src="./assets/img/footer/twitter.png" alt="Twitter"/></a>
-                <a href="<?php echo $home_FooterYoutube ?>" target="_blank"><img src="./assets/img/footer/youtube.png" alt="Youtube"/></a>
-                <a href="http://www.pnud.org.br/IDH/Boletim.aspx" target="_blank"><img  style="width: 34px; height: 34px;" src="./assets/img/home/mail.png" alt="Boletim"/></a>
+         </div>
+        <div class="nh-video-player">
+            <iframe width="440" height="248" src="//www.youtube.com/embed/Ey0h2I6rn8A" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="nh-clear" style='margin-bottom: 40px'></div>
+    </div> <!-- /row -->
+    
+    <div class="row">
+        <div class="nh-video-player">
+            <iframe width="440" height="248" src="//www.youtube.com/embed/Kq8-rTkAJqk" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="nh-video-descricao">
+            <h3 class="nh-subtitle nh-left">Índice de Vulnerabilidade Social - Resultados</h3>
+            <p>Marco Aurélio Costa - diretor de Estudos e Políticas Regionais, Urbanas e Ambientais do Ipea apresenta os resultados do IVS.
             </p>
         </div>
   
 
         <div class="nh-clear" style='margin-bottom: 40px'></div>
     </div> <!-- /row -->
-    
+
     <div class="nh-clear" style='margin-bottom: 40px;'></div>
     <hr>
 

@@ -689,7 +689,7 @@
 						$accordion.find('.templateBody').find('.accordion-inner').html(getListItens(data,data.type));
 					}
 					else{
-						$newPanel = $template.clone();
+						/*$newPanel = $template.clone();
 						var text = "";
 						
 						if(selector.id == 3)
@@ -701,7 +701,7 @@
 						$newPanel.attr("data-toggle","tooltip").attr("data-original-title",lang_mng.getString("seletor_mostrar_lista"));
 		           		$newPanel.find(".accordion-body").attr("id", i);
 			            $newPanel.find('.accordion-inner').html('Carregando...');
-			            $accordion.append($newPanel);
+			            $accordion.append($newPanel);*/
 					}
 				});					
 			} 

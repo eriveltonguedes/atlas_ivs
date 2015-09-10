@@ -693,10 +693,10 @@ body{
 }
 
 .logosFooter img{
-    margin-right: 18px;
+    margin-right: 13px;
     float: left;
     margin-bottom: 10px;
-    height:50px;
+    height:30px;
 }
 
 .footerbottomCenter{
@@ -3913,8 +3913,8 @@ width: 100px;
     font-family: "Passion One", Helvetica, Arial, Sans-serif;
     color: #000;
     font-weight: 400;
-    line-height: 10px;
-    margin-bottom: 35px;
+    line-height: 1em;
+    margin-bottom: 15px;
 }
 
 p.nh-title {
